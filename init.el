@@ -39,6 +39,7 @@
 (add-to-list 'load-path (concat config-home "site-lisp"))
 
 ;; My Custom Settings
+;;(require 'init-auto-install)
 (require 'init-theme)
 (require 'init-fontset)
 (require 'init-customization)
