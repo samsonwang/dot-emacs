@@ -3,8 +3,8 @@
 
 ; create the autosave dir if necessary, since emacs won't.
 
-(setq autosave-dir (concat config-home ".emacs_autosaves/"))
-(setq backup-dir (concat config-home ".emacs_backups/"))
+(setq autosave-dir (concat config-home ".emacs_autosaves"))
+(setq backup-dir (concat config-home ".emacs_backups"))
 
 (make-directory autosave-dir t)
 (make-directory backup-dir t)
@@ -17,7 +17,6 @@
    kept-new-versions 6
    kept-old-versions 2
    version-control t) ; use versioned backups
-
 
 (setq auto-save-file-name-transforms
    '( (".*" "~/.emacs.d/.emacs_autosaves" t) ) )
