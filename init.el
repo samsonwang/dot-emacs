@@ -20,7 +20,7 @@
 (when (>= emacs-major-version 24)
   (require 'package)
   (add-to-list 'package-archives
-    '("melpa-stable"    . "https://stable.melpa.org/packages/"))
+    '("melpa-stable" . "https://stable.melpa.org/packages/"))
 ;;  (add-to-list 'package-archives
 ;;    '("popkit"          . "http://elpa.popkit.org/packages/"))
 ;;  (add-to-list 'package-archives
@@ -61,7 +61,7 @@
 ;;(require 'better-defaults)
 
 ;; Put Custom Setting in a single stand alone file
-(setq custom-file (concat user-emacs-directory "custom-set-variables.el"))
+(setq custom-file (concat config-home "custom-set-variables.el"))
 (load custom-file 'noerror)
 
 ;; Calculate and print startup time
