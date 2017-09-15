@@ -19,7 +19,7 @@
    version-control t) ; use versioned backups
 
 (setq auto-save-file-name-transforms
-   '( ("*.*" "~/.emacs.d/.emacs_autosaves" t) ) )
+   '( (".*" "~/.emacs.d/.emacs_autosaves" t) ) )
 
 ;;; init-backup-func.el ends here
 (provide 'init-backup)
