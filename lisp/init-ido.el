@@ -7,7 +7,7 @@
 ;;(ido-everywhere t)
 
 ;; Enable Ido vertical mode
-(when (package-installed-p 'ido-vertical-mode)
+(when (>= emacs-major-version 24)
 	(ido-vertical-mode t))
 
 

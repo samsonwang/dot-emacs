@@ -6,16 +6,36 @@
 ;;=============================================================================
 ;;  Package settings
 ;;=============================================================================
-;; Enable smex
-(smex-initialize)
 
-;; Enable Global Company Mode
-(global-company-mode t)
+(when (>= emacs-major-version 24)
+  (require 'elpa-auto-install.el)
+  
+  ;; package to install
+  (defvar my-packages
+    '(smex company ido-vertical-mode yasnippet ivy counsel markdown-mode cl-lib))
+  
+  ;; auto install package above
+  (auto-install-packages my-packages)
+  
+  ;; Enable smex
+  (smex-initialize)
 
-;; Enable yasnippet
-(require 'yasnippet)
-(yas-global-mode 1)
-(setq yas-snippet-dirs (concat config-home "snippets"))
+  ;; Enable Global Company Mode
+  (global-company-mode t)
+
+  ;; Enable yasnippet
+  (require 'yasnippet)
+  (yas-global-mode 1)
+  (setq yas-snippet-dirs (concat config-home "snippets"))
+  
+  ;; 
+  (require 'init-ivy)
+
+  ;;(require 'init-global)
+  ;;(require 'init-tramp)
+  ;;(require 'init-modeline)
+
+  )
 
 ;; Enable autocomplete mode
 ;;(auto-complete-mode t)

@@ -39,7 +39,6 @@
 (add-to-list 'load-path (concat config-home "site-lisp"))
 
 ;; My Custom Settings
-(require 'init-auto-install)
 (require 'init-theme)
 (require 'init-fontset)
 (require 'init-customization)
@@ -53,11 +52,6 @@
 
 (require 'init-elpa)
 
-(require 'init-ivy)
-
-;;(require 'init-global)
-;;(require 'init-tramp)
-;;(require 'init-modeline)
 ;;(require 'better-defaults)
 
 ;; Put Custom Setting in a single stand alone file
