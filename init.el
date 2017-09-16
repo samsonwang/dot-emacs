@@ -7,7 +7,7 @@
 (setq config-home (file-name-directory load-file-name))
 (message (concat "Init from: " config-home))
 
-;; Set Best GC threshold
+;; Set Best GC thresholdo
 (defvar best-gc-cons-threshold 4000000
   "Best default GC threshold value. Should't be too big.")
 
@@ -21,12 +21,12 @@
   (require 'package)
   (add-to-list 'package-archives
     '("melpa-stable" . "https://stable.melpa.org/packages/"))
-;;  (add-to-list 'package-archives
-;;    '("popkit"          . "http://elpa.popkit.org/packages/"))
-;;  (add-to-list 'package-archives
-;;    '("melpa-cn"        . "http://elpa.emacs-china.org/melpa/"))
-;;  (add-to-list 'package-archives
-;;    '("melpa-cn-stable" . "http://elpa.emacs-china.org/melpa-stable/"))
+  (add-to-list 'package-archives
+    '("popkit" . "http://elpa.popkit.org/packages/"))
+  (add-to-list 'package-archives
+    '("melpa-cn"        . "http://elpa.emacs-china.org/melpa/"))
+  (add-to-list 'package-archives
+    '("melpa-cn-stable" . "http://elpa.emacs-china.org/melpa-stable/"))
   (package-initialize))
 
 ;; Force charset page to utf-8
