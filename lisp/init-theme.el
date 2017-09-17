@@ -3,8 +3,12 @@
 
 ;; Enable theme
 (when (eq system-type 'windows-nt)
-  (load "autumn-light-theme.el")
-  (load-theme 'autumn-light t)
+
+  ;;(load "autumn-light-theme.el")
+  ;;(load-theme 'autumn-light t)
+
+  (load "dracula-theme.el")
+  (load-theme 'dracula t)
 
   ;; Set initial window size
   (setq initial-frame-alist
