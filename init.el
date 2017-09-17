@@ -48,7 +48,7 @@
 (require 'init-org-mode)
 (require 'init-recentf)
 (require 'init-tabs)
-(require 'init-ido)
+;;(require 'init-ido)
 
 (require 'init-elpa)
 
