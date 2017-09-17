@@ -12,7 +12,8 @@
   
   ;; package to install
   (defvar my-packages
-    '(smex company ido-vertical-mode yasnippet ivy counsel markdown-mode cl-lib))
+    '(smex company ido-vertical-mode yasnippet
+	  ivy counsel markdown-mode cl-lib))
   
   ;; auto install package above
   (auto-install-packages my-packages)
@@ -31,6 +32,9 @@
   ;; 
   (require 'init-ivy)
 
+  ;;(require 'init-helm)
+
+  
   ;;(require 'init-global)
   ;;(require 'init-tramp)
   ;;(require 'init-modeline)
