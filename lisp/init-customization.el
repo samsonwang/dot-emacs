@@ -12,10 +12,7 @@
 ;;===============================================================
 ;; Autosave desktop when emacs exit
 ;;(desktop-save-mode t)
-;; Hide tool-bar menu-bar scroll-bar
-(tool-bar-mode 0) 
-;;(menu-bar-mode 0) 
-(scroll-bar-mode 0)
+
 ;; Hide startup message
 (setq inhibit-startup-message t)
 ;; Show paired parentheses
