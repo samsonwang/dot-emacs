@@ -16,8 +16,8 @@
 (global-set-key (kbd "C-x C-g") 'goto-line)
 
 ;; Unset C-z for suspend-frame
-;;(global-unset-key (kbd "C-z"))
-(global-set-key (kbd "C-z") 'suspend-frame-ex)
+(global-unset-key (kbd "C-z"))
+;;(global-set-key (kbd "C-z") 'suspend-frame-ex)
 (global-set-key (kbd "C-x C-z") 'suspend-frame-ex)
 (defun suspend-frame-ex()
   (interactive)

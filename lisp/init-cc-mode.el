@@ -1,8 +1,5 @@
 ;; -*- coding:utf-8 -*-
 
-
-
-
 (add-hook 'c-mode-hook
 		  (lambda()
 			(setq-default indent-tabs-mode nil)
