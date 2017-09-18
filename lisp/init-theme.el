@@ -22,12 +22,13 @@
   )
 
 
-(when (display-graphic-p)
-  ;; Hide tool-bar menu-bar scroll-bar
-  (tool-bar-mode 0) 
-  ;;(menu-bar-mode 0) 
-  (scroll-bar-mode 0)
-  )
+(if (display-graphic-p)
+  ;; hide toolbar scrollbar in graphical display
+  (lambda()
+    (tool-bar-mode 0)
+    (scroll-bar-mode 0))
+  ;; Hide menu-bar in command line
+  (menu-bar-mode 0))
 
 
 (provide 'init-theme)
