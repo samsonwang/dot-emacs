@@ -13,7 +13,7 @@
   ;; Set initial window size
   (setq initial-frame-alist
 		(append '((width . 90) (height . 35)
-	      (left . 580) (top . 40))
+	      (left . 490) (top . 5))
 	      initial-frame-alist))
 
   ;; Set default subsequent window size

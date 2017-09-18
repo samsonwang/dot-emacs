@@ -9,7 +9,7 @@
                       (font-spec :family chinese-name :size chinese-size))))
 
 (when (eq system-type 'windows-nt)
-   (set-fontset "Consolas" "微软雅黑" 14 14))
+   (set-fontset "Consolas" "微软雅黑" 16 16))
 
 
 ;; Set font for windows chinese
