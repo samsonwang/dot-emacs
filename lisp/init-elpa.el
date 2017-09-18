@@ -32,7 +32,7 @@
   (setq yas-snippet-dirs (concat config-home "snippets"))
   
   ;; 
-  (require 'init-ivy)
+;;  (require 'init-ivy)
 
   (require 'init-helm)
 
