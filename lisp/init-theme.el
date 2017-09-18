@@ -24,9 +24,9 @@
 
 (if (display-graphic-p)
   ;; hide toolbar scrollbar in graphical display
-  (lambda()
+  ((lambda()
     (tool-bar-mode 0)
-    (scroll-bar-mode 0))
+    (scroll-bar-mode 0)))
   ;; Hide menu-bar in command line
   (menu-bar-mode 0))
 
