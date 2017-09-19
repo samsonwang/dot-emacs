@@ -15,6 +15,9 @@
 ;; Set C-x C-g to goto line
 (global-set-key (kbd "C-x C-g") 'goto-line)
 
+;; unset C-x m for mail, because it is easily mixed with C-x C-m
+(global-unset-key (kbd "C-x m"))
+
 ;; Unset C-z for suspend-frame
 (global-unset-key (kbd "C-z"))
 ;;(global-set-key (kbd "C-z") 'suspend-frame-ex)
