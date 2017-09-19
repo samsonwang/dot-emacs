@@ -42,7 +42,7 @@
 (require 'init-site-lisp)
 (require 'init-theme)
 (require 'init-fontset)
-(require 'init-customization)
+(require 'init-misc)
 (require 'init-key-binding)
 (require 'init-backup)
 (require 'init-cc-mode)

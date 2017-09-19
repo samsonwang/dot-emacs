@@ -96,6 +96,6 @@
 
 
 
-(provide 'init-customization)
-;;; init-customization.el ends here
+(provide 'init-misc)
+;;; init-misc.el ends here
 
