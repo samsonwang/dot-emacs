@@ -3,11 +3,13 @@
 
 ; create the autosave dir if necessary, since emacs won't.
 
-(setq autosave-dir (concat config-home ".emacs_autosaves"))
-(setq backup-dir (concat config-home ".emacs_backups"))
+(setq autosave-dir (concat config-home ".emacs_autosaves") )
+(setq backup-dir (concat config-home ".emacs_backups") )
 
-(make-directory autosave-dir t)
-(make-directory backup-dir t)
+(if (not (file-exists-p autosave-dir))
+  (make-directory autosave-dir) )
+(if (not (file-exists-p autosave-dir))
+  (make-directory backup-dir) )
 
 (setq
    backup-by-copying t ; don't clobber symlinks
