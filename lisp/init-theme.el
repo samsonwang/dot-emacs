@@ -22,14 +22,17 @@
   )
 
 
-(if (display-graphic-p)
-  ;; hide toolbar scrollbar in graphical display
-  ((lambda()
-    (tool-bar-mode 0)
-    (scroll-bar-mode 0)))
-  ;; Hide menu-bar in command line
-  (menu-bar-mode 0))
+;; hide toolbar and scrollbar
+(when (fboundp 'tool-bar-mode)
+  (tool-bar-mode 0))
+(when (fboundp 'scroll-bar-mode)
+  (scroll-bar-mode 0))
+(when (fboundp 'horizontal-scroll-bar-mode)
+  (horizontal-scroll-bar-mode 0))
 
+;; hide menubar in commandline
+(when (not (display-graphic-p) )
+  (menu-bar-mode 0))
 
 (provide 'init-theme)
 ;;; init-theme.el ends here
