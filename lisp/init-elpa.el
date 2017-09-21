@@ -7,9 +7,9 @@
 ;;  Package settings
 ;;=============================================================================
 
-(when (>= emacs-major-version 24)
+(when *emacs24*
+
   (require 'elpa-auto-install.el)
-  
   ;; package to install
   (defvar my-packages
     '(smex company yasnippet markdown-mode

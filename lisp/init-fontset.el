@@ -8,7 +8,7 @@
     (set-fontset-font (frame-parameter nil 'font) charset
                       (font-spec :family chinese-name :size chinese-size))))
 
-(when (eq system-type 'windows-nt)
+(when *windows*
    (set-fontset "Consolas" "微软雅黑" 16 16))
 
 
