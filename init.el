@@ -58,6 +58,7 @@
 (require 'init-org-mode)
 (require 'init-recentf)
 (require 'init-tabs)
+(require 'init-gdb)
 
 (require 'init-elpa)
 
