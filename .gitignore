@@ -59,7 +59,7 @@ Temporary Items
 *.lock
 *.dat
 *.history
-recentf
+.recentf
 .smex-items
 smex-items
 ido.last
