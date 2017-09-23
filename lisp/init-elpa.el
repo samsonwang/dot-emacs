@@ -55,9 +55,6 @@
 
   )
 
-;; Enable autocomplete mode
-;;(auto-complete-mode t)
-;;(ac-config-default)	;; auto-complete basic configuration
 
 (provide 'init-elpa)
 ;;; init-customization.el ends here

@@ -5,12 +5,12 @@
 (recentf-mode t)
 ;; recentf-mode
 (setq recentf-save-file (expand-file-name ".recentf" config-home))
-(setq recentf-auto-cleanup 300)
+(setq recentf-auto-cleanup 'never)
 (setq recentf-keep '(file-remote-p file-readable-p))
 (setq recentf-max-saved-items 10)
 
 ;; strip $HOME from the front of recentf files
-(add-to-list 'recentf-filename-handlers 'abbreviate-file-name)
+;;(add-to-list 'recentf-filename-handlers 'abbreviate-file-name)
 
 (setq recentf-exclude '("/tmp/" "/ssh:" "/sudo:"
                         ;; ctags

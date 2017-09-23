@@ -56,6 +56,7 @@
 ;; idle require other stuff
 (require 'idle-require)
 (setq idle-require-idle-delay 1)
+(setq idle-require-load-break 0)
 (setq idle-require-message-verbose nil)
 (setq idle-require-symbols
       '(init-site-lisp
