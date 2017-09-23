@@ -11,14 +11,23 @@
 (unless (file-exists-p backup-dir)
   (make-directory backup-dir) )
 
-(setq
-   backup-by-copying t ; don't clobber symlinks
-   backup-directory-alist
-      `( ( "." . ,backup-dir ) ) ; don't litter my fs tree
-   delete-old-versions t
-   kept-new-versions 6
-   kept-old-versions 2
-   version-control t) ; use versioned backups
+(setq backup-by-copying t ; don't clobber symlinks
+      version-control t
+      delete-old-versions t
+      kept-new-versions 6
+      kept-old-versions 2) ; use versioned backups
+
+;; don't litter my fs tree
+(setq backup-directory-alist
+      `( ( "." . ,backup-dir ) ) )
+
+;; backup version controlled files
+(setq vc-make-backup-files t)
+
+;; turn on autosave
+(setq auto-save-default t
+      auto-save-timeout 20
+      auto-save-interval 200)
 
 (setq auto-save-file-name-transforms
       `( (".*" ,autosave-dir t) ) )
