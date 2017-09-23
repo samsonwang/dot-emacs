@@ -21,6 +21,9 @@
 (setq backup-directory-alist
       `( ( "." . ,backup-dir ) ) )
 
+;; do not backup files in emacs config dir
+(setq small-temporary-file-directory config-home)
+
 ;; backup version controlled files
 (setq vc-make-backup-files t)
 
