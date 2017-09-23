@@ -8,7 +8,19 @@
 ;;=============================================================================
 
 (when *emacs24*
+  
+  ;; melpa packages
+  (add-to-list 'package-archives
+    '("melpa-stable" . "https://stable.melpa.org/packages/"))
+  (add-to-list 'package-archives
+    '("melpa-cn-stable" . "http://elpa.emacs-china.org/melpa-stable/"))
 
+;;  (add-to-list 'package-archives
+;;    '("popkit" . "http://elpa.popkit.org/packages/"))
+;;  (add-to-list 'package-archives
+;;    '("melpa-cn"        . "http://elpa.emacs-china.org/melpa/"))
+
+  
   (require 'elpa-auto-install.el)
   ;; package to install
   (defvar my-packages
@@ -27,9 +39,10 @@
 
   ;; Enable yasnippet
   (require 'yasnippet)
+  (setq yas-verbosity 0)
   (yas-global-mode 1)
   (setq yas-snippet-dirs (concat config-home "snippets"))
-  
+
   ;; 
 ;;  (require 'init-ivy)
 

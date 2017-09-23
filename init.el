@@ -28,14 +28,6 @@
 (setq package--init-file-ensured t)
 (when (>= emacs-major-version 24)
   (require 'package)
-  (add-to-list 'package-archives
-    '("melpa-stable" . "https://stable.melpa.org/packages/"))
-;;  (add-to-list 'package-archives
-;;    '("popkit" . "http://elpa.popkit.org/packages/"))
-;;  (add-to-list 'package-archives
-;;    '("melpa-cn"        . "http://elpa.emacs-china.org/melpa/"))
-  (add-to-list 'package-archives
-    '("melpa-cn-stable" . "http://elpa.emacs-china.org/melpa-stable/"))
   (package-initialize))
 
 ;; Force charset page to utf-8
@@ -48,19 +40,36 @@
 (add-to-list 'load-path (concat config-home "site-lisp"))
 
 ;; My Custom Settings
-(require 'init-site-lisp)
 (require 'init-theme)
 (require 'init-fontset)
 (require 'init-misc)
-(require 'init-key-binding)
-(require 'init-backup)
-(require 'init-cc-mode)
-(require 'init-org-mode)
-(require 'init-recentf)
 (require 'init-tabs)
-(require 'init-gdb)
 
-(require 'init-elpa)
+;;(require 'init-site-lisp)
+;;(require 'init-key-binding)
+;;(require 'init-recentf)
+;;(require 'init-backup)
+;;(require 'init-org-mode)
+;;(require 'init-gdb)
+;;(require 'init-cc-mode)
+
+;; idle require other stuff
+(require 'idle-require)
+(setq idle-require-idle-delay 1)
+(setq idle-require-message-verbose nil)
+(setq idle-require-symbols
+      '(init-site-lisp
+        init-key-binding
+        init-backup
+        init-recentf
+        init-org-mode
+        init-cc-mode
+        init-gdb
+        ;; finally load elpa packages
+        init-elpa))
+(idle-require-mode 1) ;; starts loading
+
+;;(require 'init-elpa)
 
 ;;(require 'better-defaults)
 
