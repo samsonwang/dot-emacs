@@ -1,11 +1,10 @@
 
 ;; -*- coding:utf-8 -*-
 
-; create the autosave dir if necessary, since emacs won't.
-
 (setq autosave-dir (concat config-home ".emacs_autosaves/") )
 (setq backup-dir (concat config-home ".emacs_backups/") )
 
+; create the autosave dir if necessary, since emacs won't.
 (unless (file-exists-p autosave-dir)
   (make-directory autosave-dir) )
 
