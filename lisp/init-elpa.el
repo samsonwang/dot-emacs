@@ -12,8 +12,7 @@
   (require 'elpa-auto-install.el)
   ;; package to install
   (defvar my-packages
-    '(smex company yasnippet markdown-mode
-	  ivy counsel helm))
+    '(company yasnippet markdown-mode helm))
   
   ;; auto install package above
   (auto-install-packages my-packages)
@@ -21,7 +20,7 @@
   ;; package configurations
   
   ;; Enable smex
-  (smex-initialize)
+  ;; (smex-initialize)
 
   ;; Enable Global Company Mode
   (global-company-mode t)
