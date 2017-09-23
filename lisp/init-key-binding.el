@@ -6,9 +6,6 @@
 ;; use ibuffer instead of list-buffers
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
-;; Set F4 to list recently opened file
-(global-set-key (kbd "<f4>") 'recentf-open-files)
-
 ;; eval buffer
 (global-set-key [f10] 'eval-buffer)
 

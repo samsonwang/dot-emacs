@@ -30,29 +30,28 @@
   (auto-install-packages my-packages)
 
   ;; package configurations
-  
-  ;; Enable smex
-  ;; (smex-initialize)
 
+  ;; helm should init first
+  (require 'init-helm)
+  
   ;; Enable Global Company Mode
   (global-company-mode t)
 
   ;; Enable yasnippet
   (require 'yasnippet)
   (setq yas-verbosity 0)
-  (yas-global-mode 1)
   (setq yas-snippet-dirs (concat config-home "snippets"))
+  (yas-global-mode 1)
+  
 
-  ;; 
-;;  (require 'init-ivy)
+  ;; (require 'init-ivy)
 
-  (require 'init-helm)
-
+  ;; Enable smex
+  ;; (smex-initialize)
   
   ;;(require 'init-global)
   ;;(require 'init-tramp)
   ;;(require 'init-modeline)
-
   )
 
 
