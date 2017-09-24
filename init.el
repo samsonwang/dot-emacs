@@ -63,6 +63,7 @@
         init-key-binding
         init-backup
         init-recentf
+        init-misc-delay
         init-org-mode
         init-cc-mode
         init-gdb
