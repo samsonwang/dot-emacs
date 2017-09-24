@@ -69,7 +69,7 @@
 			 (buffer-name)) ))
 	;;let body
 	(when (string-match (getenv "HOME") fname)
-	  (setq fname (replace-match "~/" t t fname)))
+	  (setq fname (replace-match "~" t t fname)))
 	fname))
 ;; Title = 'system-name @ foo.bar'
 (setq frame-title-format '( (:eval (frame-title-string))
