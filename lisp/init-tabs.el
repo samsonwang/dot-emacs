@@ -1,24 +1,23 @@
 ;; -*- coding: utf-8 -*-
 
 (setq-default indent-tabs-mode nil)
-(setq tab-always-indent 'complete)
+(setq-default tab-always-indent 'complete)
 (setq-default tab-width 4)
 
-(defvaralias 'c-basic-offset 'tab-width)
-(defvaralias 'cperl-indent-level 'tab-width)
+;;(defvaralias 'c-basic-offset 'tab-width)
+;;(defvaralias 'cperl-indent-level 'tab-width)
 
 (setq c-tab-always-indent t)
 
 (add-hook 'python-mode-hook
           (lambda ()
-           (setq indent-tabs-mode t)
-           (setq tab-width 4)))
-
-(add-hook 'emacs-lisp
-          (lambda ()
-            (setq indent-tab-mode t)
-            (setq c-basic-offset 4)
+            (setq indent-tabs-mode t)
             (setq tab-width 4)))
+
+(add-hook 'emacs-lisp-mode-hook
+          (lambda ()
+            (setq tab-always-indent nil)
+            (setq tab-width 2)))
 
 ; (global-set-key (kbd "<tab>") '(lambda () (interactive) (insert-char 9 1)))
 ; (global-set-key (kbd "TAB") 'self-insert-command)
