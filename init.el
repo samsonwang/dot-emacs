@@ -34,6 +34,8 @@
 ;;(set-language-environment "utf-8") 
 ;;(set-locale-environment "utf-8") 
 (setq default-buffer-file-coding-system 'utf-8)
+(prefer-coding-system 'gbk)
+(prefer-coding-system 'utf-8)
 
 ;; Additional lisp library
 (add-to-list 'load-path (concat config-home "lisp"))
