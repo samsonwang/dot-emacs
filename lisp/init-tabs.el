@@ -1,13 +1,16 @@
 ;; -*- coding: utf-8 -*-
 
+;; always use space instead of tab 
 (setq-default indent-tabs-mode nil)
+
+;; controls the operation of the TAB key
+(setq-default c-tab-always-indent t)
+
+;; use indent as complete
 (setq-default tab-always-indent 'complete)
+
+;; default tab width
 (setq-default tab-width 4)
-
-;;(defvaralias 'c-basic-offset 'tab-width)
-;;(defvaralias 'cperl-indent-level 'tab-width)
-
-(setq c-tab-always-indent t)
 
 (add-hook 'python-mode-hook
           (lambda ()
@@ -32,3 +35,4 @@
 
 (provide 'init-tabs)
 ;; init-tabs ends here
+

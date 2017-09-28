@@ -2,7 +2,7 @@
 ;; -*- coding:utf-8 -*-
 
 ;; Enable theme
-(when (eq system-type 'windows-nt)
+(when *windows*
 
   ;;(load "autumn-light-theme.el")
   ;;(load-theme 'autumn-light t)
