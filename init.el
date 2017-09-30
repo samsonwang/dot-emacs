@@ -56,6 +56,7 @@
         init-misc-delay
         init-org-mode
         init-cc-mode
+        init-elisp-mode
         init-gdb
         ;; finally load elpa packages
         init-elpa))

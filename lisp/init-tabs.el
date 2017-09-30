@@ -17,11 +17,6 @@
             (setq indent-tabs-mode t)
             (setq tab-width 4)))
 
-(add-hook 'emacs-lisp-mode-hook
-          (lambda ()
-            (setq tab-always-indent nil)
-            (setq tab-width 2)))
-
 ; (global-set-key (kbd "<tab>") '(lambda () (interactive) (insert-char 9 1)))
 ; (global-set-key (kbd "TAB") 'self-insert-command)
 

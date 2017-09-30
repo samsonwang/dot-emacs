@@ -58,6 +58,7 @@ Temporary Items
 *.desktop
 *.lock
 *.dat
+*.elc
 *.history
 .recentf
 .smex-items
@@ -73,3 +74,4 @@ custom-set-variables.el
 GPATH
 GRTAGS
 GTAGS
+
