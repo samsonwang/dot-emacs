@@ -4,7 +4,7 @@
 
 
 ;; use ibuffer instead of list-buffers
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+;;(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; eval buffer
 (global-set-key [f10] 'eval-buffer)

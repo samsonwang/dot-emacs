@@ -1,12 +1,13 @@
 ;; -*- coding : utf8-*-
 
-(require 'helm-config)
-(helm-mode 1)
-
-;; keybindings
-(global-set-key (kbd "C-c o")      'helm-occur)
-(global-set-key (kbd "C-x C-f")    'helm-find-files)
-(global-set-key (kbd "M-x")        'helm-M-x)
+(use-package helm-config
+  :bind 
+  (("C-c o"     . helm-occur)
+   ("C-x C-f"   . helm-find-files)
+   ("M-x"       . helm-M-x)
+   ("C-x b"     . helm-mini)
+   ("C-x C-b"   . helm-buffers-list))
+  :config (helm-mode 1))
 
 (provide 'init-helm)
 ;;; init-helm ends here

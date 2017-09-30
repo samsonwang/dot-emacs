@@ -30,9 +30,6 @@
   (auto-install-packages my-packages)
 
   ;; package configurations
-
-  ;; helm should init first
-  (require 'init-helm)
   
   ;; Enable Global Company Mode
   (global-company-mode t)
@@ -42,6 +39,7 @@
   (setq yas-verbosity 0)
   (setq yas-snippet-dirs (concat config-home "snippets"))
   (yas-global-mode 1)
+  (setq yas-verbosity 3)
   
 
   ;; (require 'init-ivy)

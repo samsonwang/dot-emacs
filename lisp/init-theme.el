@@ -7,7 +7,7 @@
   ;;(load "autumn-light-theme.el")
   ;;(load-theme 'autumn-light t)
 
-  (load "theme/dracula-theme.el")
+  (load "dracula-theme.el")
   (load-theme 'dracula t)
 
   ;; Set initial window size

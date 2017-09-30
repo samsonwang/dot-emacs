@@ -26,7 +26,11 @@
 ; (global-set-key (kbd "TAB") 'self-insert-command)
 
 ;; use utabify to convert tabs to spacesk
-(global-set-key (kbd "C-x <tab>") 'untabify)
+(use-package untabify
+  :commands untabify
+  :bind ("C-x <tab>" . untabify))
+
+;;(global-set-key (kbd "C-x <tab>") 'untabify)
 
 ;; show spaces in c mode, c++ mode, lisp-mode
 ;;(require 'whitespace)
