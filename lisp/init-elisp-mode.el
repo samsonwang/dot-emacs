@@ -1,6 +1,6 @@
 
 
-(use-package elisp-mode)
+;;(use-package elisp-mode)
 
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
