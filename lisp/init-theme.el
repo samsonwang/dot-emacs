@@ -2,7 +2,7 @@
 ;; -*- coding:utf-8 -*-
 
 ;; Enable theme
-(when *windows*
+(when (or *windows* *macintosh*)
 
   ;;(load "autumn-light-theme.el")
   ;;(load-theme 'autumn-light t)

@@ -11,6 +11,9 @@
 (when *windows*
    (set-fontset "Consolas" "微软雅黑" 16 16))
 
+(when *macintosh*
+   (set-fontset "Menlo" "Menlo" 16 16))
+
 (provide 'init-fontset)
 ;;; init-fontset.el
 
