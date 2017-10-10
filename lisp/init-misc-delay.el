@@ -17,8 +17,8 @@
 
 
 ;;  Fancy display for diary and calendar
-(setq view-diary-entries-initially t
-      mark-diary-entries-in-calendar t
+(setq calendar-view-diary-initially-flag t
+      calendar-mark-diary-entries-flag t
       number-of-diary-entries 7)
 (add-hook 'diary-display-hook 'fancy-diary-display)
 (add-hook 'today-visible-calendar-hook 'calendar-mark-today)
