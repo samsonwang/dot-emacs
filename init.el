@@ -37,6 +37,7 @@
 (require 'use-package)
 (require 'init-recentf)
 (require 'init-tabs)
+(require 'init-backup)
 (require 'init-helm)
 
 ;;(require 'init-key-binding)
@@ -52,7 +53,6 @@
 (setq idle-require-message-verbose nil)
 (setq idle-require-symbols
       '(init-key-binding
-        init-backup
         init-misc-delay
         init-org-mode
         init-cc-mode
