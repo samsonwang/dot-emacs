@@ -11,8 +11,8 @@
 
 ;; Init org-mode keybindings
 (defun org-mode-keyboard-init ()
-  (define-key org-mode-map (kbd "*") (kbd "*"))
-  (define-key org-mode-map (kbd "－") (kbd "-")))
+  (define-key org-mode-map (kbd "*") (self-insert-command "*"))
+  (define-key org-mode-map (kbd "－") (self-insert-command "-")))
 
 
 ;; Enable auto swap line in org mode
