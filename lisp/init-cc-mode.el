@@ -1,12 +1,19 @@
 ;; -*- coding:utf-8 -*-
 
-(add-hook 'c-mode-hook
-          (lambda()
-            (setq indent-tabs-mode nil)
-            (setq c-basic-offset 4)
-            (setq tab-width 4)
-            (setq c-default-style "linux")))
 
+(require 'use-package)
+
+(use-package c-mode
+  :commands c-mode-init
+  :init
+  (add-hook 'c-mode-hook 'c-mode-init)
+  )
+
+(defun c-mode-init()
+  (setq indent-tabs-mode nil)
+  (setq c-basic-offset 4)
+  (setq tab-width 4)
+  (setq c-default-style "linux"))
 
 ;;===============================================================
 ;;  Google C++ style guide

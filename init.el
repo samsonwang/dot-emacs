@@ -38,6 +38,7 @@
 (require 'init-recentf)
 (require 'init-tabs)
 (require 'init-backup)
+(require 'init-cc-mode)
 (require 'init-helm)
 
 ;;(require 'init-key-binding)
@@ -55,7 +56,6 @@
       '(init-key-binding
         init-misc-delay
         init-org-mode
-        init-cc-mode
         init-elisp-mode
         init-gdb
         ;; finally load elpa packages
