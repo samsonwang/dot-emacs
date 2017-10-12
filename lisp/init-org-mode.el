@@ -1,40 +1,34 @@
 ;; -*- coding:utf-8 -*-
 ;; Customize org-mode
 
-(require 'org)
+(use-package org
+  :mode         ("\\.org\\'" . org-mode)
+  :interpreter  ("org" . org-mode)
+  :commands     org-mode-init
+  :init         (add-hook 'org-mode-hook 'org-mode-init)
+  :config
+  
+  ;; Add todo keywords
+  (setq org-todo-keywords
+        '((sequence "TODO" "PENDING" "FEEDBACK" "VERIFY" "|" "DONE" "DELEGATED")))
 
-;; Init org-mode fontface
-(defun org-mode-fontface-init ()
+  ;; syntax highlight in emacs begin_src block
+  (setq org-src-fontify-natively t)
+
+  ;; enable shift selecting
+  (setq org-support-shift-select t)
+
+  ;; org startup expand all headlines
+  (setq org-startup-folded 'showeverything)
+  
+  )
+
+(defun org-mode-init ()
   (set-face-attribute 'org-level-1 nil :height 1.2 :bold t)
   (set-face-attribute 'org-level-2 nil :height 1.1 :bold t)
-  (set-face-attribute 'org-level-3 nil :height 1.1))
-
-;; Init org-mode keybindings
-(defun org-mode-keyboard-init ()
-  (define-key org-mode-map (kbd "*") (self-insert-command "*"))
-  (define-key org-mode-map (kbd "－") (self-insert-command "-")))
-
-
-;; Enable auto swap line in org mode
-(add-hook 'org-mode-hook
-          (lambda ()
-            (org-mode-fontface-init)
-            (org-mode-keyboard-init)
-            (setq tab-width 2)
-            (setq truncate-lines nil)))
-
-;; Add todo keywords
-(setq org-todo-keywords
-      '((sequence "TODO" "PENDING" "FEEDBACK" "VERIFY" "|" "DONE" "DELEGATED")))
-
-;; syntax highlight in emacs begin_src block
-(setq org-src-fontify-natively t)
-
-;; enable shift selecting
-(setq org-support-shift-select t)
-
-;; org startup expand all headlines
-(setq org-startup-folded 'showeverything)
+  (set-face-attribute 'org-level-3 nil :height 1.1)
+  (setq tab-width 2)
+  (setq truncate-lines nil))
 
 (provide 'init-org-mode)
 ;;; init-org-mode.el ends here
