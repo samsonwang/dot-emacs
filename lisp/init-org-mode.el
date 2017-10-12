@@ -4,8 +4,7 @@
 (use-package org
   :mode         ("\\.org\\'" . org-mode)
   :interpreter  ("org" . org-mode)
-  :commands     org-mode-init
-  :init         (add-hook 'org-mode-hook 'org-mode-init)
+  :init         (add-hook 'org-mode-hook 'org-mode-hook-func)
   :config
   
   ;; Add todo keywords
@@ -23,7 +22,7 @@
   
   )
 
-(defun org-mode-init ()
+(defun org-mode-hook-func ()
   (set-face-attribute 'org-level-1 nil :height 1.2 :bold t)
   (set-face-attribute 'org-level-2 nil :height 1.1 :bold t)
   (set-face-attribute 'org-level-3 nil :height 1.1)
