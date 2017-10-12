@@ -40,6 +40,7 @@
 (require 'init-backup)
 (require 'init-cc-mode)
 (require 'init-org-mode)
+(require 'init-elisp-mode)
 (require 'init-helm)
 
 ;;(require 'init-key-binding)
@@ -56,8 +57,6 @@
 (setq idle-require-symbols
       '(init-key-binding
         init-misc-delay
-;;        init-org-mode
-        init-elisp-mode
         init-gdb
         ;; finally load elpa packages
         init-elpa))
