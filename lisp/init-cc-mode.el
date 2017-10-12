@@ -1,15 +1,13 @@
 ;; -*- coding:utf-8 -*-
 
 
-(require 'use-package)
-
-(use-package c-mode
-  :commands c-mode-init
+(use-package cc-mode
+  :mode (("\\.c\\'" . c-mode) ("\\.cpp\\'" . cc-mode))
   :init
-  (add-hook 'c-mode-hook 'c-mode-init)
+  (add-hook 'c-mode-common-hook 'c-mode-common-hook-func)
   )
 
-(defun c-mode-init()
+(defun c-mode-common-hook-func()
   (setq indent-tabs-mode nil)
   (setq c-basic-offset 4)
   (setq tab-width 4)
