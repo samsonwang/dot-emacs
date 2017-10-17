@@ -43,6 +43,8 @@
 (require 'init-elisp-mode)
 (require 'init-helm)
 
+(require 'init-o-blog)
+
 ;;(require 'init-key-binding)
 ;;(require 'init-backup)
 ;;(require 'init-org-mode)
