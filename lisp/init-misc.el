@@ -19,13 +19,13 @@
 (setq truncate-lines nil)
 
 ;; enable global line number
-(global-linum-mode t)
+;; (global-linum-mode t)
 (setq linum-format "%3d ")
 ;; show column number in modeline
 (setq column-number-mode t)
 ;; Blacklist for display line numbers
-(setq linum-disabled-modes-list
-      '(eshell-mode message-mode))
+;;(setq linum-disabled-modes-list
+;;      '(eshell-mode message-mode))
 
 
 ;; Emacs title bar to reflect file name

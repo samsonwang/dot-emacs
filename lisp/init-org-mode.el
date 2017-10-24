@@ -27,7 +27,8 @@
   (set-face-attribute 'org-level-2 nil :height 1.1 :bold t)
   (set-face-attribute 'org-level-3 nil :height 1.1)
   (setq tab-width 2)
-  (setq truncate-lines nil))
+  (setq truncate-lines nil)
+  (linum-mode))
 
 (provide 'init-org-mode)
 ;;; init-org-mode.el ends here

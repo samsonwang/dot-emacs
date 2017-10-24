@@ -4,10 +4,10 @@
 (use-package cc-mode
   :mode (("\\.c\\'" . c-mode) ("\\.cpp\\'" . cc-mode))
   :init
-  (add-hook 'c-mode-common-hook 'c-mode-common-hook-func)
-  )
+  (add-hook 'c-mode-common-hook 'c-mode-common-hook-func))
 
 (defun c-mode-common-hook-func()
+  (linum-mode)
   (setq indent-tabs-mode nil)
   (setq c-basic-offset 4)
   (setq tab-width 4)

@@ -11,13 +11,13 @@
 
 
 (defun emacs-lisp-mode-hook-func()
+  (linum-mode)
   "If you're saving an elisp file, likely the .elc is no longer valid."
   (add-hook 'after-save-hook
             (lambda ()
               (if (file-exists-p (concat buffer-file-name "c"))
                   (delete-file (concat buffer-file-name "c"))))
-            nil t)
-  )
+            nil t))
 
 
 (defun byte-compile-init-dir ()
