@@ -32,7 +32,7 @@
 (require 'init-fontset)
 (require 'init-encoding)
 (require 'init-misc)
-
+(require 'sw-split-window)
 
 (require 'use-package)
 (require 'init-recentf)
