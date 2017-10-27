@@ -2,7 +2,7 @@
 
 (use-package helm-config
   :bind 
-  (("C-c o"     . helm-occur)
+  (("C-x o"     . helm-occur)
    ("C-x C-f"   . helm-find-files)
    ("M-x"       . helm-M-x)
    ("C-x b"     . helm-mini)
