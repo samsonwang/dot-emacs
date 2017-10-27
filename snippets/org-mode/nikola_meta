@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: nikola_meta
+# key: nikola_meta
+# --
+#+BEGIN_COMMENT
+.. title: 
+.. slug: 
+.. date: 2017-10-01 21:58:25 UTC+08:00
+.. tags: nikola
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
