@@ -7,6 +7,7 @@
 ;; init config home
 (setq config-home (file-name-directory load-file-name))
 (message (concat "Init from: " config-home))
+(message (concat "user-emacs-directory: " user-emacs-directory))
 
 ;; Set Best GC thresholdo
 (defvar best-gc-cons-threshold 4000000
@@ -32,12 +33,12 @@
 (require 'init-fontset)
 (require 'init-encoding)
 (require 'init-misc)
+(require 'init-backup)
 (require 'sw-split-window)
 
 (require 'use-package)
 (require 'init-recentf)
 (require 'init-tabs)
-(require 'init-backup)
 (require 'init-cc-mode)
 (require 'init-org-mode)
 (require 'init-elisp-mode)
@@ -45,11 +46,8 @@
 
 ;;(require 'init-org-blog)
 
-;;(require 'init-key-binding)
-;;(require 'init-backup)
-;;(require 'init-org-mode)
+;;(require 'init-key1-binding)
 ;;(require 'init-gdb)
-;;(require 'init-cc-mode)
 
 ;; idle require other stuff
 (require 'idle-require)
