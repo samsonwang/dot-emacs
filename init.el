@@ -60,6 +60,7 @@
       '(init-key-binding
         init-misc-delay
         init-gdb
+        init-ibuffer
         ;; finally load elpa packages
         init-elpa))
 (idle-require-mode 1) ;; starts loading
