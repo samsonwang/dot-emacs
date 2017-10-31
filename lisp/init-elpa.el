@@ -11,10 +11,17 @@
   
   ;; melpa packages
   (add-to-list 'package-archives
-    '("melpa-stable" . "https://stable.melpa.org/packages/"))
-  (add-to-list 'package-archives
-    '("melpa-cn-stable" . "http://elpa.emacs-china.org/melpa-stable/"))
+               '("melpa-stable" .
+                 "https://stable.melpa.org/packages/"))
 
+  (add-to-list 'package-archives
+               '("melpa-cn-stable" .
+                 "http://elpa.emacs-china.org/melpa-stable/"))
+  
+  (add-to-list 'package-archives
+               '("melpa-163-stable" .
+                 "http://mirrors.163.com/elpa/melpa-stable/"))
+  
 ;;  (add-to-list 'package-archives
 ;;    '("popkit" . "http://elpa.popkit.org/packages/"))
 ;;  (add-to-list 'package-archives
