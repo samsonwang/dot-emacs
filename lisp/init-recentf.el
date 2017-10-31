@@ -25,7 +25,7 @@
                           "/ido.last$"))
   
   :bind
-  ("C-c r" . recentntf-open-files)
+  ("C-c r" . recentf-open-files)
   :config
   (recentf-mode t))
 
