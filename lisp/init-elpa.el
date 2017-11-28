@@ -10,16 +10,16 @@
 (when *emacs24*
   
   ;; melpa packages
-  (add-to-list 'package-archives
-               '("melpa-stable" .
-                 "https://stable.melpa.org/packages/"))
-
-  (add-to-list 'package-archives
-               '("melpa-cn-stable" .
-                 "http://elpa.emacs-china.org/melpa-stable/"))
+;;  (add-to-list 'package-archives
+;;               '("melpa-stable" .
+;;                 "https://stable.melpa.org/packages/"))
+  
+;;  (add-to-list 'package-archives
+;;               '("melpa-cn-stable" .
+;;                 "http://elpa.emacs-china.org/melpa-stable/"))
   
   (add-to-list 'package-archives
-               '("melpa-163-stable" .
+               '("melpa-stable-163" .
                  "http://mirrors.163.com/elpa/melpa-stable/"))
   
 ;;  (add-to-list 'package-archives
@@ -31,7 +31,13 @@
   (require 'elpa-auto-install.el)
   ;; package to install
   (defvar my-packages
-    '(company yasnippet markdown-mode helm))
+    '(company
+      yasnippet
+      markdown-mode
+      helm
+      projectile
+      helm-projectile
+      ))
   
   ;; auto install package above
   (auto-install-packages my-packages)

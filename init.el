@@ -43,6 +43,7 @@
 (require 'init-org-mode)
 (require 'init-elisp-mode)
 (require 'init-helm)
+(require 'init-projectile)
 
 ;;(require 'init-org-blog)
 
@@ -60,7 +61,8 @@
         init-gdb
         init-ibuffer
         ;; finally load elpa packages
-        init-elpa))
+        init-elpa
+        ))
 (idle-require-mode 1) ;; starts loading
 
 ;; Put Custom Setting in a single stand alone file
