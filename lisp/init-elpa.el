@@ -36,7 +36,10 @@
       markdown-mode
       helm
       projectile
+      treemacs
       helm-projectile
+      treemacs-projectile
+      
       ))
   
   ;; auto install package above

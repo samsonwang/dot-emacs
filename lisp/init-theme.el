@@ -18,9 +18,7 @@
 
   ;; Set default subsequent window size
   (setq default-frame-alist
-		(append '((width . 80) (height . 30)) default-frame-alist))
-  )
-
+		(append '((width . 85) (height . 30)) default-frame-alist)))
 
 ;; hide toolbar and scrollbar
 (when (fboundp 'tool-bar-mode)

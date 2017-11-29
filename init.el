@@ -44,6 +44,7 @@
 (require 'init-elisp-mode)
 (require 'init-helm)
 (require 'init-projectile)
+(require 'init-treemacs)
 
 ;;(require 'init-org-blog)
 
