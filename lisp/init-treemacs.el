@@ -8,6 +8,8 @@
   
   :config
   (setq treemacs-width 30)
+  (treemacs-follow-mode t)
+  (treemacs-filewatch-mode t)
   )
 
 (use-package treemacs-projectile
