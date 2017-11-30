@@ -2,7 +2,10 @@
 
 
 (use-package cc-mode
-;;  :mode (("\\.c\\'" . c-mode) (("\\.cpp\\'" "\\.cc\\'") . c++-mode))
+  :mode
+  (("\\.c\\'" . c-mode)
+   ("\\.cpp\\'" . c++-mode)
+   ("\\.h\\'" . c++-mode))
   :init
   
   (defun c-mode-common-hook-func()
@@ -13,7 +16,11 @@
     (setq tab-width 4)
     (setq c-default-style "linux"))
   
-  (add-hook 'c-mode-common-hook 'c-mode-common-hook-func))
+  (add-hook 'c-mode-common-hook 'c-mode-common-hook-func)
+  :bind
+  (:map c++-mode-map
+        ("C-c M-o" . ff-find-related-file))
+  )
 
 ;;===============================================================
 ;;  Google C++ style guide
