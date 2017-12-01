@@ -18,8 +18,13 @@
   
   (add-hook 'c-mode-common-hook 'c-mode-common-hook-func)
   :bind
-  (:map c++-mode-map
-        ("C-c M-o" . ff-find-related-file))
+  (:map
+   c++-mode-map
+   ("C-c M-o" . ff-find-related-file)
+   :map
+   c-mode-map
+   ("C-c M-o" . ff-find-related-file)
+   )
   )
 
 ;;===============================================================
