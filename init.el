@@ -45,6 +45,7 @@
 (require 'init-helm)
 (require 'init-projectile)
 (require 'init-treemacs)
+(require 'init-global)
 
 ;;(require 'init-org-blog)
 
