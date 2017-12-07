@@ -7,6 +7,7 @@
 (require 'use-package)
 
 (use-package helm-gtags
+  :after (helm)
   :init
   (add-hook 'c-mode-hook 'helm-gtags-mode)
   (add-hook 'c++-mode-hook 'helm-gtags-mode)
@@ -22,7 +23,8 @@
   :bind
   (:map helm-gtags-mode-map
         ("M-t" . helm-gtags-find-tag)
-        ("M-r" . helm-gtags-find-rtag))
+        ("M-r" . helm-gtags-find-rtag)
+        ("M-s" . helm-gtags-find-symbol))
   )
 
 ;; key bindings
