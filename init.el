@@ -6,8 +6,8 @@
 
 ;; init config home
 (setq config-home (file-name-directory load-file-name))
-(message (concat "Init from: " config-home))
-(message (concat "user-emacs-directory: " user-emacs-directory))
+;; (message (concat "Init from: " config-home))
+;; (message (concat "user-emacs-directory: " user-emacs-directory))
 
 ;; Set Best GC thresholdo
 (defvar best-gc-cons-threshold 4000000
@@ -49,7 +49,7 @@
 
 ;;(require 'init-org-blog)
 
-;;(require 'init-key1-binding)
+;;(require 'init-key-binding)
 ;;(require 'init-gdb)
 
 ;; idle require other stuff

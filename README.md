@@ -2,10 +2,9 @@
 
 # Emacs Config
 
-tested on Emacs version 23 24.5 25.1
-
-
-
+- Tested on Emacs 25.3
+- Focused on C++ development
+- Modular configuration design
 
 
 
