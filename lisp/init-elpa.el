@@ -39,7 +39,7 @@
       treemacs
       helm-projectile
       treemacs-projectile
-      
+      magit
       ))
   
   ;; auto install package above
@@ -53,7 +53,7 @@
   ;; Enable yasnippet
   (require 'yasnippet)
   (setq yas-verbosity 0)
-  (setq yas-snippet-dirs (concat config-home "snippets"))
+  (setq yas-snippet-dirs (concat user-emacs-directory "snippets"))
   (yas-global-mode 1)
   (setq yas-verbosity 3)
   
