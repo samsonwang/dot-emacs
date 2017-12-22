@@ -2,18 +2,24 @@
 
 (require 'use-package)
 
-;; required helm for integration
-;; (require 'init-helm)
-
-(use-package projectile
-  :after (helm)
+(use-package helm-projectile
+  :after
+  (helm projectile)
+  
   :bind
   (("C-c p f"  . helm-projectile)
-   ("C-c p p"  . helm-projectile-switch-to-project)
+   ("C-c p p"  . helm-projectile-switch-project)
+   ("C-c p e"  . helm-projectile-recentf)
+   ("C-c p i"  . projectile-invalidate-cache)
    )
   
   :config
-  (projectile-mode)
+  (custom-set-variables
+   '(projectile-completion-system 'helm))
+  
+  (projectile-global-mode)
+  (helm-projectile-on)
+
   )
 
 
