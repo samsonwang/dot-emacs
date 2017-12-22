@@ -4,11 +4,6 @@
 ;; Timing Startup speed
 (setq emacs-load-start-time (current-time))
 
-;; init config home
-(setq config-home (file-name-directory load-file-name))
-;; (message (concat "Init from: " config-home))
-;; (message (concat "user-emacs-directory: " user-emacs-directory))
-
 ;; Set Best GC thresholdo
 (defvar best-gc-cons-threshold 4000000
   "Best default GC threshold value. Should't be too big.")
@@ -22,9 +17,19 @@
   (require 'package)
   (package-initialize))
 
+;; init config home
+;; (setq config-home (file-name-directory load-file-name))
+;; (message (concat "Init from: " config-home))
+;; (message (concat "user-emacs-directory: " user-emacs-directory))
+
+;; temp file litters config home, put them all int a cache directory
+(defvar user-emacs-cache (concat user-emacs-directory ".emacs_cache/"))
+(unless (file-exists-p user-emacs-cache)
+  (make-directory user-emacs-cache))
+
 ;; Additional lisp library
-(add-to-list 'load-path (concat config-home "lisp"))
-(add-to-list 'load-path (concat config-home "site-lisp"))
+(add-to-list 'load-path (concat user-emacs-directory "lisp"))
+(add-to-list 'load-path (concat user-emacs-directory "site-lisp"))
 
 ;; My Custom Settings
 (require 'init-prerequisites)
@@ -68,7 +73,7 @@
 (idle-require-mode 1) ;; starts loading
 
 ;; Put Custom Setting in a single stand alone file
-(setq custom-file (concat config-home "custom-set-variables.el"))
+(setq custom-file (concat user-emacs-directory "custom-set-variables.el"))
 (load custom-file 'noerror)
 
 ;; Calculate and print startup time

@@ -69,6 +69,7 @@ eshell
 diary
 custom-set-variables.el
 projectile.cache
+*.emacs_cache/
 
 # GNU Global tag files
 GPATH

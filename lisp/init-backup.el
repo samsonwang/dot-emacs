@@ -1,8 +1,8 @@
 
 ;; -*- coding:utf-8 -*-
 
-(setq autosave-dir (concat config-home ".emacs_autosaves/") )
-(setq backup-dir (concat config-home ".emacs_backups/") )
+(setq autosave-dir (concat user-emacs-cache "autosaves/") )
+(setq backup-dir (concat user-emacs-cache "backups/") )
 
 ; create the autosave dir if necessary, since emacs won't.
 (unless (file-exists-p autosave-dir)
@@ -22,7 +22,7 @@
       `( ( "." . ,backup-dir ) ) )
 
 ;; do not backup files in emacs config dir
-(setq small-temporary-file-directory config-home)
+(setq small-temporary-file-directory user-emacs-directory)
 
 ;; backup version controlled files
 (setq vc-make-backup-files t)

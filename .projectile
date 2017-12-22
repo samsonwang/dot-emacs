@@ -1,7 +1,6 @@
 
 
--/.emacs_autosaves
--/.emacs_backups
+-/.emacs_cache
 -/auto-save-list
 
 -*.elc

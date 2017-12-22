@@ -4,7 +4,7 @@
 (use-package recentf
   :init
   ;; Keep a list of recently opened files  
-  (setq recentf-save-file (expand-file-name ".recentf" config-home))
+  (setq recentf-save-file (expand-file-name "recentf" user-emacs-cache))
   (setq recentf-auto-cleanup 'never)
 ;;  (setq recentf-keep '(file-remote-p file-readable-p))
   (setq recentf-max-saved-items 10)

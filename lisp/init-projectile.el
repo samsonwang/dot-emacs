@@ -15,7 +15,12 @@
   
   :config
   (custom-set-variables
-   '(projectile-completion-system 'helm))
+   '(projectile-completion-system 'helm)
+   '(projectile-cache-file
+     (concat user-emacs-cache "projectile.cache"))
+   '(projectile-known-projects-file
+     (concat user-emacs-cache "projectile.bookmarks"))
+   )
   
   (projectile-global-mode)
   (helm-projectile-on)
