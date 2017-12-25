@@ -52,7 +52,7 @@
 (require 'init-treemacs)
 (require 'init-global)
 (require 'init-magit)
-
+(require 'init-smex)
 
 ;;(require 'init-org-blog)
 

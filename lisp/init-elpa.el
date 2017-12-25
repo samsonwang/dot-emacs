@@ -40,6 +40,8 @@
       helm-projectile
       treemacs-projectile
       magit
+      smex
+      helm-smex
       ))
   
   ;; auto install package above
@@ -57,13 +59,9 @@
   (yas-global-mode 1)
   (setq yas-verbosity 3)
   
-
-  ;; (require 'init-ivy)
-
   ;; Enable smex
   ;; (smex-initialize)
   
-  ;;(require 'init-global)
   ;;(require 'init-tramp)
   ;;(require 'init-modeline)
   )
