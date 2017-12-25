@@ -1,9 +1,13 @@
 
 (require 'use-package)
+
 (use-package helm-smex
   :after smex
   
   :init
+  (custom-set-variables
+   '(smex-save-file (concat user-emacs-cache "smex-items")))
+  
   (smex-initialize)
   
   :bind
