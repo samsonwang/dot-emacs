@@ -2,6 +2,8 @@
 
 -/.emacs_cache
 -/auto-save-list
+-/elpa
+-/.git
 
 -*.elc
 
