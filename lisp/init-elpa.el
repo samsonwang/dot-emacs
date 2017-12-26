@@ -42,6 +42,7 @@
       magit
       smex
       helm-smex
+      htmlize
       ))
   
   ;; auto install package above
