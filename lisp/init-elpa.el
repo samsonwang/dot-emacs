@@ -45,26 +45,7 @@
       ))
   
   ;; auto install package above
-  (auto-install-packages my-packages)
-
-  ;; package configurations
-  
-  ;; Enable Global Company Mode
-  (global-company-mode t)
-
-  ;; Enable yasnippet
-  (require 'yasnippet)
-  (setq yas-verbosity 0)
-  (setq yas-snippet-dirs (concat user-emacs-directory "snippets"))
-  (yas-global-mode 1)
-  (setq yas-verbosity 3)
-  
-  ;; Enable smex
-  ;; (smex-initialize)
-  
-  ;;(require 'init-tramp)
-  ;;(require 'init-modeline)
-  )
+  (auto-install-packages my-packages))
 
 
 (provide 'init-elpa)

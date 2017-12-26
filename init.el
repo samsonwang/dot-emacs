@@ -52,14 +52,6 @@
 (require 'init-projectile)
 (require 'init-treemacs)
 (require 'init-global)
-(require 'init-magit)
-(require 'init-smex)
-
-;;(require 'init-org-blog)
-
-
-;;(require 'init-key-binding)
-;;(require 'init-gdb)
 
 ;; idle require other stuff
 (require 'idle-require)
@@ -71,9 +63,13 @@
         init-misc-delay
         init-gdb
         init-ibuffer
+        init-magit
+        init-smex
+        init-company
+        init-yasnippet
         ;; finally load elpa packages
-        init-elpa
-        ))
+        ;; and install missing packages
+        init-elpa))
 (idle-require-mode 1) ;; starts loading
 
 ;; Put Custom Setting in a single stand alone file
