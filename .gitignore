@@ -68,6 +68,7 @@ bookmarks
 eshell
 diary
 custom-set-variables.el
+custom.el
 projectile.cache
 *.emacs_cache/
 

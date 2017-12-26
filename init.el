@@ -2,13 +2,14 @@
 ;; Emacs Configuration Entrance (init.el)
 
 ;; Timing Startup speed
-(setq emacs-load-start-time (current-time))
+(defconst emacs-load-start-time (current-time))
 
-;; Set Best GC thresholdo
-(defvar best-gc-cons-threshold 4000000
-  "Best default GC threshold value. Should't be too big.")
-;; Don't GC during startup to save time
-(setq gc-cons-threshold most-positive-fixnum)
+;; Adjust garbage collection thresholds during startup, and thereafter
+(defconst normal-gc-cons-threshold (* 20 1024 1024))
+(defconst init-gc-cons-threshold (* 128 1024 1024))
+(setq gc-cons-threshold init-gc-cons-threshold)
+(add-hook 'after-init-hook
+          (lambda () (setq gc-cons-threshold normal-gc-cons-threshold)))
 
 ;; Set package url
 ;; Prevent Emacs from add (package-initialize)
@@ -23,13 +24,13 @@
 ;; (message (concat "user-emacs-directory: " user-emacs-directory))
 
 ;; temp file litters config home, put them all int a cache directory
-(defvar user-emacs-cache (concat user-emacs-directory ".emacs_cache/"))
+(defconst user-emacs-cache (expand-file-name ".emacs_cache/" user-emacs-directory))
 (unless (file-exists-p user-emacs-cache)
   (make-directory user-emacs-cache))
 
 ;; Additional lisp library
-(add-to-list 'load-path (concat user-emacs-directory "lisp"))
-(add-to-list 'load-path (concat user-emacs-directory "site-lisp"))
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
 
 ;; My Custom Settings
 (require 'init-prerequisites)
@@ -76,7 +77,7 @@
 (idle-require-mode 1) ;; starts loading
 
 ;; Put Custom Setting in a single stand alone file
-(setq custom-file (concat user-emacs-directory "custom-set-variables.el"))
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file 'noerror)
 
 ;; Calculate and print startup time
@@ -84,6 +85,10 @@
   (message "Emacs startup time: %d seconds."
            (time-to-seconds (time-since emacs-load-start-time))))
 
-;; Set GC threshold to normal value
-(setq gc-cons-threshold best-gc-cons-threshold)
+(provide 'init)
+
+;; Local Variables:
+;; coding: utf-8
+;; no-byte-compile: t
+;; End:
 
