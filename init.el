@@ -67,6 +67,8 @@
         init-smex
         init-company
         init-yasnippet
+        init-flycheck
+        init-undo-tree
         ;; finally load elpa packages
         ;; and install missing packages
         init-elpa))

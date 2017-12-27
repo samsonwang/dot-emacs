@@ -43,6 +43,8 @@
       smex
       helm-smex
       htmlize
+      undo-tree
+      flycheck
       ))
   
   ;; auto install package above
