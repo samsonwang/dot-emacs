@@ -39,6 +39,7 @@
       treemacs
       helm-projectile
       treemacs-projectile
+      helm-gtags
       magit
       smex
       helm-smex
