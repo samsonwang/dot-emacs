@@ -5,7 +5,7 @@
 #+BEGIN_COMMENT
 .. title: 
 .. slug: 
-.. date: 2017-10-01 21:58:25 UTC+08:00
+.. date: `(format-time-string "%Y-%m-%d %H:%M:%S UTC%z")`
 .. tags: nikola
 .. category: 
 .. link: 
