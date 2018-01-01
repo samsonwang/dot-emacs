@@ -24,6 +24,13 @@
 (add-hook 'today-visible-calendar-hook 'calendar-mark-today)
 
 
+(defun mode-line-bell-flash ()
+  "Flash the mode line momentarily"
+  (invert-face 'mode-line)
+  (run-with-timer 0.1 nil 'invert-face 'mode-line))
+
+(setq-default ring-bell-function 'mode-line-bell-flash)
+
 ;; misc delay is returned
 (provide 'init-misc-delay)
 

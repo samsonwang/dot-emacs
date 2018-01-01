@@ -20,7 +20,7 @@
 
 ;; enable global line number
 ;; (global-linum-mode t)
-(setq linum-format "%3d ")
+(setq linum-format "%3d")
 ;; show column number in modeline
 (setq column-number-mode t)
 ;; Blacklist for display line numbers
