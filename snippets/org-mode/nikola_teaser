@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: nikola teaser
+# key: nikola_teaser
+# --
+{{{TEASER_END}}}
