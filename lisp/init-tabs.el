@@ -1,10 +1,7 @@
 ;; -*- coding: utf-8 -*-
 
-;; always use space instead of tab 
+;; always use space instead of tab
 (setq-default indent-tabs-mode nil)
-
-;; controls the operation of the TAB key
-(setq-default c-tab-always-indent t)
 
 ;; use indent as complete
 (setq-default tab-always-indent 'complete)
@@ -20,7 +17,7 @@
 ; (global-set-key (kbd "<tab>") '(lambda () (interactive) (insert-char 9 1)))
 ; (global-set-key (kbd "TAB") 'self-insert-command)
 
-;; use utabify to convert tabs to spacesk
+;; use utabify to convert tabs to spaces
 (use-package untabify
   :commands untabify
   :bind ("C-x <tab>" . untabify))

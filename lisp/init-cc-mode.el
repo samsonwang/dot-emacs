@@ -1,30 +1,35 @@
 ;; -*- coding:utf-8 -*-
 
-
 (use-package cc-mode
   :mode
   (("\\.c\\'" . c-mode)
    ("\\.cpp\\'" . c++-mode)
    ("\\.h\\'" . c++-mode))
-  :init
   
+  :init
   (defun c-mode-common-hook-func()
     "hook func for c mode"
-    (linum-mode)
-    (setq indent-tabs-mode nil)
-    (setq c-basic-offset 4)
-    (setq tab-width 4)
-    (setq c-default-style "linux"))
+    (linum-mode))
   
   (add-hook 'c-mode-common-hook 'c-mode-common-hook-func)
+  
   :bind
   (:map
    c++-mode-map
    ("C-c M-o" . ff-find-related-file)
    :map
    c-mode-map
-   ("C-c M-o" . ff-find-related-file)
-   )
+   ("C-c M-o" . ff-find-related-file))
+  
+  :config
+  ;; set default style to linux style
+  (setq-default c-default-style "linux")
+
+  ;; controls the operation of the TAB key
+  (setq-default c-tab-always-indent nil)
+
+  (setq-default c-basic-offset 4)
+
   )
 
 ;;===============================================================

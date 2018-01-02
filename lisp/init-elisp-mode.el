@@ -5,20 +5,19 @@
   ("emacs" . emacs-lisp-mode)
   
   :init
-  (defun emacs-lisp-mode-hook-func()
-    "If you're saving an elisp file, likely the .elc is no longer valid."
-    (linum-mode)
+  (defun emacs-lisp-mode-hook-func ()
+    ;; If you're saving an elisp file, likely the .elc is no longer valid.
     (add-hook 'after-save-hook
               (lambda ()
                 (if (file-exists-p (concat buffer-file-name "c"))
                     (delete-file (concat buffer-file-name "c"))))
-              nil t))
+              nil t)
+    
+    (linum-mode)
+    (setq tab-always-indent t)
+    (setq tab-width 2))
   
-  (add-hook 'emacs-lisp-mode-hook 'emacs-lisp-mode-hook-func)
-  
-  :config
-  (setq tab-always-indent nil)
-  (setq tab-width 2))
+  (add-hook 'emacs-lisp-mode-hook 'emacs-lisp-mode-hook-func))
 
 (defun byte-compile-init-dir ()
   "Byte-compile all your lisp files."
