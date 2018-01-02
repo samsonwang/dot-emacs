@@ -69,6 +69,7 @@
         init-yasnippet
         init-flycheck
         init-undo-tree
+        init-exec-path-from-shell
         ;; finally load elpa packages
         ;; and install missing packages
         init-elpa))

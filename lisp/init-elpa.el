@@ -46,6 +46,7 @@
       htmlize
       undo-tree
       flycheck
+      exec-path-from-shell
       ))
   
   ;; auto install package above
