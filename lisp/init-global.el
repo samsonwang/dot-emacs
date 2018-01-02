@@ -22,11 +22,11 @@
   
   :bind
   (:map helm-gtags-mode-map
-        ("M-t"       . helm-gtags-find-tag)
-        ("M-r"       . helm-gtags-find-rtag)
-        ("M-s"       . helm-gtags-find-symbol)
-        ("M-,"       . helm-gtags-previous-history)
-        ("M-."       . helm-gtags-next-history))
+        ("M-t" . helm-gtags-find-tag)
+        ("M-r" . helm-gtags-find-rtag)
+        ("M-s" . helm-gtags-find-symbol)
+        ("M-," . helm-gtags-previous-history)
+        ("M-." . helm-gtags-next-history))
   )
 
 ;; key bindings
@@ -78,5 +78,12 @@
 ;;(setenv "MAKEOBJDIRPREFIX" (file-truename "~/"))
 ;;(setq company-backends '((company-dabbrev-code company-gtags)))
 
+
+
+;; Local Variables:
+;; no-byte-compile: t
+;; End:
+
 (provide 'init-global)
 ;;; init-global.el ends here
+
