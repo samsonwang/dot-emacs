@@ -47,6 +47,7 @@
       undo-tree
       flycheck
       exec-path-from-shell
+      iedit
       ))
   
   ;; auto install package above
