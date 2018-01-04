@@ -10,7 +10,7 @@
 (global-set-key [f10] 'eval-buffer)
 
 ;; Set C-x C-g to goto line
-(global-set-key (kbd "C-x C-g") 'goto-line)
+(global-set-key (kbd "C-x g") 'goto-line)
 
 ;; unset C-x m for mail, because it is easily mixed with C-x C-m
 (global-unset-key (kbd "C-x m"))
