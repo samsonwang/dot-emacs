@@ -2,9 +2,9 @@
 
 (require 'use-package)
 
-(use-package helm-projectile
+(use-package projectile
   :after
-  (helm projectile)
+  (helm)
 
   :init
   (custom-set-variables
@@ -16,15 +16,15 @@
    )
   
   :bind
-  (("C-c p f"  . helm-projectile)
-   ("C-c p p"  . helm-projectile-switch-project)
-   ("C-c p e"  . helm-projectile-recentf)
+  (("C-c p f"  . projectile-find-file)
+   ("C-c p p"  . projectile-switch-project)
+;;   ("C-c p e"  . projectile-recentf)
    ("C-c p i"  . projectile-invalidate-cache)
    )
   
   :config  
 ;;  (projectile-global-mode)
-  (helm-projectile-on)
+  (projectile-mode)
   )
 
 

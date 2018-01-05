@@ -48,8 +48,6 @@
 (require 'init-org-mode)
 (require 'init-elisp-mode)
 (require 'init-helm)
-;;(require 'init-projectile)
-;;(require 'init-treemacs)
 (require 'init-global)
 
 ;; idle require other stuff

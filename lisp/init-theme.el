@@ -7,21 +7,18 @@
   (add-to-list 'custom-theme-load-path
                (expand-file-name "site-lisp/theme" user-emacs-directory))
   
-  ;;(load "autumn-light-theme.el")
   ;;(load-theme 'autumn-light t)
-
-;;  (load "dracula-theme.el")
-  (load-theme 'dracula t)
+  (load-theme 'dracula t))
 
   ;; Set initial window size
-  (setq initial-frame-alist
-		(append '((width . 90) (height . 35)
-	      (left . 490) (top . 5))
-	      initial-frame-alist))
+;;  (setq initial-frame-alist
+;;		(append '((width . 90) (height . 35)
+;;	      (left . 490) (top . 5))
+;;	      initial-frame-alist))
 
   ;; Set default subsequent window size
-  (setq default-frame-alist
-		(append '((width . 85) (height . 30)) default-frame-alist)))
+;;  (setq default-frame-alist
+;;		(append '((width . 85) (height . 30)) default-frame-alist)))
 
 ;; hide toolbar and scrollbar
 (when (fboundp 'tool-bar-mode)
