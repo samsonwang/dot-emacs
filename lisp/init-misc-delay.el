@@ -1,13 +1,19 @@
 ;; -*- coding:utf-8 -*-
 
 
+;; Turn off sound alarms completely
+;;(setq ring-bell-function 'ignore)
+;; Warning signal by flash screen
+(setq visible-bell 1)
+
+;; ask before quit
+(setq confirm-kill-emacs 'y-or-n-p)
+
 ;; Show paired parentheses
 (show-paren-mode t)
 
-
 ;; Use y/n for short
 (fset 'yes-or-no-p 'y-or-n-p)
-
 
 ;; Display system time in modeline
 (setq display-time-24hr-format t)

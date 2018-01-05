@@ -23,7 +23,7 @@
    )
   
   :config  
-  (projectile-global-mode)
+;;  (projectile-global-mode)
   (helm-projectile-on)
   )
 

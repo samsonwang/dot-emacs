@@ -40,7 +40,6 @@
 (require 'init-encoding)
 (require 'init-misc)
 (require 'init-backup)
-(require 'sw-split-window)
 
 (require 'use-package)
 (require 'init-recentf)
@@ -49,8 +48,8 @@
 (require 'init-org-mode)
 (require 'init-elisp-mode)
 (require 'init-helm)
-(require 'init-projectile)
-(require 'init-treemacs)
+;;(require 'init-projectile)
+;;(require 'init-treemacs)
 (require 'init-global)
 
 ;; idle require other stuff
@@ -60,6 +59,8 @@
 (setq idle-require-message-verbose nil)
 (setq idle-require-symbols
       '(init-key-binding
+        sw-split-window
+        init-projectile
         init-misc-delay
         init-gdb
         init-ibuffer
@@ -70,6 +71,7 @@
         init-flycheck
         init-undo-tree
         init-exec-path-from-shell
+        init-treemacs
         ;; finally load elpa packages
         ;; and install missing packages
         init-elpa))
