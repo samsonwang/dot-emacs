@@ -13,6 +13,8 @@
 ;; Warning signal by flash screen
 (setq visible-bell 1)
 
+;; ask before quit
+(setq confirm-kill-emacs 'y-or-n-p)
 
 ;; Enable gloabl line wrap
 ;;(set-default 'truncate-lines t)
