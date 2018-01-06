@@ -4,7 +4,7 @@
 
 (use-package projectile
   :after
-  (helm)
+  (helm helm-projectile)
 
   :init
   (custom-set-variables
@@ -13,6 +13,8 @@
      (concat user-emacs-cache "projectile.cache"))
    '(projectile-known-projects-file
      (concat user-emacs-cache "projectile.bookmarks"))
+   '(projectile-mode-line
+     '(:eval (format " [%s]" (projectile-project-name))))
    )
   
   :bind
@@ -24,9 +26,7 @@
   
   :config  
 ;;  (projectile-global-mode)
-  (projectile-mode)
-  )
-
+  (projectile-mode))
 
 (provide 'init-projectile)
 ;; init-projectile.el ends here
