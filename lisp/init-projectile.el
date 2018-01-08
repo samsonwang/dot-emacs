@@ -14,7 +14,9 @@
    '(projectile-known-projects-file
      (concat user-emacs-cache "projectile.bookmarks"))
    '(projectile-mode-line
-     '(:eval (format " [%s]" (projectile-project-name))))
+     '(:eval (if (file-remote-p default-directory)
+                 " Projectile"
+               (format " [%s]" (projectile-project-name)))))
    )
   
   :bind
@@ -25,8 +27,7 @@
    )
   
   :config  
-;;  (projectile-global-mode)
-  (projectile-mode))
+  (projectile-global-mode))
 
 (provide 'init-projectile)
 ;; init-projectile.el ends here
