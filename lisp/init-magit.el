@@ -1,6 +1,7 @@
 
 
 (use-package magit
+  :diminish auto-revert-mode
   :init
   ;; magit requires server.el
   ;; put server auth file in cache directory

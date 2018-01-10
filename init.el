@@ -40,6 +40,7 @@
 (require 'init-encoding)
 (require 'init-misc)
 (require 'init-backup)
+(require 'init-modeline)
 
 (require 'use-package)
 (require 'init-recentf)

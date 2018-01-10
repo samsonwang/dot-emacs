@@ -3,6 +3,7 @@
 (require 'use-package)
 
 (use-package projectile
+  :diminish projectile-mode
   :after
   (helm helm-projectile)
 

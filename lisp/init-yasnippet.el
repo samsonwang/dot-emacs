@@ -1,6 +1,7 @@
 
 
 (use-package yasnippet
+  :diminish yas-minor-mode
   :init
   (setq yas-snippet-dirs
         (expand-file-name "snippets" user-emacs-directory))

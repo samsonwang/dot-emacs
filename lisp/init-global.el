@@ -7,6 +7,7 @@
 (require 'use-package)
 
 (use-package helm-gtags
+  :diminish helm-gtags-mode
   :after (helm)
   :init
   (add-hook 'c-mode-hook 'helm-gtags-mode)
