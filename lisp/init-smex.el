@@ -11,10 +11,8 @@
   :bind
   ("C-c M-x" . helm-smex-major-mode-commands)
 
-:config
-  
-  (smex-initialize)  
-  )
+  :config
+  (smex-initialize))
 
 ;; init-smex ends here
 (provide 'init-smex)

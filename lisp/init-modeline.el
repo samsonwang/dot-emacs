@@ -2,9 +2,8 @@
 (setq-default mode-line-buffer-identification
               (list
                ;; put projectile in the first
-               '(:eval (if (file-remote-p default-directory)
-                           ""
-                         (format "[%s] " (projectile-project-name))))
+               '(:eval (if (fboundp 'projectile-project-name)
+                           (format "[%s] " (projectile-project-name))))
                (propertized-buffer-identification "%12b")))
 
 ;; 对于mode line 的详细设置可以查看以下variable

@@ -71,6 +71,7 @@
         init-undo-tree
         init-exec-path-from-shell
         init-treemacs
+        init-eshell
         ;; finally load elpa packages
         ;; and install missing packages
         init-elpa))
