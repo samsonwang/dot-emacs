@@ -28,6 +28,7 @@
       exec-path-from-shell
       iedit
       diminish ;; use-package need this
+      mmm-mako
       ))
   
   ;; melpa packages
