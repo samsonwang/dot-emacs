@@ -8,6 +8,14 @@
   (setq mmm-global-mode 'maybe)
   (add-to-list 'auto-mode-alist '("\\.tmpl\\'" . html-mode))
   (mmm-add-mode-ext-class 'html-mode "\\.tmpl\\'" 'mako)
+
+  ;; use tab as tab in mmm-mode
+  :bind
+  (:map
+   mmm-mode-map
+   ("<tab>" . self-insert-command)
+   )
+  
 )
 
 (provide 'init-nikola)
