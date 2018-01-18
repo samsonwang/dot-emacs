@@ -18,16 +18,6 @@
   (require 'package)
   (package-initialize))
 
-;; init config home
-;; (setq config-home (file-name-directory load-file-name))
-;; (message (concat "Init from: " config-home))
-;; (message (concat "user-emacs-directory: " user-emacs-directory))
-
-;; temp file litters config home, put them all int a cache directory
-(defconst user-emacs-cache (expand-file-name ".emacs_cache/" user-emacs-directory))
-(unless (file-exists-p user-emacs-cache)
-  (make-directory user-emacs-cache))
-
 ;; Additional lisp library
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
@@ -51,32 +41,29 @@
 (require 'init-helm)
 (require 'init-global)
 
-;; idle require other stuff
-(require 'idle-require)
-(setq idle-require-idle-delay 1)
-(setq idle-require-load-break 0)
-(setq idle-require-message-verbose nil)
-(setq idle-require-symbols
-      '(init-key-binding
-        sw-split-window
-        init-projectile
-        init-misc-delay
-        init-gdb
-        init-ibuffer
-        init-magit
-        init-smex
-        init-company
-        init-yasnippet
-        init-flycheck
-        init-undo-tree
-        init-exec-path-from-shell
-        init-treemacs
-        init-eshell
-        init-nikola
-        ;; finally load elpa packages
-        ;; and install missing packages
-        init-elpa))
-(idle-require-mode 1) ;; starts loading
+(require 'init-idle-require)
+(idle-require 'init-key-binding)
+(idle-require 'sw-split-window)
+(idle-require 'init-projectile)
+(idle-require 'init-misc-delay)
+(idle-require 'init-gdb)
+(idle-require 'init-ibuffer)
+(idle-require 'init-magit)
+(idle-require 'init-smex)
+(idle-require 'init-company)
+(idle-require 'init-yasnippet)
+(idle-require 'init-flycheck)
+(idle-require 'init-undo-tree)
+(idle-require 'init-exec-path-from-shell)
+(idle-require 'init-treemacs)
+(idle-require 'init-eshell)
+(idle-require 'init-nikola)
+(idle-require 'init-dired)
+
+;; finally load elpa packages
+;; and install missing packages
+(idle-require 'init-elpa)
+(idle-require-mode 1)
 
 ;; Put Custom Setting in a single stand alone file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
