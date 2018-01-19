@@ -24,12 +24,16 @@
   ;; syntax highlight in emacs begin_src block
   (setq org-src-fontify-natively t)
 
+  ;; @https://emacs.stackexchange.com/questions/13820/inline-verbatim-and-code-with-quotes-in-org-mode
+  (setcar (nthcdr 2 org-emphasis-regexp-components) " \t\r\n,")
+  (org-set-emph-re 'org-emphasis-regexp-components org-emphasis-regexp-components)
+
   ;; enable shift selecting
   (setq org-support-shift-select t)
 
   ;; org startup expand all headlines
   (setq org-startup-folded 'showeverything)
-  
+
   (set-face-attribute 'org-level-1 nil :height 1.2 :bold t)
   (set-face-attribute 'org-level-2 nil :height 1.1 :bold t)
   (set-face-attribute 'org-level-3 nil :height 1.1))
