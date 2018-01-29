@@ -12,6 +12,10 @@
 ;; Show paired parentheses
 (show-paren-mode t)
 
+;; insert parentheses in pairs
+(electric-pair-mode t)
+(setq electric-pair-preserve-balance nil)
+
 ;; Use y/n for short
 (fset 'yes-or-no-p 'y-or-n-p)
 
