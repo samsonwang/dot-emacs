@@ -3,8 +3,8 @@
 #key: file
 # --
 //==============================================================================
-//                  ${1:`(file-name-nondirectory(buffer-file-name))`}
+//                  `(file-name-nondirectory(buffer-file-name))`
 // 
-// begin    : ${2:`(format-time-string "%Y-%m-%d")`}
-// describe :
+// begin    : `(format-time-string "%Y-%m-%d")`
+// describe : $0
 //==============================================================================
