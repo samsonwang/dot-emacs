@@ -17,12 +17,17 @@
 ; (global-set-key (kbd "<tab>") '(lambda () (interactive) (insert-char 9 1)))
 ; (global-set-key (kbd "TAB") 'self-insert-command)
 
-;; use utabify to convert tabs to spaces
-(use-package untabify
-  :commands untabify
-  :bind ("C-x <tab>" . untabify))
-
+;; use untabify to convert tabs to spaces
+;(use-package untabify
+;  :commands untabify
+;  :bind ("C-x <tab>" . untabify))
 ;;(global-set-key (kbd "C-x <tab>") 'untabify)
+
+;; use tabify to convert spaces to tabs
+; M-x tabify
+
+;; to insert tab directly
+; C-q <tab>
 
 ;; show spaces in c mode, c++ mode, lisp-mode
 ;;(require 'whitespace)
