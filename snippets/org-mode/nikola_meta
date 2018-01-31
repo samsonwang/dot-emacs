@@ -4,9 +4,9 @@
 # --
 #+BEGIN_COMMENT
 .. title: 
-.. slug: 
+.. slug: `(file-name-nondirectory (file-name-sans-extension buffer-file-name))`
 .. date: `(format-time-string "%Y-%m-%d %H:%M:%S UTC+08:00")`
-.. tags: nikola
+.. tags: draft, nikola
 .. category: 
 .. link: 
 .. description: 
