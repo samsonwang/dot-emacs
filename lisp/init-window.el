@@ -48,6 +48,12 @@ Always focus bigger window."
 (global-set-key (kbd "C-x 2") 'sw/split-window-vertically)
 (global-set-key (kbd "C-x 3") 'sw/split-window-horizontally)
 
-;; sw-split-window ends here
-(provide 'sw-split-window)
+;; adjust window size
+(global-set-key (kbd "C-M-<left>") #'shrink-window-horizontally)
+(global-set-key (kbd "C-M-<right>") #'enlarge-window-horizontally)
+(global-set-key (kbd "C-M-<down>") #'shrink-window)
+(global-set-key (kbd "C-M-<up>") #'enlarge-window)
+
+(provide 'init-window)
+;; init-window ends here
 

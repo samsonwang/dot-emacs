@@ -42,10 +42,10 @@
 (require 'init-global)
 
 (require 'init-idle-require)
-(idle-require 'init-key-binding)
-(idle-require 'sw-split-window)
-(idle-require 'init-projectile)
 (idle-require 'init-misc-delay)
+(idle-require 'init-key-binding)
+(idle-require 'init-window)
+(idle-require 'init-projectile)
 (idle-require 'init-gdb)
 (idle-require 'init-ibuffer)
 (idle-require 'init-magit)
