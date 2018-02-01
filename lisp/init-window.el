@@ -54,6 +54,9 @@ Always focus bigger window."
 (global-set-key (kbd "C-M-<down>") #'shrink-window)
 (global-set-key (kbd "C-M-<up>") #'enlarge-window)
 
+;; enable winner-mode
+(winner-mode 1)
+
 (provide 'init-window)
 ;; init-window ends here
 
