@@ -7,6 +7,7 @@
 (require 'use-package)
 
 (use-package helm-gtags
+  :if (executable-find "global")
   :diminish helm-gtags-mode
   :after (helm)
   :init
