@@ -40,6 +40,7 @@
 (require 'init-elisp-mode)
 (require 'init-helm)
 (require 'init-global)
+(require 'init-highlight-symbol)
 
 (require 'init-idle-require)
 (idle-require 'init-misc-delay)
@@ -59,6 +60,8 @@
 (idle-require 'init-eshell)
 (idle-require 'init-nikola)
 (idle-require 'init-dired)
+
+
 
 ;; finally load elpa packages
 ;; and install missing packages
