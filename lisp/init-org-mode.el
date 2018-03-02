@@ -8,6 +8,9 @@
   :interpreter
   ("org" . org-mode)
 
+  ;; I wonder why this failed to diminish org-indent-mode
+  :diminish org-indent-mode
+
   :init
   (defun org-mode-hook-func ()
     (setq tab-width 2)
