@@ -6,17 +6,21 @@
 
 ;; Adjust garbage collection thresholds during startup, and thereafter
 (defconst normal-gc-cons-threshold (* 20 1024 1024))
-(defconst init-gc-cons-threshold (* 128 1024 1024))
-(setq gc-cons-threshold init-gc-cons-threshold)
+(defconst normal-file-name-handler-alist file-name-handler-alist)
+(setq gc-cons-threshold (* 128 1024 1024)
+      gc-cons-percentage 0.6
+      file-name-handler-alist nil)
 (add-hook 'after-init-hook
-          (lambda () (setq gc-cons-threshold normal-gc-cons-threshold)))
+          (lambda ()
+            (setq gc-cons-threshold normal-gc-cons-threshold
+                  gc-cons-percentage 0.1
+                  file-name-handler-alist normal-file-name-handler-alist)))
 
 ;; Set package url
 ;; Prevent Emacs from add (package-initialize)
 (setq package--init-file-ensured t)
-(when (>= emacs-major-version 24)
-  (require 'package)
-  (package-initialize))
+(require 'package)
+(package-initialize)
 
 ;; Additional lisp library
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
