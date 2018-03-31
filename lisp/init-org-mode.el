@@ -37,7 +37,7 @@
   (setq org-support-shift-select t)
 
   ;; org startup expand all headlines
-  (setq org-startup-folded 'showeverything)
+  (setq org-startup-folded 'content)
 
   (set-face-attribute 'org-level-1 nil :height 1.2 :bold t)
   (set-face-attribute 'org-level-2 nil :height 1.1 :bold t)
