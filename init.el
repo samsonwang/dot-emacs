@@ -27,15 +27,17 @@
 (add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
 
 ;; My Custom Settings
+;; 1st priority core customization
 (require 'init-prerequisites)
 (require 'init-site-lisp)
 (require 'init-theme)
 (require 'init-fontset)
-(require 'init-encoding)
-(require 'init-misc)
-(require 'init-backup)
 (require 'init-modeline)
+(require 'init-encoding)
+(require 'init-backup)
+(require 'init-misc)
 
+;; 2nd priority
 (require 'use-package)
 (require 'init-recentf)
 (require 'init-tabs)
@@ -46,6 +48,7 @@
 (require 'init-global)
 (require 'init-highlight-symbol)
 
+;; 3rd priority is loaded after init when ilde
 (require 'init-idle-require)
 (idle-require 'init-misc-delay)
 (idle-require 'init-key-binding)
@@ -64,9 +67,6 @@
 (idle-require 'init-eshell)
 (idle-require 'init-nikola)
 (idle-require 'init-dired)
-
-
-
 ;; finally load elpa packages
 ;; and install missing packages
 (idle-require 'init-elpa)
