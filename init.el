@@ -44,6 +44,7 @@
 (require 'init-cc-mode)
 (require 'init-org-mode)
 (require 'init-elisp-mode)
+(require 'init-python-mode)
 (require 'init-helm)
 (require 'init-global)
 (require 'init-highlight-symbol)

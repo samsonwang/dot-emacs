@@ -9,14 +9,6 @@
 ;; default tab width
 (setq-default tab-width 4)
 
-(add-hook 'python-mode-hook
-          (lambda ()
-            (setq indent-tabs-mode t)
-            (setq tab-width 4)))
-
-; (global-set-key (kbd "<tab>") '(lambda () (interactive) (insert-char 9 1)))
-; (global-set-key (kbd "TAB") 'self-insert-command)
-
 ;; use untabify to convert tabs to spaces
 ;(use-package untabify
 ;  :commands untabify
