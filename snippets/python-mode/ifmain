@@ -2,5 +2,9 @@
 # name: ifmain
 # key: ifm
 # --
+def ${1:main}():
+    $0pass
+
+
 if __name__ == '__main__':
-    ${1:main()}
+    ${1:$(yas/substr yas-text "[^: ]*")}()
