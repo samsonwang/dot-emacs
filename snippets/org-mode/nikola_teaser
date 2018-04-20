@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # name: nikola teaser
-# key: nikola_teaser
+# key: <nt
 # --
 {{{TEASER_END}}}
