@@ -16,14 +16,10 @@
         file-name-handler-alist normal-file-name-handler-alist))
 (add-hook 'after-init-hook #'after-init-hook-func)
 
-
-;; Set package url
-;; Prevent Emacs from add (package-initialize)
+;; Prevent Emacs from adding (package-initialize)
 (setq package--init-file-ensured t)
-(require 'package)
-(package-initialize)
 
-;; Additional lisp library
+;; basic load path
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 ;; My Custom Settings
@@ -34,7 +30,7 @@
 (require 'init-misc)
 
 ;; 2nd priority, use-package based config
-(require 'init-use-package)
+(require 'use-package)
 (require 'init-recentf)
 (require 'init-tabs)
 (require 'init-cc-mode)
@@ -68,7 +64,7 @@
 (idle-require-mode 1)
 
 ;; Put Custom Setting in a single stand alone file
-(defconst custom-file (expand-file-name "custom.el" user-emacs-directory))
+(defconst custom-file (expand-emacs-home "custom.el"))
 (load custom-file 'noerror)
 
 ;; Calculate and print startup time
