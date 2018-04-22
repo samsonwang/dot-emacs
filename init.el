@@ -27,12 +27,12 @@
 (require 'init-prerequisites)
 (require 'init-theme)
 (require 'init-backup)
+(require 'init-tabs)
 (require 'init-misc)
 
 ;; 2nd priority, use-package based config
 (require 'use-package)
 (require 'init-recentf)
-(require 'init-tabs)
 (require 'init-cc-mode)
 (require 'init-org-mode)
 (require 'init-elisp-mode)
