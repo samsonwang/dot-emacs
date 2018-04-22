@@ -10,11 +10,12 @@
 (setq gc-cons-threshold (* 128 1024 1024)
       gc-cons-percentage 0.6
       file-name-handler-alist nil)
-(add-hook 'after-init-hook
-          (lambda ()
-            (setq gc-cons-threshold normal-gc-cons-threshold
-                  gc-cons-percentage 0.1
-                  file-name-handler-alist normal-file-name-handler-alist)))
+(defun after-init-hook-func ()
+  (setq gc-cons-threshold normal-gc-cons-threshold
+        gc-cons-percentage 0.1
+        file-name-handler-alist normal-file-name-handler-alist))
+(add-hook 'after-init-hook #'after-init-hook-func)
+
 
 ;; Set package url
 ;; Prevent Emacs from add (package-initialize)
@@ -24,21 +25,16 @@
 
 ;; Additional lisp library
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
 
 ;; My Custom Settings
-;; 1st priority core customization
+;; 1st priority, core customization
 (require 'init-prerequisites)
-(require 'init-site-lisp)
 (require 'init-theme)
-(require 'init-fontset)
-(require 'init-modeline)
-(require 'init-encoding)
 (require 'init-backup)
 (require 'init-misc)
 
-;; 2nd priority
-(require 'use-package)
+;; 2nd priority, use-package based config
+(require 'init-use-package)
 (require 'init-recentf)
 (require 'init-tabs)
 (require 'init-cc-mode)
@@ -49,7 +45,7 @@
 (require 'init-global)
 (require 'init-highlight-symbol)
 
-;; 3rd priority is loaded after init when ilde
+;; 3rd priority is loaded after init when idle
 (require 'init-idle-require)
 (idle-require 'init-misc-delay)
 (idle-require 'init-key-binding)
@@ -68,13 +64,11 @@
 (idle-require 'init-eshell)
 (idle-require 'init-nikola)
 (idle-require 'init-dired)
-;; finally load elpa packages
-;; and install missing packages
-(idle-require 'init-elpa)
+(idle-require 'init-elpa) ;; finally load and install elpa packages
 (idle-require-mode 1)
 
 ;; Put Custom Setting in a single stand alone file
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(defconst custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file 'noerror)
 
 ;; Calculate and print startup time

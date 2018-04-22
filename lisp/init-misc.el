@@ -9,18 +9,18 @@
 (setq inhibit-startup-message t)
 
 ;; Enable gloabl line wrap
-;;(set-default 'truncate-lines t)
 (setq truncate-lines nil)
 
-;; enable global line number
+;; line number
 ;; (global-linum-mode t)
 (setq linum-format "%3d")
-;; show column number in modeline
-(setq column-number-mode t)
-;; Blacklist for display line numbers
-;;(setq linum-disabled-modes-list
-;;      '(eshell-mode message-mode))
 
+;; Force charset page to utf-8
+;;(set-language-environment "utf-8") 
+;;(set-locale-environment "utf-8")
+(setq-default buffer-file-coding-system 'utf-8-unix)
+(prefer-coding-system 'gbk)
+(prefer-coding-system 'utf-8-unix)
 
 ;; Emacs title bar to reflect file name
 (defun frame-title-string ()
@@ -35,7 +35,6 @@
 ;; Title = 'foo.bar @ system-name'
 (setq frame-title-format '( (:eval (frame-title-string))
 			    " - Emacs @ "system-name" " ) )
-
 
 ;;  Default stracth buffer
 (defun scratch-buffer-message ()

@@ -3,6 +3,7 @@
 -/.emacs_cache
 -/auto-save-list
 -/elpa
+-/snippets
 -/.git
 
 -*.elc

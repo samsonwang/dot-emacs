@@ -1,11 +1,5 @@
 ;; -*- coding:utf-8 -*-
 
-
-;; Turn off sound alarms completely
-;;(setq ring-bell-function 'ignore)
-;; Warning signal by flash screen
-(setq visible-bell 1)
-
 ;; ask before quit
 (setq confirm-kill-emacs 'y-or-n-p)
 
@@ -33,7 +27,7 @@
 (add-hook 'diary-display-hook 'fancy-diary-display)
 (add-hook 'today-visible-calendar-hook 'calendar-mark-today)
 
-
+;; Warning signal by flash modeline
 (defun mode-line-bell-flash ()
   "Flash the mode line momentarily"
   (invert-face 'mode-line)
@@ -42,8 +36,9 @@
 (setq-default ring-bell-function 'mode-line-bell-flash)
 
 
-(defun create-scratch-buffer nil
-  "create a new scratch buffer to work in. (could be *scratch* - *scratchX*)"
+(defun create-scratch-buffer ()
+  "create a new scratch buffer to work in.
+   (could be *scratch* - *scratchX*)"
   (interactive)
   (let ((n 0)
         bufname)
@@ -56,6 +51,20 @@
     (switch-to-buffer (get-buffer-create bufname))
     (emacs-lisp-mode)
     ))
+
+;; site lisp directory for load path
+(defun init-site-lisp-load-path ()
+  (eval-when-compile (require 'cl))
+  (if (fboundp 'normal-top-level-add-to-load-path)
+      (let* ((site-lisp-dir "~/.emacs.d/site-lisp/")
+             (default-directory site-lisp-dir))
+        (progn
+          (setq load-path
+                (append
+                 (loop for dir in (directory-files site-lisp-dir)
+                       unless (string-match "^\\." dir)
+                       collecting (expand-file-name dir))
+                 load-path))))))
 
 ;; misc delay is returned
 (provide 'init-misc-delay)
