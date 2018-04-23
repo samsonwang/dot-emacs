@@ -12,3 +12,7 @@
 
 (provide 'init-dired)
 ;; init-dired ends here
+
+;; no-byte-compile: t
+;; End:
+

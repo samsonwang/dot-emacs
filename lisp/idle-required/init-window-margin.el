@@ -1,12 +1,18 @@
 
 
-(defun toggle-window-margin-right ()
+(defun toggle-window-margin-right (&optional margin-width)
   "Toggle the right margin between `fill-column' or window width.
   This command is convenient when reading novel, documentation."
-  (interactive)
+  (interactive "P")
   (if (null (cdr (window-margins)))
-      (set-window-margins nil 0 (- (window-body-width) fill-column))
+      (cond
+       (margin-width
+        (set-window-margins nil 0 (- (window-body-width) margin-width)))
+       (t
+        (set-window-margins nil 0 (- (window-body-width) fill-column))))
     (set-window-margins nil 0 0)))
 
+(global-set-key (kbd "C-x 4") #'toggle-window-margin-right)
+  
 (provide 'init-window-margin)
 
