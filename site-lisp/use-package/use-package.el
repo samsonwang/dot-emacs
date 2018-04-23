@@ -67,7 +67,7 @@ then the expanded macros do their job silently."
 (defcustom use-package-debug nil
   "Whether to display use-package expansions in a *use-package* buffer."
   :type 'boolean
-  :group 'use-package)
+ :group 'use-package)
 
 (defcustom use-package-check-before-init nil
   "If non-nil, check that package exists before executing its `:init' block.
