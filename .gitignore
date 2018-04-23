@@ -72,6 +72,7 @@ custom-set-variables.el
 custom.el
 projectile.cache
 *.emacs_cache/
+tool/playground.el
 
 # GNU Global tag files
 GPATH
