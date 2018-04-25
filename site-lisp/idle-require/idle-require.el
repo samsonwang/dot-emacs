@@ -86,6 +86,13 @@
    is non-nil, it is added instead of FEATURE."
   `(add-to-list 'idle-require-symbols ,feature))
 
+(defconst idle-require-font-lock-keywords
+  '(("(\\(idle-require\\)\\_>[ \t']*\\(\\(?:\\sw\\|\\s_\\)+\\)?"
+     (1 font-lock-keyword-face)
+     (2 font-lock-constant-face nil t))))
+
+(font-lock-add-keywords 'emacs-lisp-mode idle-require-font-lock-keywords)
+
 (defun idle-req-log (msg)
   (if idle-require-message-verbose
       (message msg)))

@@ -1,7 +1,6 @@
 
 ;; idle require other stuff
 (use-package idle-require
-;  :disabled t
   :load-path "site-lisp/idle-require"
   :init
   (setq idle-require-idle-delay 1
@@ -9,8 +8,11 @@
         idle-require-message-verbose nil)
   
   ;; idle required path
-  (add-to-list 'load-path (expand-file-name "lisp/idle-required"
-                                            user-emacs-directory))
+  (add-to-list 'load-path (emacs-home "lisp/idle-required"))
+  
+  ;; start idle-require after init finish
+  (add-hook 'after-init-hook
+            (lambda () (idle-require-mode 1)))
   )
 
 (provide 'init-idle-require)

@@ -62,10 +62,10 @@
 (idle-require 'init-dired)
 (idle-require 'init-window-margin)
 (idle-require 'init-elpa) ;; finally load and install elpa packages
-(idle-require-mode 1)
+
 
 ;; Put Custom Setting in a single stand alone file
-(defconst custom-file (expand-emacs-home "custom.el"))
+(defconst custom-file (emacs-home "custom.el"))
 (load custom-file 'noerror)
 
 ;; Calculate and print startup time
