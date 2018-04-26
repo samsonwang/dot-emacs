@@ -1,7 +1,7 @@
 ;; -*- coding : utf8-*-
 
 (use-package helm-config
-  :bind 
+  :bind
   (("C-c o"     . helm-occur)
    ("C-x C-f"   . helm-find-files)
    ("M-x"       . helm-M-x)

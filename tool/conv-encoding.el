@@ -2,9 +2,9 @@
 
 (require 'cl)
 
-(setq conv-dir "d:/")
-(setq conv-file-regexp "\.h$")
-(setq conv-encoding-dest 'utf-8-dos)
+(setq conv-dir "~/.emacs.d/site-lisp/misc/")
+(setq conv-file-regexp "\.el$")
+(setq conv-encoding-dest 'utf-8-unix)
 
 ;; "^\\."
 (defun convert-file-coding-system (@fpath @coding-system)

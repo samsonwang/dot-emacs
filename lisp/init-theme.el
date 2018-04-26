@@ -1,4 +1,3 @@
-
 ;; -*- coding:utf-8 -*-
 
 ;; Enable theme
@@ -6,15 +5,15 @@
 
   (add-to-list 'custom-theme-load-path
                (expand-file-name "site-lisp/theme" user-emacs-directory))
-  
+
   ;;(load-theme 'autumn-light t)
   (load-theme 'dracula t))
 
   ;; Set initial window size
 ;;  (setq initial-frame-alist
 ;;		(append '((width . 90) (height . 35)
-;;	      (left . 490) (top . 5))
-;;	      initial-frame-alist))
+;;        (left . 490) (top . 5))
+;;        initial-frame-alist))
 
   ;; Set default subsequent window size
 ;;  (setq default-frame-alist
@@ -60,7 +59,7 @@
     (set-fontset-font (frame-parameter nil 'font) charset
                       (font-spec :family chinese-name :size chinese-size))))
 
-(when (display-graphic-p) 
+(when (display-graphic-p)
   (when *windows*
     (set-fontset "Consolas" "微软雅黑" 16 16))
   (when *macintosh*
@@ -70,4 +69,3 @@
 
 (provide 'init-theme)
 ;;; init-theme.el ends here
-
