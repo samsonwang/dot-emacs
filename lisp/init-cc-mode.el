@@ -5,14 +5,15 @@
   (("\\.c\\'" . c-mode)
    ("\\.cpp\\'" . c++-mode)
    ("\\.h\\'" . c++-mode))
-  
+
   :init
   (defun c-mode-common-hook-func()
     "hook func for c mode"
+    (highlight-symbol-mode)
     (linum-mode))
-  
+
   (add-hook 'c-mode-common-hook 'c-mode-common-hook-func)
-  
+
   :bind
   (:map
    c++-mode-map
@@ -20,7 +21,7 @@
    :map
    c-mode-map
    ("C-c M-o" . ff-find-related-file))
-  
+
   :config
   ;; set default style to linux style
   (setq-default c-default-style "linux")
@@ -42,4 +43,3 @@
 
 (provide 'init-cc-mode)
 ;;; init-cc-mode.el ends here
-

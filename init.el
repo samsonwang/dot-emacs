@@ -32,14 +32,13 @@
 
 ;; 2nd priority, use-package based config
 (require 'use-package)
-(require 'init-recentf)
 (require 'init-cc-mode)
 (require 'init-org-mode)
 (require 'init-elisp-mode)
 (require 'init-python-mode)
+(require 'init-recentf)
 (require 'init-helm)
 (require 'init-global)
-(require 'init-highlight-symbol)
 
 ;; 3rd priority is loaded after init when idle
 (require 'init-idle-require)

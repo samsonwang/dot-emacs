@@ -24,9 +24,9 @@
     ))
 
 ;; melpa packages
-;;  (add-to-list 'package-archives
-;;               '("melpa-stable" .
-;;                 "https://stable.melpa.org/packages/"))
+  (add-to-list 'package-archives
+               '("melpa-stable" .
+                 "https://stable.melpa.org/packages/"))
 
 ;;  (add-to-list 'package-archives
 ;;               '("melpa-cn-stable" .
@@ -35,9 +35,9 @@
 ;;  (add-to-list 'package-archives
 ;;    '("melpa-cn"        . "http://elpa.emacs-china.org/melpa/"))
 
-(add-to-list 'package-archives
-             '("melpa-stable" .
-               "http://mirrors.163.com/elpa/melpa-stable/"))
+;;(add-to-list 'package-archives
+;;             '("melpa-stable" .
+;;               "http://mirrors.163.com/elpa/melpa-stable/"))
 
 
 (require 'cl-lib)
