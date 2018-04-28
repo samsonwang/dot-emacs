@@ -13,6 +13,8 @@
     (set-window-margins nil 0 0)))
 
 (global-set-key (kbd "C-x 4") #'toggle-window-margin-right)
-  
+
+(setq fill-column 90)
+
 (provide 'init-window-margin)
 
