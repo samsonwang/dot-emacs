@@ -14,7 +14,7 @@
 
 (global-set-key (kbd "C-x 4") #'toggle-window-margin-right)
 
-(setq fill-column 90)
+(setq-default fill-column 90)
 
 (provide 'init-window-margin)
 
