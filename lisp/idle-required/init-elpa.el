@@ -21,6 +21,8 @@
     iedit
     mmm-mako
     highlight-symbol
+    aggressive-indent
+;    auto-indent-mode
     ))
 
 ;; melpa packages

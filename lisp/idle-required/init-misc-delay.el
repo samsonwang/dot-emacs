@@ -32,7 +32,6 @@
   "Flash the mode line momentarily"
   (invert-face 'mode-line)
   (run-with-timer 0.1 nil 'invert-face 'mode-line))
-
 (setq-default ring-bell-function 'mode-line-bell-flash)
 
 
@@ -51,6 +50,11 @@
     (switch-to-buffer (get-buffer-create bufname))
     (emacs-lisp-mode)
     ))
+
+(defun byte-compile-init-dir ()
+  "Byte-compile all your lisp files."
+  (interactive)
+  (byte-recompile-directory user-emacs-directory 0))
 
 ;; site lisp directory for load path
 (defun init-site-lisp-load-path ()

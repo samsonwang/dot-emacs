@@ -1,6 +1,7 @@
 ;; -*- coding:utf-8 -*-
 
 (use-package cc-mode
+  :diminish aggressive-indent-mode
   :mode
   (("\\.c\\'" . c-mode)
    ("\\.cpp\\'" . c++-mode)
@@ -9,6 +10,7 @@
   :init
   (defun c-mode-common-hook-func()
     "hook func for c mode"
+    (aggressive-indent-mode)
     (highlight-symbol-mode)
     (linum-mode))
 
@@ -29,9 +31,7 @@
   ;; controls the operation of the TAB key
   (setq-default c-tab-always-indent nil)
 
-  (setq-default c-basic-offset 4)
-
-  )
+  (setq-default c-basic-offset 4))
 
 ;;===============================================================
 ;;  Google C++ style guide
