@@ -50,6 +50,9 @@
             " - Emacs loves you!\n\n")))
 (setq-default initial-scratch-message (scratch-buffer-message))
 
+(require 'diminish)
+(require 'aggressive-indent)
+(diminish 'aggressive-indent-mode)
 
 (provide 'init-misc)
 ;;; init-misc.el ends here

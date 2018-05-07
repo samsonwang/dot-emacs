@@ -1,6 +1,6 @@
+
 (use-package emacs-lisp-mode
   :diminish aggressive-indent-mode
-  :interpreter ("emacs" . emacs-lisp-mode)
   :init
   (defun emacs-lisp-mode-hook-func ()
     ;; If you're saving an elisp file, likely the .elc is no longer valid.
@@ -17,3 +17,4 @@
 
 ;; init elisp mode ends here
 (provide 'init-elisp-mode)
+

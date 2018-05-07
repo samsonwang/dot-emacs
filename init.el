@@ -18,6 +18,7 @@
 
 ;; Prevent Emacs from adding (package-initialize)
 (setq package--init-file-ensured t)
+(package-initialize)
 
 ;; basic load path
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
@@ -32,12 +33,12 @@
 
 ;; 2nd priority, use-package based config
 (require 'use-package)
-(require 'init-cc-mode)
-(require 'init-org-mode)
-(require 'init-elisp-mode)
-(require 'init-python-mode)
 (require 'init-recentf)
 (require 'init-helm)
+(require 'init-elisp-mode)
+(require 'init-cc-mode)
+(require 'init-python-mode)
+(require 'init-org-mode)
 (require 'init-global)
 
 ;; 3rd priority is loaded after init when idle

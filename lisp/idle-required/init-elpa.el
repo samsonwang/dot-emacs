@@ -2,7 +2,8 @@
 
 ;; package to install
 (defvar my-packages
-  '(company
+  '(diminish
+    company
     yasnippet
     markdown-mode
     helm
@@ -22,7 +23,7 @@
     mmm-mako
     highlight-symbol
     aggressive-indent
-;    auto-indent-mode
+    ;;  auto-indent-mode
     ))
 
 ;; melpa packages
