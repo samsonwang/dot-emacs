@@ -40,6 +40,7 @@
 (require 'init-python-mode)
 (require 'init-org-mode)
 (require 'init-global)
+(require 'init-diminish)
 
 ;; 3rd priority is loaded after init when idle
 (require 'init-idle-require)
