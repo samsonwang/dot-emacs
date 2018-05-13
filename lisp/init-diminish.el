@@ -2,7 +2,7 @@
 
 (use-package diminish
   :config
-  (require 'aggressive-indent)
+  (require 'aggressive-indent nil t)
   (diminish 'aggressive-indent-mode)
   )
 
