@@ -64,8 +64,8 @@
     (set-fontset "Consolas" "微软雅黑" 16 16))
   (when *macintosh*
     (set-fontset "Menlo" "Menlo" 16 16))
-  (when (and *linux* (display-graphic-p))
-    (set-fontset "Mono" "Sans" 16 16)))
+  (when *linux*
+    (set-fontset "Mono" "文泉驿微米黑" 16 16)))
 
 (provide 'init-theme)
 ;;; init-theme.el ends here
