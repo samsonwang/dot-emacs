@@ -5,16 +5,6 @@
 ;; Setup default open directory
 (when *windows* (setq default-directory "~/"))
 
-;; Hide startup message
-(setq inhibit-startup-message t)
-
-;; Enable gloabl line wrap
-(setq truncate-lines nil)
-
-;; line number
-;; (global-linum-mode t)
-(setq linum-format "%3d")
-
 ;; Force charset page to utf-8
 ;;(set-language-environment "utf-8") 
 ;;(set-locale-environment "utf-8")

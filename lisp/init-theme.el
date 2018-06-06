@@ -28,9 +28,20 @@
   (horizontal-scroll-bar-mode 0))
 
 ;; hide menubar in commandline
-(when (not (display-graphic-p) )
+(unless (display-graphic-p)
   (menu-bar-mode 0))
 
+;; line number
+;; (global-linum-mode t)
+(if (display-graphic-p)
+    (setq linum-format "%3d")
+  (setq linum-format "%3d "))
+
+;; Hide startup message
+(setq inhibit-startup-message t)
+
+;; Enable gloabl line wrap
+(setq truncate-lines nil)
 
 ;; modeline setting
 (setq-default mode-line-buffer-identification
