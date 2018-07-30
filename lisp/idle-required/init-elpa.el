@@ -7,14 +7,15 @@
     yasnippet
     markdown-mode
     helm
+    helm-projectile
+    helm-gtags
+    helm-smex
+    helm-swoop
     projectile
     treemacs
-    helm-projectile
     treemacs-projectile
-    helm-gtags
     magit
     smex
-    helm-smex
     htmlize
     undo-tree
     flycheck
