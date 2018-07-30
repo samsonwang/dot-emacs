@@ -12,8 +12,6 @@
     helm-smex
     helm-swoop
     projectile
-    ;;    treemacs
-    ;;    treemacs-projectile
     magit
     smex
     htmlize
@@ -24,13 +22,21 @@
     mmm-mako
     highlight-symbol
     aggressive-indent
-    ;;  auto-indent-mode
     ))
 
+;; use melpa mirror
+(setq package-archives
+      '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
+        ("melpa" . "http://elpa.emacs-china.org/melpa-stable/")))
+
 ;; melpa packages
-  (add-to-list 'package-archives
-               '("melpa-stable" .
-                 "https://stable.melpa.org/packages/"))
+;;  (add-to-list 'package-archives
+;;               '("melpa-stable" .
+;;                 "https://stable.melpa.org/packages/"))
+
+;;  (add-to-list 'package-archives
+;;               '("melpa-stable" .
+;;                 "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/"))
 
 ;;  (add-to-list 'package-archives
 ;;               '("melpa-cn-stable" .
@@ -38,6 +44,10 @@
 
 ;;  (add-to-list 'package-archives
 ;;    '("melpa-cn"        . "http://elpa.emacs-china.org/melpa/"))
+
+;;(setq package-archives
+;;      '(("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+;;("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")))
 
 ;;(add-to-list 'package-archives
 ;;             '("melpa-stable" .
