@@ -12,8 +12,8 @@
     helm-smex
     helm-swoop
     projectile
-    treemacs
-    treemacs-projectile
+    ;;    treemacs
+    ;;    treemacs-projectile
     magit
     smex
     htmlize
