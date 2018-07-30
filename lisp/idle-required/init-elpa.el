@@ -55,8 +55,8 @@
 
 
 (require 'cl-lib)
-(defun sw/install-packages (my-packages)
-  "Ensure the packages I use are installed. See `my-packages'."
+(defun package-install-ex (my-packages)
+  "Ensure the packages I need are installed. See `my-packages'."
   (let ((missing-packages
          (cl-remove-if #'package-installed-p my-packages)))
     (when missing-packages
@@ -65,7 +65,7 @@
       (mapc #'package-install missing-packages))))
 
 ;; auto install package above
-(sw/install-packages my-packages)
+(package-install-ex my-packages)
 
 (provide 'init-elpa)
 ;;; init-customization.el ends here
