@@ -1,5 +1,3 @@
 #name : <header>...</header>
 # --
-<header>
-  $0
-</header>
+<header>$0</header>
