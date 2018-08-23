@@ -3,7 +3,7 @@
 (require 'cl)
 
 (setq conv-dir "~/.emacs.d/site-lisp/misc/")
-(setq conv-file-regexp "\.el$")
+(setq conv-file-regexp "\.[el|h|cpp]$")
 (setq conv-encoding-dest 'utf-8-unix)
 
 ;; "^\\."
