@@ -17,7 +17,7 @@
 (setq display-time-24hr-format t)
 (setq display-time-day-and-date t)
 (setq system-time-locale "C")  ;; Change time display into English
-;(display-time)
+                                        ;(display-time)
 
 
 ;;  Fancy display for diary and calendar
@@ -34,6 +34,9 @@
   (run-with-timer 0.1 nil 'invert-face 'mode-line))
 (setq-default ring-bell-function 'mode-line-bell-flash)
 
+;; delete trailling space before save
+;;(add-hook 'before-save-hook #'whitespace-cleanup)
+(add-hook 'before-save-hook #'delete-trailing-whitespace)
 
 (defun create-scratch-buffer ()
   "create a new scratch buffer to work in.
@@ -42,9 +45,10 @@
   (let ((n 0)
         bufname)
     (while (progn
-             (setq bufname (concat "*scratch"
-                                   (if (= n 0) "" (int-to-string n))
-                                   "*"))
+             (setq bufname
+                   (concat "*scratch"
+                           (if (= n 0) "" (int-to-string n))
+                           "*"))
              (setq n (1+ n))
              (get-buffer bufname)))
     (switch-to-buffer (get-buffer-create bufname))
@@ -72,4 +76,3 @@
 
 ;; misc delay is returned
 (provide 'init-misc-delay)
-
