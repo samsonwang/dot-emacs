@@ -33,13 +33,5 @@
 
   (setq-default c-basic-offset 4))
 
-;;===============================================================
-;;  Google C++ style guide
-;;===============================================================
-;;(load "google-style-guide.el")
-;;(add-hook 'c-mode-common-hook 'google-set-c-style)
-;;(add-hook 'c-mode-common-hook 'google-make-newline-indent)
-
-
 (provide 'init-cc-mode)
 ;;; init-cc-mode.el ends here

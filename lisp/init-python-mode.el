@@ -1,6 +1,5 @@
 
 (use-package python
-  :diminish aggressive-indent-mode
   :mode ("\\.py\\'" . python-mode)
   :interpreter ("python" . python-mode)
   :init

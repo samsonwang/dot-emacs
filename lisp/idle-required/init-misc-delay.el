@@ -48,7 +48,7 @@
              (setq n (1+ n))
              (get-buffer bufname)))
     (switch-to-buffer (get-buffer-create bufname))
-    (emacs-lisp-mode)
+    (lisp-interaction-mode)
     ))
 
 (defun byte-compile-init-dir ()

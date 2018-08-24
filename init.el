@@ -39,6 +39,7 @@
 (require 'init-cc-mode)
 (require 'init-python-mode)
 (require 'init-org-mode)
+(require 'init-js-mode)
 (require 'init-global)
 (require 'init-diminish)
 
