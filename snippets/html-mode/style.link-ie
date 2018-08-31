@@ -1,0 +1,8 @@
+# contributor: Jimmy Wu <frozenthrone88@gmail.com>
+# name: <!--[if IE]><link stylesheet="..." /><![endif]-->
+# group: style
+# key: style.link-ie
+# --
+<!--[if IE]>
+<link rel="stylesheet" href="${1:url}" type="text/css" media="${2:screen}" />
+<![endif]-->

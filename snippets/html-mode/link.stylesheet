@@ -1,5 +1,0 @@
-# contributor : Jimmy Wu <frozenthrone88@gmail.com>
-# name : <link stylesheet="..." />
-# group: link
-# --
-<link rel="stylesheet" href="${1:url}" type="text/css" media="${2:screen}" />
