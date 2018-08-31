@@ -39,12 +39,13 @@
 (require 'init-cc-mode)
 (require 'init-python-mode)
 (require 'init-org-mode)
-(require 'init-js-mode)
 (require 'init-global)
 (require 'init-diminish)
 
 ;; 3rd priority is loaded after init when idle
 (require 'init-idle-require)
+(idle-require 'init-js-mode)
+(idle-require 'init-css-mode)
 (idle-require 'init-misc-delay)
 (idle-require 'init-key-binding)
 (idle-require 'init-window)
@@ -80,4 +81,3 @@
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
-
