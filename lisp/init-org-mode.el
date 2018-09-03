@@ -2,11 +2,8 @@
 ;; Customize org-mode
 
 (use-package org
-  :mode
-  ("\\.org\\'" . org-mode)
-
-  :interpreter
-  ("org" . org-mode)
+  :mode ("\\.org\\'" . org-mode)
+  :interpreter ("org" . org-mode)
 
   ;; I wonder why this failed to diminish org-indent-mode
   :diminish org-indent-mode
@@ -45,4 +42,3 @@
 
 (provide 'init-org-mode)
 ;;; init-org-mode.el ends here
-

@@ -1,5 +1,7 @@
 
-(use-package emacs-lisp-mode
+(use-package emacs-lisp
+  :mode ("\\.el\\'" . emacs-lisp-mode)
+  :interpreter ("emacs-lisp" . emacs-lisp-mode)
   :diminish aggressive-indent-mode
   :init
   (defun emacs-lisp-mode-hook-func ()
@@ -17,4 +19,3 @@
 
 ;; init elisp mode ends here
 (provide 'init-elisp-mode)
-
