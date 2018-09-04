@@ -3,4 +3,4 @@
 # group: style
 # key: style.link
 # --
-<link rel="stylesheet" href="${1:url}" type="text/css" media="${2:screen}" />
+<link href="${1:url}" rel="stylesheet" type="text/css" media="${2:screen}" />
