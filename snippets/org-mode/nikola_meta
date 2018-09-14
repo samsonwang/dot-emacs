@@ -3,12 +3,13 @@
 # key: <nm
 # --
 #+BEGIN_COMMENT
-.. title: 
+.. title:
 .. slug: `(file-name-nondirectory (file-name-sans-extension buffer-file-name))`
 .. date: `(format-time-string "%Y-%m-%d %H:%M:%S UTC+08:00")`
-.. tags: draft, nikola
-.. category: 
-.. link: 
-.. description: 
+.. tags: nikola
+.. category:
+.. link:
+.. description:
 .. type: text
+·· status: draft
 #+END_COMMENT
