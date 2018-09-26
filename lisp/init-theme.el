@@ -76,7 +76,7 @@
   (when *macintosh*
     (set-fontset "Menlo" "Menlo" 16 16))
   (when *linux*
-    (set-fontset "Mono" "WenQuanYi Micro Hei" 16 16)))
+    (set-fontset "Mono" "Noto Sans Mono CJK SC" 16 16)))
 
 (provide 'init-theme)
 ;;; init-theme.el ends here
