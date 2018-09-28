@@ -74,5 +74,12 @@
                        collecting (expand-file-name dir))
                  load-path))))))
 
+(defun disable-auto-indent()
+  "disable auto indent for this buffer temporary"
+  (interactive)
+  (electric-indent-local-mode -1)
+  (aggressive-indent-mode -1)
+  (message "auto-indent disabled"))
+
 ;; misc delay is returned
 (provide 'init-misc-delay)
