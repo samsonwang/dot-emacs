@@ -26,8 +26,8 @@
 
 ;; use melpa mirror
 (setq package-archives
-      '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
-        ("melpa" . "http://elpa.emacs-china.org/melpa-stable/")))
+      '(("gnu"   . "https://elpa.emacs-china.org/gnu/")
+        ("melpa" . "https://elpa.emacs-china.org/melpa-stable/")))
 
 ;; (add-to-list 'package-archives
 ;;              '("melpa-stable" .
@@ -57,4 +57,3 @@
 
 (provide 'init-elpa)
 ;;; init-customization.el ends here
-
