@@ -72,8 +72,8 @@
 
 ;; Calculate and print startup time
 (when (require 'time-date nil t)
-  (message "Emacs startup time: %d seconds."
-           (time-to-seconds (time-since emacs-load-start-time))))
+  (message "Emacs startup time: %.3f seconds."
+           (float-time (time-since emacs-load-start-time))))
 
 (provide 'init)
 
