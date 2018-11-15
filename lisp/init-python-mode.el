@@ -7,7 +7,7 @@
     "hook func for python mode"
     (setq python-indent-offset 4)
     ;;  (setq indent-tabs-mode t)
-    ;;  (setq tab-width 4)
+    (setq tab-width 4)
     (aggressive-indent-mode)
     (linum-mode))
 
@@ -16,4 +16,3 @@
   )
 
 (provide 'init-python-mode)
-
