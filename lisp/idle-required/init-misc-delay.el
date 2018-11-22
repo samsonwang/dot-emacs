@@ -1,5 +1,8 @@
 ;; -*- coding:utf-8 -*-
 
+;; replace highlighted when type
+(delete-selection-mode 1)
+
 ;; ask before quit
 (setq confirm-kill-emacs 'y-or-n-p)
 
