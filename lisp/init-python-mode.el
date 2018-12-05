@@ -8,7 +8,7 @@
     (setq python-indent-offset 4)
     ;;  (setq indent-tabs-mode t)
     (setq tab-width 4)
-    (aggressive-indent-mode)
+    ;;    (aggressive-indent-mode)
     (linum-mode))
 
   (add-hook 'python-mode-hook
