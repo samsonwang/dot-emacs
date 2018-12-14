@@ -91,5 +91,9 @@
           (concat "d:/Program Files/Git/usr/bin;"
                   (getenv "PATH"))) )
 
+(use-package ox-rst
+  :load-path "site-lisp/ox-rst"
+  )
+
 ;; misc delay is returned
 (provide 'init-misc-delay)
