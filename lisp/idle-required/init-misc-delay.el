@@ -95,5 +95,10 @@
   :load-path "site-lisp/ox-rst"
   )
 
+;; put idlwave directory in cache
+(custom-set-variables
+ '(idlwave-config-directory
+   (concat user-emacs-cache "idlwave")))
+
 ;; misc delay is returned
 (provide 'init-misc-delay)
