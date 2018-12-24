@@ -4,9 +4,10 @@
 (use-package org
   :mode ("\\.org\\'" . org-mode)
   :interpreter ("org" . org-mode)
-
   ;; I wonder why this failed to diminish org-indent-mode
   :diminish org-indent-mode
+  :bind
+  (("C-c 0"     . org-capture))
 
   :init
   (defun org-mode-hook-func ()
