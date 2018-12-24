@@ -70,6 +70,10 @@
 (defconst custom-file (emacs-home "custom.el"))
 (load custom-file 'noerror)
 
+;; personal file
+(defconst personal-file (emacs-home "personal.el"))
+(load personal-file 'noerror)
+
 ;; Calculate and print startup time
 (when (require 'time-date nil t)
   (message "Emacs startup time: %.3f seconds."
