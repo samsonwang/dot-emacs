@@ -19,8 +19,8 @@
   :config
   ;; Add todo keywords
   (setq org-todo-keywords
-        '((sequence "TODO" "PENDING" "FEEDBACK" "VERIFY" "|"
-                    "DONE" "DELEGATED")))
+        '((sequence "TODO" "PENDING" "FEEDBACK" "|"
+                    "DONE" "CANCELED")))
 
   ;; syntax highlight in emacs begin_src block
   (setq org-src-fontify-natively t)
