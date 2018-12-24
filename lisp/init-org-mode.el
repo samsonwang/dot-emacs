@@ -7,9 +7,13 @@
   ;; I wonder why this failed to diminish org-indent-mode
   :diminish org-indent-mode
   :bind
-  (("C-c 0"     . org-capture))
+  (("C-c 0"     . org-capture)
+   ("C-c 9"     . org-agenda))
 
   :init
+  (setq org-agenda-files '("~/Dropbox/Agenda/"))
+  (setq org-default-notes-file "~/Dropbox/Agenda/notes.org")
+
   (defun org-mode-hook-func ()
     (setq tab-width 2)
     (setq truncate-lines nil)
