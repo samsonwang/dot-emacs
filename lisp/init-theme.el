@@ -72,7 +72,7 @@
 
 (when (display-graphic-p)
   (when *windows*
-    (set-fontset "Consolas" "微软雅黑" 16 18))
+    (set-fontset "Consolas" "微软雅黑" 16 16))
   (when *macintosh*
     (set-fontset "Menlo" "Menlo" 16 16))
   (when *linux*
