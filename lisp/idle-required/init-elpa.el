@@ -19,7 +19,7 @@
     flycheck
     exec-path-from-shell
     iedit
-    mmm-mako
+;    mmm-mako
     highlight-symbol
     aggressive-indent
     ))

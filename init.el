@@ -60,7 +60,7 @@
 (idle-require 'init-undo-tree)
 (idle-require 'init-exec-path-from-shell)
 (idle-require 'init-eshell)
-(idle-require 'init-nikola)
+;(idle-require 'init-nikola)
 (idle-require 'init-dired)
 (idle-require 'init-window-margin)
 (idle-require 'init-elpa) ;; finally load and install elpa packages
