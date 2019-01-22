@@ -19,15 +19,21 @@
     flycheck
     exec-path-from-shell
     iedit
-;    mmm-mako
     highlight-symbol
     aggressive-indent
     ))
+;; mmm-mako
+
 
 ;; use melpa mirror
-(setq package-archives
-      '(("gnu"   . "https://elpa.emacs-china.org/gnu/")
-        ("melpa" . "https://elpa.emacs-china.org/melpa-stable/")))
+(if *windows*
+    (setq package-archives
+          '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
+            ("melpa" . "http://elpa.emacs-china.org/melpa-stable/")))
+  (setq package-archives
+        '(("gnu"   . "https://elpa.emacs-china.org/gnu/")
+          ("melpa" . "https://elpa.emacs-china.org/melpa-stable/")))
+  )
 
 ;; (add-to-list 'package-archives
 ;;              '("melpa-stable" .
