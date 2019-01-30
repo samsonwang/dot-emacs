@@ -9,7 +9,7 @@
    ("C-x C-b"   . helm-buffers-list)
    ("C-c i"     . helm-imenu))
   :config
-  (helm-mode 1))
+  (helm-mode +1))
 
 (provide 'init-helm)
 ;;; init-helm ends here

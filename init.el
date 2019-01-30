@@ -26,21 +26,20 @@
 ;; My Custom Settings
 ;; 1st priority, core customization
 (require 'init-prerequisites)
-(require 'init-theme)
+(require 'init-ui)
+(require 'init-editor)
 (require 'init-backup)
-(require 'init-tabs)
-(require 'init-misc)
 
 ;; 2nd priority, use-package based config
 (require 'use-package)
 (require 'init-recentf)
 (require 'init-helm)
+(require 'init-global)
 (require 'init-elisp-mode)
 (require 'init-cc-mode)
 (require 'init-python-mode)
 (require 'init-org-mode)
-(require 'init-global)
-(require 'init-diminish)
+(require 'init-misc)
 
 ;; 3rd priority is loaded after init when idle
 (require 'init-idle-require)

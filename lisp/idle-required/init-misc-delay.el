@@ -1,17 +1,27 @@
 ;; -*- coding:utf-8 -*-
 
 ;; replace highlighted when type
-(delete-selection-mode 1)
+(delete-selection-mode +1)
 
 ;; ask before quit
 (setq confirm-kill-emacs 'y-or-n-p)
 
 ;; Show paired parentheses
-(show-paren-mode t)
+(show-paren-mode +1)
 
 ;; insert parentheses in pairs
-(electric-pair-mode t)
+(electric-pair-mode +1)
 (setq electric-pair-preserve-balance nil)
+
+;; show the cursor when moving after big movements in the window
+(require 'beacon)
+(beacon-mode +1)
+(diminish 'beacon-mode)
+
+;; show available keybindings after you start typing
+(require 'which-key)
+(which-key-mode +1)
+(diminish 'which-key-mode)
 
 ;; Use y/n for short
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -20,7 +30,7 @@
 (setq display-time-24hr-format t)
 (setq display-time-day-and-date t)
 (setq system-time-locale "C")  ;; Change time display into English
-                                        ;(display-time)
+;; (display-time)
 
 
 ;;  Fancy display for diary and calendar
@@ -55,8 +65,7 @@
              (setq n (1+ n))
              (get-buffer bufname)))
     (switch-to-buffer (get-buffer-create bufname))
-    (lisp-interaction-mode)
-    ))
+    (lisp-interaction-mode)))
 
 (defun byte-compile-init-dir ()
   "Byte-compile all your lisp files."
@@ -92,8 +101,7 @@
                   (getenv "PATH"))) )
 
 (use-package ox-rst
-  :load-path "site-lisp/ox-rst"
-  )
+  :load-path "site-lisp/ox-rst")
 
 ;; put idlwave directory in cache
 (custom-set-variables

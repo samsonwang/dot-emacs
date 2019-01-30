@@ -2,28 +2,28 @@
 
 ;; package to install
 (defvar my-packages
-  '(diminish
+  '(aggressive-indent
+    beacon
     company
-    yasnippet
-    markdown-mode
+    diminish
+    exec-path-from-shell
+    flycheck
     helm
     helm-projectile
     helm-gtags
     helm-smex
     helm-swoop
-    projectile
-    magit
-    smex
-    htmlize
-    undo-tree
-    flycheck
-    exec-path-from-shell
-    iedit
     highlight-symbol
-    aggressive-indent
-    ))
+    htmlize
+    iedit
+    magit
+    markdown-mode
+    projectile
+    smex
+    undo-tree
+    which-key
+    yasnippet))
 ;; mmm-mako
-
 
 ;; use melpa mirror
 (if *windows*
@@ -32,8 +32,7 @@
             ("melpa" . "http://elpa.emacs-china.org/melpa-stable/")))
   (setq package-archives
         '(("gnu"   . "https://elpa.emacs-china.org/gnu/")
-          ("melpa" . "https://elpa.emacs-china.org/melpa-stable/")))
-  )
+          ("melpa" . "https://elpa.emacs-china.org/melpa-stable/"))))
 
 ;; (add-to-list 'package-archives
 ;;              '("melpa-stable" .

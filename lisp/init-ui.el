@@ -31,6 +31,11 @@
 (unless (display-graphic-p)
   (menu-bar-mode 0))
 
+;; nice scrolling
+(setq scroll-margin 3
+      scroll-conservatively 100000
+      scroll-preserve-screen-position 1)
+
 ;; line number
 ;; (global-linum-mode t)
 (if (display-graphic-p)
@@ -39,9 +44,30 @@
 
 ;; Hide startup message
 (setq inhibit-startup-message t)
+;; Default stracth buffer
+(defun scratch-buffer-message ()
+  (if (executable-find "fortune")
+      (format ";; %s\n\n"
+              (replace-regexp-in-string "\n" "\n;; " ; comment each line
+                                        (replace-regexp-in-string
+                                        ; remove trailing linebreak
+                                         "\\(\n$\\|\\|\\[m *\\|\\[[0-9][0-9]m *\\)" ""
+                                         (shell-command-to-string "fortune"))))
+    (concat ";; Happy hacking "
+            (or user-login-name "")
+            " - Emacs loves you!\n\n")))
+(setq-default initial-scratch-message (scratch-buffer-message))
 
 ;; Enable gloabl line wrap
 (setq truncate-lines nil)
+
+;; frame title = 'foo.bar @ system-name'
+(setq frame-title-format
+      '(" "
+        (:eval (if (buffer-file-name)
+                   (abbreviate-file-name (buffer-file-name))
+                 (buffer-name)))
+			  " - Emacs @ " system-name))
 
 ;; modeline setting
 (setq-default mode-line-buffer-identification
@@ -78,5 +104,5 @@
   (when *linux*
     (set-fontset "Mono" "Noto Sans Mono CJK SC" 16 16)))
 
-(provide 'init-theme)
+(provide 'init-ui)
 ;;; init-theme.el ends here

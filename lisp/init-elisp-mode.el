@@ -2,7 +2,6 @@
 (use-package emacs-lisp
   :mode ("\\.el\\'" . emacs-lisp-mode)
   :interpreter ("emacs-lisp" . emacs-lisp-mode)
-  :diminish aggressive-indent-mode
   :init
   (defun emacs-lisp-mode-hook-func ()
     ;; If you're saving an elisp file, likely the .elc is no longer valid.

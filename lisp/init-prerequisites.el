@@ -29,6 +29,8 @@
 ;; use-package is required for 2rd priority
 (add-to-list 'load-path (emacs-home "site-lisp/use-package"))
 
+;; Setup default open directory
+(when *windows* (setq default-directory "~/"))
+
 ;; init-prerequisites ends here
 (provide 'init-prerequisites)
-

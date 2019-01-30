@@ -1,7 +1,6 @@
 ;; -*- coding:utf-8 -*-
 
 (use-package cc-mode
-  :diminish aggressive-indent-mode
   :mode
   (("\\.c\\'" . c-mode)
    ("\\.cpp\\'" . c++-mode)
@@ -12,8 +11,7 @@
     "hook func for c mode"
     (aggressive-indent-mode)
     (highlight-symbol-mode)
-    (linum-mode)
-    )
+    (linum-mode))
 
   (add-hook 'c-mode-common-hook 'c-mode-common-hook-func)
 
