@@ -1,10 +1,16 @@
 ;; -*- coding:utf-8 -*-
 
-;; replace highlighted when type
-(delete-selection-mode +1)
+;; Use y/n for short
+(fset 'yes-or-no-p 'y-or-n-p)
 
 ;; ask before quit
 (setq confirm-kill-emacs 'y-or-n-p)
+
+;; replace highlighted when type
+(delete-selection-mode +1)
+
+;; highlight the current line
+;; (global-hl-line-mode +1)
 
 ;; Show paired parentheses
 (show-paren-mode +1)
@@ -23,15 +29,11 @@
 (which-key-mode +1)
 (diminish 'which-key-mode)
 
-;; Use y/n for short
-(fset 'yes-or-no-p 'y-or-n-p)
-
 ;; Display system time in modeline
 (setq display-time-24hr-format t)
 (setq display-time-day-and-date t)
 (setq system-time-locale "C")  ;; Change time display into English
 ;; (display-time)
-
 
 ;;  Fancy display for diary and calendar
 (setq calendar-view-diary-initially-flag t
