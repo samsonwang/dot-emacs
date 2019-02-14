@@ -102,8 +102,13 @@
           (concat "d:/Program Files/Git/usr/bin;"
                   (getenv "PATH"))) )
 
+;; org file export to rst
 (use-package ox-rst
   :load-path "site-lisp/ox-rst")
+
+;; qt files
+(use-package qt-pro-mode
+  :mode ("\\.pro\\'" . qt-pro-mode))
 
 ;; put idlwave directory in cache
 (custom-set-variables

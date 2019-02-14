@@ -19,6 +19,7 @@
     magit
     markdown-mode
     projectile
+    qt-pro-mode
     smex
     undo-tree
     which-key
