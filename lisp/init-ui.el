@@ -96,9 +96,35 @@
     (set-fontset-font (frame-parameter nil 'font) charset
                       (font-spec :family chinese-name :size chinese-size))))
 
+(defun get-dpi ()
+  (let* ((attrs (car (display-monitor-attributes-list)))
+         (size (assoc 'mm-size attrs))
+         (sizex (cadr size))
+         (res (cdr (assoc 'geometry attrs)))
+         (resx (- (caddr res) (car res)))
+         dpi)
+    (catch 'exit
+      ;; in terminal
+      (unless sizex
+        (throw 'exit 10))
+      ;; on big screen
+      (when (> sizex 1000)
+        (throw 'exit 10))
+      ;; DPI
+      (* (/ (float resx) sizex) 25.4))))
+
+(defun get-preferred-font-size ()
+  (let ( (dpi (get-dpi)) )
+    (cond
+     ((< dpi 110) 16)
+     ((< dpi 130) 22)
+     ((< dpi 160) 26)
+     (t 28))))
+
 (when (display-graphic-p)
+  (defvar font-size (get-preferred-font-size))
   (when *windows*
-    (set-fontset "Consolas" "微软雅黑" 16 16))
+    (set-fontset "Consolas" "微软雅黑" font-size font-size))
   (when *macintosh*
     (set-fontset "Menlo" "Menlo" 16 16))
   (when *linux*
