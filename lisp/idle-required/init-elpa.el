@@ -23,7 +23,8 @@
     smex
     undo-tree
     which-key
-    yasnippet))
+    yasnippet
+    dockerfile-mode))
 ;; mmm-mako
 
 ;; use melpa mirror
