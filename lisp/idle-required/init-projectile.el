@@ -19,17 +19,20 @@
                  " Projectile"
                (format " [%s]" (projectile-project-name)))))
    )
-  
+
+  ;; projectile bug #1382
+  ;; https://github.com/bbatsov/projectile/issues/1382
+  (require 'subr-x)
+
   :bind
   (("C-c p f"  . projectile-find-file)
    ("C-c p p"  . projectile-switch-project)
-;;   ("C-c p e"  . projectile-recentf)
+   ("C-c p r"  . projectile-recentf)
    ("C-c p i"  . projectile-invalidate-cache)
    )
-  
-  :config  
+
+  :config
   (projectile-global-mode))
 
 (provide 'init-projectile)
 ;; init-projectile.el ends here
-
