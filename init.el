@@ -45,6 +45,7 @@
 (require 'init-idle-require)
 (idle-require 'init-js-mode)
 (idle-require 'init-css-mode)
+(idle-require 'init-go-mode)
 (idle-require 'init-misc-delay)
 (idle-require 'init-key-binding)
 (idle-require 'init-window)

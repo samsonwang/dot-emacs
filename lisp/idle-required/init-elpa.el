@@ -24,7 +24,8 @@
     undo-tree
     which-key
     yasnippet
-    dockerfile-mode))
+    dockerfile-mode
+    go-mode))
 ;; mmm-mako
 
 ;; use melpa mirror
