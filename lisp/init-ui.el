@@ -7,17 +7,13 @@
                (expand-file-name "site-lisp/theme" user-emacs-directory))
 
   ;;(load-theme 'autumn-light t)
-  (load-theme 'dracula t))
+  (load-theme 'dracula t)
 
-  ;; Set initial window size
-;;  (setq initial-frame-alist
-;;		(append '((width . 90) (height . 35)
-;;        (left . 490) (top . 5))
-;;        initial-frame-alist))
+  ;; startup full screen
+  (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
-  ;; Set default subsequent window size
-;;  (setq default-frame-alist
-;;		(append '((width . 85) (height . 30)) default-frame-alist)))
+  (add-to-list 'default-frame-alist '(fullscreen . fullheight)) )
+
 
 ;; hide toolbar and scrollbar
 (when (fboundp 'tool-bar-mode)
