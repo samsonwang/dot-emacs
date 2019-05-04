@@ -112,19 +112,22 @@
 (defun get-preferred-font-size ()
   (let ( (dpi (get-dpi)) )
     (cond
-     ((< dpi 110) 16)
-     ((< dpi 130) 22)
-     ((< dpi 160) 26)
+     ((< dpi 110) 14)
+     ((< dpi 130) 18)
+     ((< dpi 160) 24)
      (t 28))))
+
+;;(message (concat "dpi:" (number-to-string (get-dpi))))
+;;(message (concat "font-size:" (number-to-string (get-preferred-font-size))))
 
 (when (display-graphic-p)
   (defvar font-size (get-preferred-font-size))
   (when *windows*
     (set-fontset "Consolas" "微软雅黑" font-size font-size))
   (when *macintosh*
-    (set-fontset "Menlo" "Menlo" 16 16))
+    (set-fontset "Menlo" "Menlo" font-size font-size))
   (when *linux*
-    (set-fontset "Mono" "Noto Sans Mono CJK SC" 16 16)))
+    (set-fontset "Mono" "Noto Sans Mono CJK SC" font-size font-size)))
 
 (provide 'init-ui)
 ;;; init-theme.el ends here
