@@ -29,8 +29,23 @@
 ;; use-package is required for 2rd priority
 (add-to-list 'load-path (emacs-home "site-lisp/use-package"))
 
-;; Setup default open directory
-(when *windows* (setq default-directory "~/"))
+(when *windows*
+  ;; Setup default open directory
+  (setq default-directory "~/")
+
+  ;; extra path, some elisp need this, such as rgrep's find
+  (setq extra-path '("d:/Program Files/PortableGit/usr/bin"
+                     "d:/Program Files/LLVM/bin"
+                     "d:/Program Files/Global/bin"))
+
+  ;; add to exec-path
+  (setq exec-path (append exec-path extra-path))
+
+  ;; add to PATH env
+  (setenv "PATH"
+          (concat (mapconcat 'identity extra-path ";")
+                  ";"
+                  (getenv "PATH"))))
 
 ;; init-prerequisites ends here
 (provide 'init-prerequisites)

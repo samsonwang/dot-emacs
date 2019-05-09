@@ -95,13 +95,6 @@
   (aggressive-indent-mode -1)
   (message "auto-indent disabled"))
 
-;; add extra mingw path, some elisp need this, such as rgrep's find
-(when *windows*
-  ;;  (add-to-list 'exec-path "d:/Program Files/Git/usr/bin")
-  (setenv "PATH"
-          (concat "d:/Program Files/Git/usr/bin;"
-                  (getenv "PATH"))) )
-
 ;; org file export to rst
 (use-package ox-rst
   :load-path "site-lisp/ox-rst")
