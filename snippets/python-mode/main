@@ -3,4 +3,7 @@
 # key: main
 # --
 def main():
-    $0
+    pass $0
+
+if __name__ == '__main__':
+   main()
