@@ -5,6 +5,7 @@
     "hook func for go mode"
     ;;    (aggressive-indent-mode)
     (highlight-symbol-mode)
+    (highlight-symbol-nav-mode)
     (linum-mode))
 
   (add-hook 'go-mode-hook 'go-mode-hook-func)

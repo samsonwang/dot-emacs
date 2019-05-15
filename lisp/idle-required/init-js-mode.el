@@ -7,6 +7,7 @@
   (defun js-mode-hook-func()
     "hook func for js mode"
     (highlight-symbol-mode)
+    (highlight-symbol-nav-mode)
     (linum-mode))
 
   (add-hook 'js-mode-hook #'js-mode-hook-func)

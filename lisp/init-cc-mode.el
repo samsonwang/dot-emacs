@@ -11,6 +11,7 @@
     "hook func for c mode"
     (aggressive-indent-mode)
     (highlight-symbol-mode)
+    (highlight-symbol-nav-mode)
     (linum-mode))
 
   (add-hook 'c-mode-common-hook 'c-mode-common-hook-func)
