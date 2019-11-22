@@ -74,6 +74,7 @@ projectile.cache
 *.emacs_cache/
 tool/playground.el
 personal.el
+tutorial
 
 # GNU Global tag files
 GPATH

@@ -67,7 +67,9 @@
              (setq n (1+ n))
              (get-buffer bufname)))
     (switch-to-buffer (get-buffer-create bufname))
-    (lisp-interaction-mode)))
+    (lisp-interaction-mode)
+    (insert (scratch-buffer-message))))
+
 
 (defun byte-compile-init-dir ()
   "Byte-compile all your lisp files."
