@@ -11,8 +11,8 @@
 
   ;; startup full screen
   (add-to-list 'initial-frame-alist '(fullscreen . maximized))
-
-  (add-to-list 'default-frame-alist '(fullscreen . fullheight)) )
+  ;; (add-to-list 'default-frame-alist '(fullscreen . fullheight))
+  )
 
 
 ;; hide toolbar and scrollbar
@@ -85,43 +85,44 @@
 
 
 ;; Fontset
-(defun set-fontset (english-name chinese-name english-size chinese-size)
-  (set-face-attribute 'default nil :font
-                      (format  "%s:pixelsize=%d"  english-name english-size))
-  (dolist (charset '(kana han symbol cjk-misc bopomofo))
-    (set-fontset-font (frame-parameter nil 'font) charset
-                      (font-spec :family chinese-name :size chinese-size))))
-
-(defun get-dpi ()
-  (let* ((attrs (car (display-monitor-attributes-list)))
-         (size (assoc 'mm-size attrs))
-         (sizex (cadr size))
-         (res (cdr (assoc 'geometry attrs)))
-         (resx (- (caddr res) (car res)))
-         dpi)
-    (catch 'exit
-      ;; in terminal
-      (unless sizex
-        (throw 'exit 10))
-      ;; on big screen
-      (when (> sizex 1000)
-        (throw 'exit 10))
-      ;; DPI
-      (* (/ (float resx) sizex) 25.4))))
-
-(defun get-preferred-font-size ()
-  (let ( (dpi (get-dpi)) )
-    (cond
-     ((< dpi 110) 16)
-     ((< dpi 130) 18)
-     ((< dpi 160) 24)
-     (t 28))))
-
-(message (concat "dpi:" (number-to-string (get-dpi))
-                 " font-size:" (number-to-string (get-preferred-font-size))))
 
 (when (display-graphic-p)
+  (defun get-dpi ()
+    (let* ((attrs (car (display-monitor-attributes-list)))
+           (size (assoc 'mm-size attrs))
+           (sizex (cadr size))
+           (res (cdr (assoc 'geometry attrs)))
+           (resx (- (caddr res) (car res)))
+           dpi)
+      (catch 'exit
+        ;; in terminal
+        (unless sizex
+          (throw 'exit 10))
+        ;; on big screen
+        (when (> sizex 1000)
+          (throw 'exit 10))
+        ;; DPI
+        (* (/ (float resx) sizex) 25.4))))
+
+  (defun get-preferred-font-size ()
+    (let ( (dpi (get-dpi)) )
+      (cond
+       ((< dpi 110) 16)
+       ((< dpi 130) 18)
+       ((< dpi 160) 24)
+       (t 28))))
+
+  (message (concat "dpi:" (number-to-string (get-dpi))
+                   " font-size:" (number-to-string (get-preferred-font-size))))
+
   (setq font-size (get-preferred-font-size))
+
+  (defun set-fontset (english-name chinese-name english-size chinese-size)
+    (set-face-attribute 'default nil :font
+                        (format  "%s:pixelsize=%d"  english-name english-size))
+    (dolist (charset '(kana han symbol cjk-misc bopomofo))
+      (set-fontset-font (frame-parameter nil 'font) charset
+                        (font-spec :family chinese-name :size chinese-size))))
   (when *windows*
     (set-fontset "Consolas" "微软雅黑" font-size font-size))
   (when *macintosh*
