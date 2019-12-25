@@ -12,21 +12,24 @@
     helm-projectile
     helm-gtags
     helm-smex
-    helm-swoop
+    ;; helm-swoop ;; Type a pattern and all the matching lines are shown in another buffer.
     highlight-symbol
     htmlize
-    iedit
+    iedit ;; Edit multiple regions in the same way simultaneously.
     magit
-    markdown-mode
     projectile
-    qt-pro-mode
     smex
     undo-tree
     which-key
     yasnippet
+    markdown-mode
+    qt-pro-mode
     dockerfile-mode
-    go-mode))
-;; mmm-mako
+    go-mode ;; major mode for golang
+    logview ;; major mode for log files
+    ;; mmm-mako
+    ))
+
 
 ;; use melpa mirror
 (if *windows*
