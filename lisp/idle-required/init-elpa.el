@@ -52,6 +52,8 @@
 ;;              '("melpa-stable" .
 ;;                "http://mirrors.163.com/elpa/melpa-stable/"))
 
+(unless *emacs26*
+  (setq package-check-signature nil))
 
 (require 'cl-lib)
 (defun package-install-ex (my-packages)

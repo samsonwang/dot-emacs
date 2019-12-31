@@ -12,6 +12,8 @@
                          (>= emacs-major-version 24) ) )
 (defconst *emacs25* (and (not (featurep 'xemacs))
                          (>= emacs-major-version 25) ) )
+(defconst *emacs26* (and (not (featurep 'xemacs))
+                         (>= emacs-major-version 26) ) )
 
 ;; init config home
 ;; (setq config-home (file-name-directory load-file-name))
