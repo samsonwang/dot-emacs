@@ -1,13 +1,15 @@
 ;; -*- coding:utf-8 -*-
 
-;; package to install
+;; package to install, in alphabetical order
 (defvar my-packages
   '(aggressive-indent
     beacon
     company
     diminish
+    dockerfile-mode
     exec-path-from-shell
     flycheck
+    go-mode ;; major mode for golang
     helm
     helm-projectile
     helm-gtags
@@ -16,20 +18,18 @@
     highlight-symbol
     htmlize
     iedit ;; Edit multiple regions in the same way simultaneously.
+    logview ;; major mode for log files
     magit
+    markdown-mode
+    ;; mmm-mako
     projectile
+    qt-pro-mode
     smex
     undo-tree
+    ;; use-package ;; already installed in site-lisp folder
     which-key
     yasnippet
-    markdown-mode
-    qt-pro-mode
-    dockerfile-mode
-    go-mode ;; major mode for golang
-    logview ;; major mode for log files
-    ;; mmm-mako
     ))
-
 
 ;; use melpa mirror
 (if *windows*
