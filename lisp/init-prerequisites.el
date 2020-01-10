@@ -30,6 +30,15 @@
 
 ;; use-package is required for 2rd priority
 (add-to-list 'load-path (emacs-home "site-lisp/use-package"))
+(eval-when-compile
+  (require 'use-package))
+;; use-package:diminish need this
+(use-package diminish
+  :config
+  (diminish 'eldoc-mode))
+;; use-pacakge:bind need this
+(use-package bind-key)
+
 
 (when *windows*
   ;; Setup default open directory

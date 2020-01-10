@@ -65,14 +65,6 @@
                  (buffer-name)))
 			  " - Emacs @ " system-name))
 
-;; modeline setting
-(setq-default mode-line-buffer-identification
-              (list
-               ;; put projectile in the first
-               '(:eval (if (fboundp 'projectile-project-name)
-                           (format "[%s] " (projectile-project-name))))
-               (propertized-buffer-identification "%12b")))
-
 ;; show column number in modeline
 (setq column-number-mode t)
 

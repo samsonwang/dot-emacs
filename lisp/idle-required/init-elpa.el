@@ -6,6 +6,7 @@
     beacon
     company
     diminish
+    disable-mouse
     dockerfile-mode
     exec-path-from-shell
     flycheck

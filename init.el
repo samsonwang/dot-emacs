@@ -29,9 +29,6 @@
 (require 'init-ui)
 (require 'init-editor)
 (require 'init-backup)
-
-;; 2nd priority, use-package based config
-(require 'use-package)
 (require 'init-recentf)
 (require 'init-helm)
 (require 'init-global)
@@ -42,7 +39,7 @@
 (require 'init-logview-mode)
 (require 'init-misc)
 
-;; 3rd priority is loaded after init when idle
+;; 2rd priority is loaded after init when idle
 (require 'init-idle-require)
 (idle-require 'init-js-mode)
 (idle-require 'init-css-mode)
