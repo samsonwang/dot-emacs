@@ -14,12 +14,7 @@
   (add-hook 'logview-mode-hook #'logview-mode-hook-func)
 
   :config
-  ;; no littering
-  (setq logview-views-file (concat user-emacs-cache "logview.views"))
-  (setq logview-cache-filename (concat user-emacs-cache "logview-cache.extmap"))
-
   ;;(setq logview-auto-revert-mode 'auto-revert-mode)
-
   ;;(setq datetime-timezone "Asia/Shanghai")
   ;; self-defined log format
   (setq logview-additional-timestamp-formats
@@ -34,6 +29,11 @@
   (setq logview-additional-submodes
         '(("cpp" . ((format  . "TIMESTAMP LEVEL -")
                     (levels  . "cpp")))))
+
+  :custom
+  ;; no littering
+  (logview-views-file (concat user-emacs-cache "logview.views"))
+  (logview-cache-filename (concat user-emacs-cache "logview-cache.extmap"))
   )
 
-  (provide 'init-logview-mode)
+(provide 'init-logview-mode)

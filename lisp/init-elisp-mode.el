@@ -14,7 +14,7 @@
     (aggressive-indent-mode)
     (setq tab-always-indent t)
     (setq tab-width 2))
-  (add-hook 'emacs-lisp-mode-hook 'emacs-lisp-mode-hook-func))
+  (add-hook 'emacs-lisp-mode-hook #'emacs-lisp-mode-hook-func))
 
 ;; init elisp mode ends here
 (provide 'init-elisp-mode)

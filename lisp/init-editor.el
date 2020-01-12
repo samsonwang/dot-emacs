@@ -15,4 +15,8 @@
 (prefer-coding-system 'gbk)
 (prefer-coding-system 'utf-8-unix)
 
+;; aggressive indent
+(use-package aggressive-indent
+  :diminish aggressive-indent-mode)
+
 (provide 'init-editor)

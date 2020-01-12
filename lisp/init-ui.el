@@ -77,7 +77,6 @@
 
 
 ;; Fontset
-
 (when (display-graphic-p)
   (defun get-dpi ()
     (let* ((attrs (car (display-monitor-attributes-list)))

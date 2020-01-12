@@ -6,6 +6,14 @@
    ("\\.cpp\\'" . c++-mode)
    ("\\.h\\'" . c++-mode))
 
+  :bind
+  (:map
+   c++-mode-map
+   ("C-c M-o" . ff-find-related-file)
+   :map
+   c-mode-map
+   ("C-c M-o" . ff-find-related-file))
+
   :init
   (defun c-mode-common-hook-func()
     "hook func for c mode"
@@ -15,14 +23,6 @@
     (linum-mode))
 
   (add-hook 'c-mode-common-hook 'c-mode-common-hook-func)
-
-  :bind
-  (:map
-   c++-mode-map
-   ("C-c M-o" . ff-find-related-file)
-   :map
-   c-mode-map
-   ("C-c M-o" . ff-find-related-file))
 
   :config
   ;; set default style to linux style

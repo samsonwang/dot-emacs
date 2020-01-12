@@ -11,9 +11,6 @@
    ("C-c 9"     . org-agenda))
 
   :init
-  (setq org-agenda-files '("~/Dropbox/Agenda/"))
-  (setq org-default-notes-file "~/Dropbox/Agenda/notes.org")
-
   (defun org-mode-hook-func ()
     (setq tab-width 2)
     (setq truncate-lines nil)
@@ -22,28 +19,24 @@
   (add-hook 'org-mode-hook 'org-mode-hook-func)
 
   :config
-  ;; Add todo keywords
-  (setq org-todo-keywords
-        '((sequence "TODO" "PENDING" "FEEDBACK" "|"
-                    "DONE" "CANCELED")))
-
-  ;; syntax highlight in emacs begin_src block
-  (setq org-src-fontify-natively t)
-
   ;; @https://emacs.stackexchange.com/questions/13820/inline-verbatim-and-code-with-quotes-in-org-mode
   (setcar (nthcdr 2 org-emphasis-regexp-components) " \t\r\n")
   (org-set-emph-re 'org-emphasis-regexp-components
                    org-emphasis-regexp-components)
 
-  ;; enable shift selecting
-  (setq org-support-shift-select t)
-
-  ;; org startup expand all headlines
-  (setq org-startup-folded 'content)
-
   (set-face-attribute 'org-level-1 nil :height 1.2 :bold t)
   (set-face-attribute 'org-level-2 nil :height 1.1 :bold t)
-  (set-face-attribute 'org-level-3 nil :height 1.1))
+  (set-face-attribute 'org-level-3 nil :height 1.1)
+
+  :custom
+  (org-agenda-files '("~/Dropbox/Agenda/"))
+  (org-default-notes-file "~/Dropbox/Agenda/notes.org")
+  (org-startup-folded 'content) ;; org startup expand all headlines
+  (org-support-shift-select t) ;; enable shift selecting
+  (org-src-fontify-natively t) ;; syntax highlight in emacs begin_src block
+  (org-todo-keywords '((sequence "TODO" "PENDING" "FEEDBACK" "|"
+                                 "DONE" "CANCELED"))) ;; Add todo keywords
+  )
 
 (provide 'init-org-mode)
 ;;; init-org-mode.el ends here

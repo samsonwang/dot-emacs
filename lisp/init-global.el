@@ -1,27 +1,11 @@
 ;; -*- coding: utf-8 -*-
 ;; GNU Global Source Code Tag System
-;; 
 
 ;; use helm-gtags for global front end
-
-(require 'use-package)
-
 (use-package helm-gtags
   :if (executable-find "global")
   :diminish helm-gtags-mode
   :after (helm)
-  :init
-  (add-hook 'c-mode-hook 'helm-gtags-mode)
-  (add-hook 'c++-mode-hook 'helm-gtags-mode)
-  (add-hook 'asm-mode-hook 'helm-gtags-mode)
-
-  :config
-  ;; customize
-  (custom-set-variables
-   '(helm-gtags-path-style 'relative)
-   '(helm-gtags-ignore-case t)
-   '(helm-gtags-auto-update t))
-  
   :bind
   (:map helm-gtags-mode-map
         ("M-t" . helm-gtags-find-tag)
@@ -29,6 +13,16 @@
         ("M-s" . helm-gtags-find-symbol)
         ("M-," . helm-gtags-previous-history)
         ("M-." . helm-gtags-next-history))
+
+  :init
+  (add-hook 'c-mode-hook 'helm-gtags-mode)
+  (add-hook 'c++-mode-hook 'helm-gtags-mode)
+  (add-hook 'asm-mode-hook 'helm-gtags-mode)
+
+  :custom
+  (helm-gtags-path-style 'relative)
+  (helm-gtags-ignore-case t)
+  (helm-gtags-auto-update t)
   )
 
 ;; key bindings
@@ -88,4 +82,3 @@
 
 (provide 'init-global)
 ;;; init-global.el ends here
-
