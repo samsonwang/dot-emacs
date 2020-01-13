@@ -4,6 +4,7 @@
 (defvar my-packages
   '(aggressive-indent
     beacon
+    bind-key
     company
     diminish
     disable-mouse
