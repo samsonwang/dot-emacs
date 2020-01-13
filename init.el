@@ -16,8 +16,10 @@
         file-name-handler-alist normal-file-name-handler-alist))
 (add-hook 'after-init-hook #'after-init-hook-func)
 
-;; Prevent Emacs from adding (package-initialize)
+;; prevent from adding (package-initialize)
 (setq package--init-file-ensured t)
+;; prevent from loading packages twice
+(setq package-enable-at-startup nil)
 (package-initialize)
 
 ;; basic load path
