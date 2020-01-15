@@ -54,13 +54,13 @@ Temporary Items
 *.DB-wal
 *#
 .#*
-*elpa/
 *.swp
 *.desktop
 *.lock
 *.dat
 *.elc
 *.history
+elpa/
 .recentf
 .smex-items
 smex-items
@@ -71,7 +71,8 @@ diary
 custom-set-variables.el
 custom.el
 projectile.cache
-*.emacs_cache/
+.emacs_cache/
+.cache/
 tool/playground.el
 personal.el
 tutorial

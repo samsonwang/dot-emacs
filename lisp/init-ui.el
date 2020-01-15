@@ -1,18 +1,68 @@
 ;; -*- coding:utf-8 -*-
 
-;; Enable theme
-(when (display-graphic-p)
 
-  (add-to-list 'custom-theme-load-path
-               (expand-file-name "site-lisp/theme" user-emacs-directory))
+(if (display-graphic-p)
+    (progn
+      ;; Enable theme
+      ;; (add-to-list 'custom-theme-load-path
+      ;; (expand-file-name "site-lisp/theme" user-emacs-directory))
+      ;; (load-theme 'autumn-light t)
+      ;; (load-theme 'dracula t)
+      (use-package dracula-theme)
 
-  ;;(load-theme 'autumn-light t)
-  (load-theme 'dracula t)
+      ;; startup full screen
+      (add-to-list 'initial-frame-alist '(fullscreen . maximized))
+      ;; (add-to-list 'default-frame-alist '(fullscreen . fullheight))
 
-  ;; startup full screen
-  (add-to-list 'initial-frame-alist '(fullscreen . maximized))
-  ;; (add-to-list 'default-frame-alist '(fullscreen . fullheight))
-  )
+      ;; Fontset
+      (defconst screen-dpi
+        (let* ((attrs (car (display-monitor-attributes-list)))
+               (size (assoc 'mm-size attrs))
+               (sizex (cadr size))
+               (res (cdr (assoc 'geometry attrs)))
+               (resx (- (cl-caddr res) (car res)))
+               dpi)
+          (catch 'exit
+            ;; in terminal
+            (unless sizex
+              (throw 'exit 10))
+            ;; on big screen
+            (when (> sizex 1000)
+              (throw 'exit 10))
+            ;; DPI
+            (* (/ (float resx) sizex) 25.4))))
+
+      (defconst font-size
+        (let ( (dpi screen-dpi) )
+          (cond
+           ((< dpi 110) 16)
+           ((< dpi 130) 18)
+           ((< dpi 160) 24)
+           (t 28))))
+
+      (message (concat "dpi:" (number-to-string screen-dpi)
+                       " font-size:" (number-to-string font-size)))
+
+      (defun set-fontset (english-name chinese-name english-size chinese-size)
+        (set-face-attribute 'default nil :font
+                            (format  "%s:pixelsize=%d"  english-name english-size))
+        (dolist (charset '(kana han symbol cjk-misc bopomofo))
+          (set-fontset-font (frame-parameter nil 'font) charset
+                            (font-spec :family chinese-name :size chinese-size))))
+      (when *windows*
+        (set-fontset "Consolas" "微软雅黑" font-size font-size))
+      (when *macintosh*
+        (set-fontset "Menlo" "Menlo" font-size font-size))
+      (when *linux*
+        (set-fontset "Mono" "Noto Sans Mono CJK SC" font-size font-size))
+
+      ;; line number
+      (setq linum-format "%3d"))
+  (progn
+    ;; hide menubar
+    (menu-bar-mode 0)
+    ;; line number in terminal need addtional space
+    (setq linum-format "%3d ")))
 
 
 ;; hide toolbar and scrollbar
@@ -22,21 +72,6 @@
   (scroll-bar-mode 0))
 (when (fboundp 'horizontal-scroll-bar-mode)
   (horizontal-scroll-bar-mode 0))
-
-;; hide menubar in commandline
-(unless (display-graphic-p)
-  (menu-bar-mode 0))
-
-;; nice scrolling
-(setq scroll-margin 3
-      scroll-conservatively 100000
-      scroll-preserve-screen-position 1)
-
-;; line number
-;; (global-linum-mode t)
-(if (display-graphic-p)
-    (setq linum-format "%3d")
-  (setq linum-format "%3d "))
 
 ;; Hide startup message
 (setq inhibit-startup-message t)
@@ -54,16 +89,12 @@
             " - Emacs loves you!\n\n")))
 (setq-default initial-scratch-message (scratch-buffer-message))
 
-;; Enable gloabl line wrap
-(setq truncate-lines nil)
-
-;; frame title = 'foo.bar @ system-name'
-(setq frame-title-format
-      '(" "
-        (:eval (if (buffer-file-name)
-                   (abbreviate-file-name (buffer-file-name))
-                 (buffer-name)))
-			  " - Emacs @ " system-name))
+;; frame title = 'foo.bar - Emacs @ system-name'
+(setq-default frame-title-format
+              '(" " (:eval (if (buffer-file-name)
+                               (abbreviate-file-name (buffer-file-name))
+                             (buffer-name)))
+                " - Emacs @ " system-name))
 
 ;; show column number in modeline
 (setq column-number-mode t)
@@ -75,51 +106,6 @@
 ;; But I need global-mode-string,
 ;; @see http://www.delorie.com/gnu/docs/elisp-manual-21/elisp_360.html
 
-
-;; Fontset
-(when (display-graphic-p)
-  (defun get-dpi ()
-    (let* ((attrs (car (display-monitor-attributes-list)))
-           (size (assoc 'mm-size attrs))
-           (sizex (cadr size))
-           (res (cdr (assoc 'geometry attrs)))
-           (resx (- (cl-caddr res) (car res)))
-           dpi)
-      (catch 'exit
-        ;; in terminal
-        (unless sizex
-          (throw 'exit 10))
-        ;; on big screen
-        (when (> sizex 1000)
-          (throw 'exit 10))
-        ;; DPI
-        (* (/ (float resx) sizex) 25.4))))
-
-  (defun get-preferred-font-size ()
-    (let ( (dpi (get-dpi)) )
-      (cond
-       ((< dpi 110) 16)
-       ((< dpi 130) 18)
-       ((< dpi 160) 24)
-       (t 28))))
-
-  (message (concat "dpi:" (number-to-string (get-dpi))
-                   " font-size:" (number-to-string (get-preferred-font-size))))
-
-  (setq font-size (get-preferred-font-size))
-
-  (defun set-fontset (english-name chinese-name english-size chinese-size)
-    (set-face-attribute 'default nil :font
-                        (format  "%s:pixelsize=%d"  english-name english-size))
-    (dolist (charset '(kana han symbol cjk-misc bopomofo))
-      (set-fontset-font (frame-parameter nil 'font) charset
-                        (font-spec :family chinese-name :size chinese-size))))
-  (when *windows*
-    (set-fontset "Consolas" "微软雅黑" font-size font-size))
-  (when *macintosh*
-    (set-fontset "Menlo" "Menlo" font-size font-size))
-  (when *linux*
-    (set-fontset "Mono" "Noto Sans Mono CJK SC" font-size font-size)))
 
 (provide 'init-ui)
 ;;; init-theme.el ends here

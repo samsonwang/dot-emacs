@@ -21,6 +21,9 @@
                  '(:eval (if (fboundp 'projectile-project-name)
                              (format "[%s] " (projectile-project-name))))
                  (propertized-buffer-identification "%12b")))
+  ;; projectile issue #1382
+  ;; https://github.com/bbatsov/projectile/issues/1382
+  (require 'subr-x)
 
   :custom
   (projectile-completion-system 'helm)
@@ -29,12 +32,7 @@
   (projectile-mode-line
    '(:eval (if (file-remote-p default-directory)
                " Projectile"
-             (format " [%s]" (projectile-project-name))))
-   )
-
-  ;;  (require 'subr-x)
-  ;; projectile bug #1382
-  ;; https://github.com/bbatsov/projectile/issues/1382
+             (format " [%s]" (projectile-project-name)))))
   )
 
 (provide 'init-projectile)

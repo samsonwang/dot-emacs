@@ -19,4 +19,12 @@
 (use-package aggressive-indent
   :diminish aggressive-indent-mode)
 
+;; nice scrolling
+(setq scroll-margin 3
+      scroll-conservatively 100000
+      scroll-preserve-screen-position 1)
+
+;; Enable gloabl line wrap
+(setq truncate-lines nil)
+
 (provide 'init-editor)

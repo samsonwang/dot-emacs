@@ -9,6 +9,7 @@
     diminish
     disable-mouse
     dockerfile-mode
+    dracula-theme
     exec-path-from-shell
     flycheck
     go-mode ;; major mode for golang
