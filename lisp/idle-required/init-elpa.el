@@ -26,6 +26,7 @@
     markdown-mode
     ;; mmm-mako
     projectile
+    pyim
     qt-pro-mode
     smex
     undo-tree
