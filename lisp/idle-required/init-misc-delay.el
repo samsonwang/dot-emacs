@@ -115,12 +115,6 @@
  '(epg-gpg-home-directory "~/.gnupg")
  '(epg-gpg-program (executable-find "gpg"))
  '(epg-gpgconf-program (executable-find "gpgconf")))
-;;(custom-set-variables
-;; '(epg-gpg-home-directory "~/.gnupg")
-;; '(epg-gpg-program "d:/Program Files/PortableGit/usr/bin/gpg.exe")
-;; '(epg-gpgconf-program "d:/Program Files/PortableGit/usr/bin/gpgconf.exe")
-;; )
-
 
 
 ;; misc delay is returned

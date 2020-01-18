@@ -13,14 +13,14 @@
 
 
 ;; Unset C-z for suspend-frame
-(global-unset-key (kbd "C-z"))
+;;(global-unset-key (kbd "C-z"))
 ;;(global-set-key (kbd "C-z") 'suspend-frame-ex)
-(global-set-key (kbd "C-c C-z") #'suspend-frame-ex)
+(global-set-key (kbd "C-x C-z") #'suspend-frame-ex)
 (defun suspend-frame-ex ()
   (interactive)
   (if (display-graphic-p)
-	(message "Suspend-frame kbd disabled for graphical displays.")
-	(suspend-frame)))
+      (message "Suspend-frame kbd disabled for graphical displays.")
+    (suspend-frame)))
 
 
 (global-set-key (kbd "C-c r") #'revert-buffer-no-confirm)

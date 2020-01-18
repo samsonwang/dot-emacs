@@ -68,11 +68,11 @@
 
 ;; Put Custom Setting in a single stand alone file
 (defconst custom-file (emacs-home "custom.el"))
-(load custom-file 'noerror)
+(load custom-file 'noerror t)
 
 ;; personal file
 (defconst personal-file (emacs-home "personal.el"))
-(load personal-file 'noerror)
+(load personal-file 'noerror t)
 
 ;; Calculate and print startup time
 (when (require 'time-date nil t)
