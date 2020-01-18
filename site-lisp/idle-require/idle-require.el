@@ -114,13 +114,16 @@
           (idle-req-log "Loading ALL autoload functions")
           (setq idle-require-symbols (idle-require-get-autoload-symbols)))
         (unless idle-require-timer
-        (setq idle-require-timer
-              (run-with-idle-timer idle-require-idle-delay
-                                   t 'idle-require-load-next))))
+          (setq idle-require-timer
+                (run-with-idle-timer idle-require-idle-delay
+                                     t 'idle-require-load-next))))
     ;; off
     (when idle-require-timer
       (cancel-timer idle-require-timer)
       (setq idle-require-timer nil))))
+
+(defvar idle-require-finish-hook nil
+  "hook run after idle-require load all symbols")
 
 (defun idle-require-get-autoload-symbols ()
   "Return all symbols that will be autoloaded."
@@ -154,6 +157,7 @@
       (sit-for idle-require-load-break)))
   (when (null idle-require-symbols)
     (idle-require-mode 0)
+    (run-hooks 'idle-require-finish-hook)
     (idle-req-log "idle-require finished")))
 
 (provide 'idle-require)
