@@ -26,7 +26,8 @@
     markdown-mode
     ;; mmm-mako
     projectile
-    pyim
+    ;; pyim ;; using a self-tailored version in site-lisp
+    ;; posframe ;; introduced in emacs26, required by emacs26
     qt-pro-mode
     smex
     undo-tree

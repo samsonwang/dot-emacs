@@ -11,10 +11,10 @@
                 (add-to-list 'load-path (emacs-home "lisp/idle-required"))
                 (idle-require-mode +1))))
 
-  (add-hook 'idle-require-finish-hook
-            (lambda ()
-              (unless idle-require-message-verbose
-                (message " "))))
+  ;;(add-hook 'idle-require-finish-hook
+  ;;          (lambda ()
+  ;;            (unless idle-require-message-verbose
+  ;;              (message " "))))
 
   :custom
   (idle-require-idle-delay 1)
