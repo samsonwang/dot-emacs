@@ -105,6 +105,10 @@
 (use-package qt-pro-mode
   :mode ("\\.pro\\'" . qt-pro-mode))
 
+;; matlab files
+(use-package octave
+  :mode ("\\.m\\'" . octave-mode))
+
 ;; put idlwave directory in cache
 (custom-set-variables
  '(idlwave-config-directory
