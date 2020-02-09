@@ -24,13 +24,15 @@
       scroll-conservatively 100000
       scroll-preserve-screen-position 1)
 
-;; Enable gloabl line wrap
+;; enable gloabl line wrap
 (setq truncate-lines nil)
 
 ;; display line number
 ;; linum-mode is slow on large files
 (if *emacs26*
     (use-package display-line-numbers
+      :custom
+      (display-line-numbers-grow-only t)
       :config
       (defun display-margin-line-number ()
         (display-line-numbers-mode)))
