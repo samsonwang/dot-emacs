@@ -67,11 +67,11 @@
 
 
 ;; Put Custom Setting in a single stand alone file
-(defconst custom-file (emacs-home "custom.el"))
+(defconst custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file 'noerror t)
 
 ;; personal file
-(defconst personal-file (emacs-home "personal.el"))
+(defconst personal-file (expand-file-name "personal.el" user-emacs-directory))
 (load personal-file 'noerror t)
 
 ;; Calculate and print startup time

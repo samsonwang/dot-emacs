@@ -46,7 +46,7 @@
 
   :custom
   (pyim-message-verbose nil)
-  (pyim-page-length 5) ;; 选词框显示候选词
+  (pyim-page-length 6) ;; 选词框显示候选词
   (pyim-title "pyim ") ;; 在modeline中显示的名称
   (pyim-dcache-directory (concat user-emacs-cache "pyim")))
 

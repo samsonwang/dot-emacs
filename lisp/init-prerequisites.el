@@ -20,16 +20,14 @@
 ;; (message (concat "Init from: " config-home))
 ;; (message (concat "user-emacs-directory: " user-emacs-directory))
 
-(defun emacs-home (dir-name)
-  (expand-file-name dir-name user-emacs-directory))
-
 ;; temp file litters config home, put them all int a cache directory
-(defconst user-emacs-cache (emacs-home ".cache/"))
+(defconst user-emacs-cache (expand-file-name ".cache/" user-emacs-directory))
 (unless (file-exists-p user-emacs-cache)
   (make-directory user-emacs-cache))
 
 ;; use-package is required for 2rd priority
-(add-to-list 'load-path (emacs-home "site-lisp/use-package"))
+(add-to-list 'load-path
+             (expand-file-name "site-lisp/use-package" user-emacs-directory))
 (require 'use-package)
 ;; use-package:diminish need this
 (use-package diminish
