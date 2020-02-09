@@ -10,7 +10,7 @@
                 (if (file-exists-p (concat buffer-file-name "c"))
                     (delete-file (concat buffer-file-name "c"))))
               nil t)
-    (linum-mode)
+    (display-margin-line-number)
     (aggressive-indent-mode)
     (setq tab-always-indent t)
     (setq tab-width 2))

@@ -1,6 +1,5 @@
 ;; -*- coding:utf-8 -*-
 
-
 (if (display-graphic-p)
     (progn
       ;; Enable theme
@@ -54,16 +53,10 @@
       (when *macintosh*
         (set-fontset "Menlo" "Menlo" font-size font-size))
       (when *linux*
-        (set-fontset "Mono" "Noto Sans Mono CJK SC" font-size font-size))
-
-      ;; line number
-      (setq linum-format "%3d"))
+        (set-fontset "Mono" "Noto Sans Mono CJK SC" font-size font-size)))
   (progn
     ;; hide menubar
-    (menu-bar-mode 0)
-    ;; line number in terminal need addtional space
-    (setq linum-format "%3d ")))
-
+    (menu-bar-mode 0)))
 
 ;; hide toolbar and scrollbar
 (when (fboundp 'tool-bar-mode)
@@ -96,16 +89,12 @@
                              (buffer-name)))
                 " - Emacs @ " system-name))
 
-;; show column number in modeline
-(setq column-number-mode t)
-
 ;; 对于mode line 的详细设置可以查看以下variable
 ;; mode-line-format
 ;; mode-line-modes
 ;; @see http://emacs-fu.blogspot.com/2011/08/customizing-mode-line.html
 ;; But I need global-mode-string,
 ;; @see http://www.delorie.com/gnu/docs/elisp-manual-21/elisp_360.html
-
 
 (provide 'init-ui)
 ;;; init-theme.el ends here

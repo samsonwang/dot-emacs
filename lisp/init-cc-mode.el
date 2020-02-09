@@ -20,7 +20,7 @@
     (aggressive-indent-mode)
     (highlight-symbol-mode)
     (highlight-symbol-nav-mode)
-    (linum-mode))
+    (display-margin-line-number))
 
   (add-hook 'c-mode-common-hook 'c-mode-common-hook-func)
 

@@ -14,7 +14,7 @@
   (defun org-mode-hook-func ()
     (setq tab-width 2)
     (setq truncate-lines nil)
-    (linum-mode))
+    (display-margin-line-number))
 
   (add-hook 'org-mode-hook 'org-mode-hook-func)
 

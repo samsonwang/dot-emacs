@@ -27,4 +27,26 @@
 ;; Enable gloabl line wrap
 (setq truncate-lines nil)
 
+;; display line number
+;; linum-mode is slow on large files
+(if *emacs26*
+    (use-package display-line-numbers
+      :config
+      (defun display-margin-line-number ()
+        (display-line-numbers-mode)))
+  (use-package linum
+    :init
+    (if (display-graphic-p)
+        ;; line number
+        (setq linum-format "%3d")
+      ;; line number in terminal need addtional space
+      (setq linum-format "%3d "))
+    :config
+    (defun display-margin-line-number ()
+      (linum-mode))))
+
+
+;; show column number in modeline
+(setq column-number-mode t)
+
 (provide 'init-editor)
