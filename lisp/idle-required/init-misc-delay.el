@@ -74,7 +74,8 @@
 (defun byte-compile-init-dir ()
   "Byte-compile all your lisp files."
   (interactive)
-  (byte-recompile-directory user-emacs-directory 0))
+  (byte-recompile-directory
+   (expand-file-name "lisp" user-emacs-directory) 0))
 
 ;; site lisp directory for load path
 (defun init-site-lisp-load-path ()
@@ -114,12 +115,14 @@
  '(idlwave-config-directory
    (concat user-emacs-cache "idlwave")))
 
-;; gpg
-(custom-set-variables
- '(epg-gpg-home-directory "~/.gnupg")
- '(epg-gpg-program (executable-find "gpg"))
- '(epg-gpgconf-program (executable-find "gpgconf")))
-
+;; gnupg easypg
+(use-package epa-file
+  :custom
+  (epg-gpg-home-directory "~/.gnupg")
+  (epg-gpg-program (executable-find "gpg"))
+  (epg-gpgconf-program (executable-find "gpgconf"))
+  :config
+  (epa-file-enable))
 
 ;; misc delay is returned
 (provide 'init-misc-delay)

@@ -10,10 +10,9 @@
     (idle-require-mode +1))
   (add-hook 'after-init-hook #'after-init-hook-func)
 
-  ;;(add-hook 'idle-require-finish-hook
-  ;;          (lambda ()
-  ;;            (unless idle-require-message-verbose
-  ;;              (message " "))))
+  (defun idle-require-finish-hook-func ()
+    (message (concat "Emacs is ready, " (startup-echo-area-message))))
+  (add-hook 'idle-require-finish-hook #'idle-require-finish-hook-func)
 
   :custom
   (idle-require-idle-delay 1)
