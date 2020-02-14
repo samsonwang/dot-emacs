@@ -27,6 +27,11 @@
 ;; enable gloabl line wrap
 (setq truncate-lines nil)
 
+;; predicate buffer is too big
+(defun buffer-too-big-p ()
+  (or (> (buffer-size) (* 3000 80))
+      (> (line-number-at-pos (point-max)) 3000)))
+
 ;; display line number
 ;; linum-mode is slow on large files
 (if *emacs26*
@@ -35,7 +40,8 @@
       (display-line-numbers-grow-only t)
       :config
       (defun display-margin-line-number ()
-        (display-line-numbers-mode)))
+        (unless (buffer-too-big-p)
+          (display-line-numbers-mode))))
   (use-package linum
     :init
     (if (display-graphic-p)
@@ -45,7 +51,8 @@
       (setq linum-format "%3d "))
     :config
     (defun display-margin-line-number ()
-      (linum-mode))))
+      (unless (buffer-too-big-p)
+        (linum-mode)))))
 
 
 ;; show column number in modeline
