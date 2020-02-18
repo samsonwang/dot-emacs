@@ -38,7 +38,13 @@
     (use-package display-line-numbers
       :custom
       (display-line-numbers-grow-only t)
+      ;; (display-line-numbers-width 0)
+      ;; (display-line-numbers-widen t)
       :config
+      (set-face-attribute 'line-number nil
+                          :foreground "#565761")
+      ;;(set-face-attribute 'line-number-current-line nil
+      ;;                    :background "white" :foreground "black")
       (defun display-margin-line-number ()
         (unless (buffer-too-big-p)
           (display-line-numbers-mode))))
