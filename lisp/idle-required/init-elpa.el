@@ -34,6 +34,7 @@
     ;; use-package ;; already installed in site-lisp folder
     which-key
     yasnippet
+    yasnippet-snippets
     ))
 
 ;; use melpa mirror
