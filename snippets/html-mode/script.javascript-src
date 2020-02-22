@@ -1,6 +1,0 @@
-# contributor: Jimmy Wu <frozenthrone88@gmail.com>
-# name :<script src="..." type="text/javascript" ></script>
-# group: script
-# key: script.js-src
-# --
-<script src="$1" type="text/javascript"></script>

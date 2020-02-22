@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# name: namespace
-# key: uns
-# --
-namespace ${1:Namespace} {
-
-          `yas/selected-text`
-
-}  // $1

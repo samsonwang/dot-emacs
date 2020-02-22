@@ -1,8 +1,0 @@
-#name : <ol>...</ol>
-#group : list
-# --
-<ol>
-  <li>$0</li>
-  <li></li>
-  <li></li>
-</ol>
