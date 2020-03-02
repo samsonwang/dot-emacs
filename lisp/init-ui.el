@@ -34,10 +34,14 @@
       (defconst font-size
         (let ( (dpi screen-dpi) )
           (cond
-           ((< dpi 110) 16)
-           ((< dpi 130) 18)
-           ((< dpi 160) 24)
-           (t 28))))
+           ((< dpi 100) 24)
+           ((< dpi 120) 26)
+           ((< dpi 140) 27)
+           ((< dpi 170) 28)
+           (t 32))))
+      ;; dell workstation: dpi=96 font=24
+      ;; dell xps13: dpi=165.877 font=28
+      ;; dell xps13 + aoc: dpi=101.940 font=26
 
       (message (concat "dpi:" (number-to-string screen-dpi)
                        " font-size:" (number-to-string font-size)))
