@@ -106,7 +106,7 @@
    If `idle-require-symbols' is a list of files, those will be loaded.
    Otherwise all autoload functions will be loaded.
    Loading all autoload functions can easily triple Emacs' memory footprint."
-  nil " idle-req" nil
+  nil nil nil
   (if idle-require-mode
       ;; on
       (progn

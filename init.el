@@ -1,26 +1,17 @@
 ;; -*- coding: utf-8 -*-
 ;; Emacs Configuration Entrance (init.el)
 
-;; Timing Startup speed
-(defconst emacs-load-start-time (current-time))
-
 ;; Adjust garbage collection thresholds during startup, and thereafter
-(defconst normal-gc-cons-threshold (* 20 1024 1024))
+(defconst normal-gc-cons-threshold (* 128 1024 1024))
 (defconst normal-file-name-handler-alist file-name-handler-alist)
-(setq gc-cons-threshold (* 128 1024 1024)
+(setq gc-cons-threshold (* 512 1024 1024)
       gc-cons-percentage 0.6
       file-name-handler-alist nil)
 (defun after-init-hook-func ()
   (setq gc-cons-threshold normal-gc-cons-threshold
-        gc-cons-percentage 0.1
+        gc-cons-percentage 0.2
         file-name-handler-alist normal-file-name-handler-alist))
-(add-hook 'after-init-hook #'after-init-hook-func)
-
-;; prevent from adding (package-initialize)
-(setq package--init-file-ensured t)
-;; prevent from loading packages twice
-(setq package-enable-at-startup nil)
-(package-initialize)
+(add-hook 'emacs-startup-hook #'after-init-hook-func)
 
 ;; basic load path
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
@@ -66,18 +57,16 @@
 (idle-require 'init-elpa) ;; finally load and install elpa packages
 
 
-;; Put Custom Setting in a single stand alone file
-(defconst custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file 'noerror t)
+;; (load custom-file 'noerror t)
+(when (file-exists-p custom-file)
+  (load custom-file))
 
 ;; personal file
 (defconst personal-file (expand-file-name "personal.el" user-emacs-directory))
 (load personal-file 'noerror t)
 
-;; Calculate and print startup time
-(when (require 'time-date nil t)
-  (message "Emacs startup time: %.3f seconds."
-           (float-time (time-since emacs-load-start-time))))
+;; print startup time
+(message "Emacs startup time: %s" (emacs-init-time))
 
 (provide 'init)
 
