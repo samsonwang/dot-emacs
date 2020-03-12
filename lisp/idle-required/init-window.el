@@ -1,7 +1,7 @@
 
 ;; split window with certain ratio
 
-(defvar sw/ratio-dict
+(defvar samson/ratio-dict
   '((1 . 1.61803398875)
     (2 . 2)
     (3 . 3)
@@ -9,14 +9,14 @@
     (5 . 0.61803398875))
   "retio dictionary")
 
-(defun sw/split-window-horizontally (&optional ratio)
+(defun samson/split-window-horizontally (&optional ratio)
   "Split window horizontally and resize the new window.
 Always focus bigger window."
   (interactive "P")
   (let* (ratio-val)
     (cond
      (ratio
-      (setq ratio-val (cdr (assoc ratio sw/ratio-dict)))
+      (setq ratio-val (cdr (assoc ratio samson/ratio-dict)))
       (split-window-horizontally (floor (/ (window-body-width)
                                            (1+ ratio-val)))))
      (t
@@ -26,14 +26,14 @@ Always focus bigger window."
             (>= ratio-val 1))
         (windmove-right))))
 
-(defun sw/split-window-vertically (&optional ratio)
+(defun samson/split-window-vertically (&optional ratio)
   "Split window vertically and resize the new window.
 Always focus bigger window."
   (interactive "P")
   (let* (ratio-val)
     (cond
      (ratio
-      (setq ratio-val (cdr (assoc ratio sw/ratio-dict)))
+      (setq ratio-val (cdr (assoc ratio samson/ratio-dict)))
       (split-window-vertically (floor (/ (window-body-height)
                                          (1+ ratio-val)))))
      (t
@@ -45,8 +45,8 @@ Always focus bigger window."
             (>= ratio-val 1))
         (windmove-down))))
 
-(global-set-key (kbd "C-x 2") 'sw/split-window-vertically)
-(global-set-key (kbd "C-x 3") 'sw/split-window-horizontally)
+(global-set-key (kbd "C-x 2") 'samson/split-window-vertically)
+(global-set-key (kbd "C-x 3") 'samson/split-window-horizontally)
 
 ;; adjust window size
 (global-set-key (kbd "C-M-<left>") #'shrink-window-horizontally)
@@ -59,4 +59,3 @@ Always focus bigger window."
 
 (provide 'init-window)
 ;; init-window ends here
-

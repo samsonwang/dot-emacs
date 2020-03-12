@@ -9,7 +9,7 @@
 
 ;; set-mark-command is usually mixed with input
 (global-set-key (kbd "C-c m") #'set-mark-command)
-(global-set-key (kbd "C-c M-m") #'set-mark-command)
+;; (global-set-key (kbd "C-c M-m") #'set-mark-command)
 
 
 ;; Unset C-z for suspend-frame
@@ -23,7 +23,7 @@
     (suspend-frame)))
 
 
-(global-set-key (kbd "C-c r") #'revert-buffer-no-confirm)
+(global-set-key (kbd "C-c r") #'revert-buffer)
 (global-set-key (kbd "C-c M-r") #'revert-buffer-no-confirm)
 ;; Source: http://www.emacswiki.org/emacs-en/download/misc-cmds.el
 (defun revert-buffer-no-confirm ()
@@ -31,6 +31,34 @@
   (interactive)
   (revert-buffer :ignore-auto :noconfirm)
   (message "buffer reverted"))
+
+
+(global-set-key (kbd "C-c d") #'delete-this-file)
+;; Delete the current file
+(defun delete-this-file ()
+  "Delete the current file, and kill the buffer."
+  (interactive)
+  (unless (buffer-file-name)
+    (error "No file is currently being edited"))
+  (when (yes-or-no-p (format "Really delete '%s'?"
+                             (file-name-nondirectory buffer-file-name)))
+    (delete-file (buffer-file-name))
+    (kill-this-buffer)))
+
+(global-set-key (kbd "C-c n") #'rename-this-file-and-buffer)
+;; Rename the current file
+(defun rename-this-file-and-buffer (new-name)
+  "Renames both current buffer and file it's visiting to NEW-NAME."
+  (interactive "sNew name: ")
+  (let ((name (buffer-name))
+        (filename (buffer-file-name)))
+    (unless filename
+      (error "Buffer '%s' is not visiting a file!" name))
+    (progn
+      (when (file-exists-p filename)
+        (rename-file filename new-name 1))
+      (set-visited-file-name new-name)
+      (rename-buffer new-name))))
 
 
 (provide 'init-key-binding)
