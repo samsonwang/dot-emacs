@@ -19,6 +19,10 @@
 (electric-pair-mode +1)
 (setq electric-pair-preserve-balance nil)
 
+;; delete files to trash, as an extra layer of precaution against
+;; accidentally deleting wanted files.
+(setq delete-by-moving-to-trash t)
+
 ;; show the cursor when moving after big movements in the window
 (require 'beacon)
 (beacon-mode +1)
