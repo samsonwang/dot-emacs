@@ -6,6 +6,7 @@
     beacon
     ;; bind-key ;; bind-key is shipped with use-package
     company
+    cmake-mode
     diminish
     disable-mouse
     dockerfile-mode

@@ -1,17 +1,14 @@
 ;; -*- coding: utf-8 -*-
 ;; Emacs Configuration Entrance (init.el)
 
-;; Adjust garbage collection thresholds during startup, and thereafter
-(defconst normal-gc-cons-threshold (* 128 1024 1024))
+;; adjust garbage collection thresholds during startup, and thereafter
 (defconst normal-file-name-handler-alist file-name-handler-alist)
-(setq gc-cons-threshold (* 512 1024 1024)
-      gc-cons-percentage 0.6
-      file-name-handler-alist nil)
-(defun after-init-hook-func ()
-  (setq gc-cons-threshold normal-gc-cons-threshold
-        gc-cons-percentage 0.2
-        file-name-handler-alist normal-file-name-handler-alist))
-(add-hook 'emacs-startup-hook #'after-init-hook-func)
+(setq file-name-handler-alist nil
+      gc-cons-percentage 0.5
+      gc-cons-threshold #x40000000) ;; 1GB
+(defun emacs-startup-hook-func ()
+  (setq file-name-handler-alist normal-file-name-handler-alist))
+(add-hook 'emacs-startup-hook #'emacs-startup-hook-func)
 
 ;; basic load path
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
@@ -54,6 +51,7 @@
 (idle-require 'init-dired)
 (idle-require 'init-window-margin)
 (idle-require 'init-pyim)
+(idle-require 'init-gc)
 (idle-require 'init-elpa) ;; finally load and install elpa packages
 
 

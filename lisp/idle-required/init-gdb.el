@@ -1,4 +1,3 @@
-
 ;; -*- coding: utf-8 -*-
 
 ;; enable gdb many windows
@@ -6,4 +5,3 @@
 
 (provide 'init-gdb)
 ;; init-gdb ends here
-

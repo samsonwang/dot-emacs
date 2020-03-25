@@ -42,7 +42,7 @@
     (error "No file is currently being edited"))
   (when (yes-or-no-p (format "Really delete '%s'?"
                              (file-name-nondirectory buffer-file-name)))
-    (delete-file (buffer-file-name))
+    (delete-file (buffer-file-name) t)
     (kill-this-buffer)))
 
 (global-set-key (kbd "C-c n") #'rename-this-file-and-buffer)
