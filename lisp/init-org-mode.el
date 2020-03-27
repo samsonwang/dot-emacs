@@ -29,8 +29,8 @@
   (set-face-attribute 'org-level-3 nil :height 1.1)
 
   :custom
-  (org-agenda-files '("~/Dropbox/Agenda/"))
-  (org-default-notes-file "~/Dropbox/Agenda/notes.org")
+  (org-agenda-files '("~/.agenda/"))
+  (org-default-notes-file "~/.agenda/notes.org")
   (org-startup-folded 'content) ;; org startup expand all headlines
   (org-support-shift-select t) ;; enable shift selecting
   (org-src-fontify-natively t) ;; syntax highlight in emacs begin_src block
