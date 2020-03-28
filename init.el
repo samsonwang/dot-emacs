@@ -26,7 +26,7 @@
 (require 'init-cc-mode)
 (require 'init-python-mode)
 (require 'init-org-mode)
-(require 'init-logview-mode)
+(require 'init-log-mode)
 
 ;; 2rd priority is loaded after init when idle
 (require 'init-idle-require)

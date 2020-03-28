@@ -56,7 +56,7 @@
 
 
 (when *windows*
-  ;; Setup default open directory
+  ;; setup default open directory
   (setq default-directory "~/")
 
   ;; extra path, some elisp need this, such as rgrep's find

@@ -1,4 +1,9 @@
 
+;; no littering
+(setq-default
+ logview-views-file (concat user-emacs-cache "logview.views")
+ logview-cache-filename (concat user-emacs-cache "logview-cache.extmap"))
+
 (use-package logview
   ;; :interpreter ("logview" . logview-mode)
   :init
@@ -30,10 +35,10 @@
         '(("cpp" . ((format  . "TIMESTAMP LEVEL -")
                     (levels  . "cpp")))))
 
-  :custom
+  ;;:custom
   ;; no littering
-  (logview-views-file (concat user-emacs-cache "logview.views"))
-  (logview-cache-filename (concat user-emacs-cache "logview-cache.extmap"))
+  ;; (logview-views-file (concat user-emacs-cache "logview.views"))
+  ;; (logview-cache-filename (concat user-emacs-cache "logview-cache.extmap"))
   )
 
 (provide 'init-logview-mode)
