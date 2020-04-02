@@ -22,7 +22,7 @@
     highlight-symbol
     htmlize
     iedit ;; Edit multiple regions in the same way simultaneously.
-    logview ;; major mode for log files
+    ;; logview ;; major mode for log files
     magit
     markdown-mode
     ;; mmm-mako
