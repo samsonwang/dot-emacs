@@ -2,6 +2,7 @@
 
 (if (display-graphic-p)
     (progn
+      "graphical user interface"
       ;; Enable theme
       ;; (add-to-list 'custom-theme-load-path
       ;; (expand-file-name "site-lisp/theme" user-emacs-directory))
@@ -52,13 +53,21 @@
         (dolist (charset '(kana han symbol cjk-misc bopomofo))
           (set-fontset-font (frame-parameter nil 'font) charset
                             (font-spec :family chinese-name :size chinese-size))))
+
       (when *windows*
-        (set-fontset "Consolas" "微软雅黑" font-size font-size))
+        ;; check if font is installed
+        (if (member "SauceCodePro Nerd Font Mono" (font-family-list))
+            (set-fontset "SauceCodePro Nerd Font Mono" "微软雅黑" font-size font-size)
+          (set-fontset "Consolas" "微软雅黑" font-size font-size)))
       (when *macintosh*
         (set-fontset "Menlo" "Menlo" font-size font-size))
       (when *linux*
-        (set-fontset "Mono" "Noto Sans Mono CJK SC" font-size font-size)))
+        (set-fontset "Mono" "Noto Sans Mono CJK SC" font-size font-size))
+      ;; specify font for all unicode characters
+      (when (member "Symbola" (font-family-list))
+        (set-fontset-font t 'unicode "Symbola" nil 'prepend)))
   (progn
+    "non graphical user interface"
     ;; hide menubar
     (menu-bar-mode 0)))
 
