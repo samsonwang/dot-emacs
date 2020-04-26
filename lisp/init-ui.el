@@ -55,10 +55,10 @@
                             (font-spec :family chinese-name :size chinese-size))))
 
       (when *windows*
-        ;; check if font is installed
+        ;; check whether font is installed
         (if (member "SauceCodePro Nerd Font Mono" (font-family-list))
-            (set-fontset "SauceCodePro Nerd Font Mono" "微软雅黑" font-size font-size)
-          (set-fontset "Consolas" "微软雅黑" font-size font-size)))
+            (set-fontset "SauceCodePro Nerd Font Mono" "Microsoft YaHei" font-size font-size)
+          (set-fontset "Consolas" "Microsoft YaHei" font-size font-size)))
       (when *macintosh*
         (set-fontset "Menlo" "Menlo" font-size font-size))
       (when *linux*
