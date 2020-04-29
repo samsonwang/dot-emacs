@@ -11,6 +11,7 @@
     disable-mouse
     dockerfile-mode
     dracula-theme
+    elfeed
     exec-path-from-shell
     flycheck
     go-mode ;; major mode for golang

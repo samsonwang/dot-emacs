@@ -51,6 +51,7 @@
 (idle-require 'init-dired)
 (idle-require 'init-window-margin)
 (idle-require 'init-pyim)
+(idle-require 'init-elfeed)
 (idle-require 'init-gc)
 (idle-require 'init-elpa) ;; finally load and install elpa packages
 
