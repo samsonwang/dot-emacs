@@ -14,6 +14,7 @@
                          (>= emacs-major-version 25) ) )
 (defconst *emacs26* (and (not (featurep 'xemacs))
                          (>= emacs-major-version 26) ) )
+(defconst *gnutls* (null (gnutls-available-p)))
 
 ;; Put Custom Setting in a single stand alone file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))

@@ -40,7 +40,7 @@
     ))
 
 ;; use melpa mirror
-(if *windows*
+(if *gnutls*
     (setq package-archives
           '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
             ("melpa" . "http://elpa.emacs-china.org/melpa-stable/")))
