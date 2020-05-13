@@ -95,12 +95,12 @@
             " - Emacs loves you!\n\n")))
 (setq-default initial-scratch-message (scratch-buffer-message))
 
-;; frame title = 'foo.bar - Emacs @ system-name'
+;; frame title = 'foo.bar @ system-name - Emacs '
 (setq-default frame-title-format
               '(" " (:eval (if (buffer-file-name)
                                (abbreviate-file-name (buffer-file-name))
                              (buffer-name)))
-                " - Emacs @ " system-name))
+                " @ " system-name " - Emacs"))
 
 ;; 对于mode line 的详细设置可以查看以下variable
 ;; mode-line-format
