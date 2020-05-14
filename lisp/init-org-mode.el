@@ -24,18 +24,19 @@
   (org-set-emph-re 'org-emphasis-regexp-components
                    org-emphasis-regexp-components)
 
-  (set-face-attribute 'org-level-1 nil :height 1.2 :bold t)
-  (set-face-attribute 'org-level-2 nil :height 1.1 :bold t)
-  (set-face-attribute 'org-level-3 nil :height 1.1)
+  (set-face-attribute 'org-document-title nil :height 1.1)
+  ;; (set-face-attribute 'org-level-1 nil :height 1 :bold t)
+  ;; (set-face-attribute 'org-level-2 nil :height 1)
+  ;; (set-face-attribute 'org-level-3 nil :height 1)
 
   :custom
   (org-agenda-files '("~/.agenda/"))
   (org-default-notes-file "~/.agenda/notes.org")
-  (org-startup-folded 'content) ;; org startup expand all headlines
-  (org-support-shift-select t) ;; enable shift selecting
-  (org-src-fontify-natively t) ;; syntax highlight in emacs begin_src block
+  (org-startup-folded 'content) ; org startup expand all headlines
+  (org-support-shift-select t) ; enable shift selecting
+  (org-src-fontify-natively t) ; syntax highlight in emacs begin_src block
   (org-todo-keywords '((sequence "TODO" "PENDING" "FEEDBACK" "|"
-                                 "DONE" "CANCELED"))) ;; Add todo keywords
+                                 "DONE" "CANCELED"))) ; Add todo keywords
   )
 
 (provide 'init-org-mode)

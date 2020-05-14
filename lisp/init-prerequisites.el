@@ -20,9 +20,10 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 ;; temp file litters config home, put them all int a cache directory
-(defconst user-emacs-cache (expand-file-name ".cache/" user-emacs-directory))
+;;(defconst user-emacs-cache (expand-file-name ".cache/" user-emacs-directory))
+(defconst user-emacs-cache "~/.cache/emacs/")
 (unless (file-exists-p user-emacs-cache)
-  (make-directory user-emacs-cache))
+  (make-directory user-emacs-cache t))
 
 (require 'package)
 
