@@ -3,7 +3,7 @@
 # key: <nm
 # --
 #+BEGIN_COMMENT
-.. title:
+.. title: $1
 .. slug: `(file-name-nondirectory (file-name-sans-extension buffer-file-name))`
 .. date: `(format-time-string "%Y-%m-%d %H:%M:%S UTC+08:00")`
 .. tags: nikola
@@ -15,6 +15,9 @@
 #+END_COMMENT
 #+OPTIONS: num:nil
 
-#+TITLE:
+#+TITLE: $1
 
 {{{TEASER_END}}}
+
+
+（全文完）
