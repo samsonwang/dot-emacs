@@ -45,20 +45,19 @@
     (delete-file (buffer-file-name) t)
     (kill-this-buffer)))
 
+
 (global-set-key (kbd "C-c n") #'rename-this-file-and-buffer)
 ;; Rename the current file
 (defun rename-this-file-and-buffer (new-name)
   "Renames both current buffer and file it's visiting to NEW-NAME."
-  (interactive "sNew name: ")
-  (let ((name (buffer-name))
-        (filename (buffer-file-name)))
-    (unless filename
-      (error "Buffer '%s' is not visiting a file!" name))
-    (progn
-      (when (file-exists-p filename)
-        (rename-file filename new-name 1))
-      (set-visited-file-name new-name)
-      (rename-buffer new-name))))
+  (interactive
+   (let ((filename (buffer-file-name)))
+     (unless filename
+       (error "Buffer '%s' is not visiting a file!" (buffer-name)))
+     (read-string "New name: " (file-name-nondirectory filename))))
+  (rename-file (buffer-file-name) new-name)
+  (set-visited-file-name new-name)
+  (rename-buffer new-name))
 
 
 (provide 'init-key-binding)
