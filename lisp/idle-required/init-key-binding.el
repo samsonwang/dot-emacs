@@ -54,7 +54,8 @@
    (let ((filename (buffer-file-name)))
      (unless filename
        (error "Buffer '%s' is not visiting a file!" (buffer-name)))
-     (read-string "New name: " (file-name-nondirectory filename))))
+     (list (read-string "New name: " (file-name-nondirectory filename)))))
+  ;;(message (format "Rename file to %s" new-name))
   (rename-file (buffer-file-name) new-name)
   (set-visited-file-name new-name)
   (rename-buffer new-name))
