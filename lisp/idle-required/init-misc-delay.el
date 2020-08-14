@@ -72,6 +72,7 @@
              (get-buffer bufname)))
     (switch-to-buffer (get-buffer-create bufname))
     (lisp-interaction-mode)
+    (setq buffer-offer-save t) ; prevent data loss
     (insert (scratch-buffer-message))))
 
 
