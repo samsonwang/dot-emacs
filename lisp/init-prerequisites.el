@@ -8,12 +8,14 @@
                       (eq system-type 'linux)) )
 (defconst *unix* (or *linux* (eq system-type 'usg-unix-v)
                      (eq system-type 'berkeley-unix)) )
-(defconst *emacs24* (and (not (featurep 'xemacs))
-                         (>= emacs-major-version 24) ) )
+
 (defconst *emacs25* (and (not (featurep 'xemacs))
                          (>= emacs-major-version 25) ) )
 (defconst *emacs26* (and (not (featurep 'xemacs))
                          (>= emacs-major-version 26) ) )
+(defconst *emacs27* (and (not (featurep 'xemacs))
+                         (>= emacs-major-version 27) ) )
+
 (defconst *gnutls* (null (gnutls-available-p)))
 
 ;; Put Custom Setting in a single stand alone file
