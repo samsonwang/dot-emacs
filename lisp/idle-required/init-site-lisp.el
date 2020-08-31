@@ -1,6 +1,6 @@
 ;; Set load path
 
-(eval-when-compile (require 'cl))
+(eval-when-compile (require 'cl-lib))
 
 (if (fboundp 'normal-top-level-add-to-load-path)
     (let* ((my-lisp-dir "~/.emacs.d/site-lisp/")
@@ -14,4 +14,3 @@
                load-path)))))
 
 (provide 'init-site-lisp)
-

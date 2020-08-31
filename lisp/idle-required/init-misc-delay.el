@@ -84,7 +84,7 @@
 
 ;; site lisp directory for load path
 (defun init-site-lisp-load-path ()
-  (eval-when-compile (require 'cl))
+  (eval-when-compile (require 'cl-lib))
   (if (fboundp 'normal-top-level-add-to-load-path)
       (let* ((site-lisp-dir "~/.emacs.d/site-lisp/")
              (default-directory site-lisp-dir))

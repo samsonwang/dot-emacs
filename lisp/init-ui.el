@@ -8,8 +8,9 @@
       ;; (expand-file-name "site-lisp/theme" user-emacs-directory))
       ;; (load-theme 'autumn-light t)
 
-      ;; (use-package dracula-theme)
-      (load-theme 'dracula t)
+      (use-package dracula-theme
+        :config
+        (load-theme 'dracula t))
 
       ;; startup full screen
       (add-to-list 'initial-frame-alist '(fullscreen . maximized))
