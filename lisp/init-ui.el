@@ -66,6 +66,7 @@
       (when *linux*
         (set-fontset "Mono" "Noto Sans Mono CJK SC" font-size font-size))
       ;; specify font for all unicode characters
+      ;; http://xahlee.info/comp/unicode_font_download.html
       (when (member "Symbola" (font-family-list))
         (set-fontset-font t 'unicode "Symbola" nil 'prepend)))
   (progn
