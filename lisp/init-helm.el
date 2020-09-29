@@ -1,7 +1,9 @@
 ;; -*- coding : utf8-*-
 
 (use-package helm
-  :diminish (helm-mode helm-ff-cache-mode)
+  :diminish (helm-mode)
+  :custom
+  (helm-ff-cache-mode-lighter "")
   :bind
   (("C-c o"     . helm-occur)
    ("C-x C-f"   . helm-find-files)
