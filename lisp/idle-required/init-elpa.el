@@ -34,6 +34,7 @@
     smex
     undo-tree
     ;; use-package ;; already installed in site-lisp folder
+    wc-mode
     which-key
     yasnippet
     yasnippet-snippets
