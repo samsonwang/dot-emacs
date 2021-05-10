@@ -107,27 +107,42 @@
 (use-package ox-rst
   :load-path "site-lisp/ox-rst")
 
-;; qt files
-(use-package qt-pro-mode
-  :mode ("\\.pro\\'" . qt-pro-mode))
-
 ;; matlab files
 (use-package octave
   :mode ("\\.m\\'" . octave-mode))
 
+;; qt files
+(use-package qt-pro-mode
+  :mode ("\\.pro\\'" . qt-pro-mode))
+
+;; actually, I do not need idlwave-mode, *.pro file defaults to idlwave, and I changed
+;; it to qt-pro-mode
 ;; put idlwave directory in cache
-(custom-set-variables
- '(idlwave-config-directory
-   (concat user-emacs-cache "idlwave")))
+;;(custom-set-variables
+;; '(idlwave-config-directory
+;;   (concat user-emacs-cache "idlwave")))
+;;(use-package idlwave
+;;  :custom
+;;  (idlwave-config-directory (expand-file-name "idlwave/" user-emacs-cache)))
 
 ;; gnupg easypg
 (use-package epa-file
   :custom
-  (epg-gpg-home-directory "~/.gnupg")
+  (epg-gpg-home-directory "~/.gnupg/")
   (epg-gpg-program (executable-find "gpg"))
   (epg-gpgconf-program (executable-find "gpgconf"))
   :config
   (epa-file-enable))
+
+;; eshell
+(use-package eshell
+  :custom
+  (eshell-directory-name (expand-file-name "eshell/" user-emacs-cache)))
+
+;; url
+(use-package url
+  :custom
+  (url-configuration-directory (expand-file-name "url/" user-emacs-cache)))
 
 ;; misc delay is returned
 (provide 'init-misc-delay)

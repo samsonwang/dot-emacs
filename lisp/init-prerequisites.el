@@ -77,5 +77,5 @@
                   ";"
                   (getenv "PATH"))))
 
-;; init-prerequisites ends here
 (provide 'init-prerequisites)
+;; init-prerequisites ends here
