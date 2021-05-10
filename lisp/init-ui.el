@@ -57,18 +57,25 @@
                             (font-spec :family chinese-name :size chinese-size))))
 
       (when *windows*
-        ;; check whether font is installed
-        (if (member "SauceCodePro Nerd Font Mono" (font-family-list))
-            (set-fontset "SauceCodePro Nerd Font Mono" "Microsoft YaHei" font-size font-size)
-          (set-fontset "Consolas" "Microsoft YaHei" font-size font-size)))
+        (cond
+         ;; chectk whether font is installed
+         ((member "Source Code Pro" (font-family-list))
+          (set-fontset "Source Code Pro" "Microsoft YaHei" font-size font-size))
+         ((member "SauceCodePro Nerd Font Mono" (font-family-list))
+          (set-fontset "SauceCodePro Nerd Font Mono" "Microsoft YaHei" font-size font-size))
+         (t
+          (set-fontset "Consolas" "Microsoft YaHei" font-size font-size))))
+
       (when *macintosh*
         (set-fontset "Menlo" "Menlo" font-size font-size))
       (when *linux*
         (set-fontset "Mono" "Noto Sans Mono CJK SC" font-size font-size))
+
       ;; specify font for all unicode characters
       ;; http://xahlee.info/comp/unicode_font_download.html
       (when (member "Symbola" (font-family-list))
         (set-fontset-font t 'unicode "Symbola" nil 'prepend)))
+
   (progn
     "non graphical user interface"
     ;; hide menubar
