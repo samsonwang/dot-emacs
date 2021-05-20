@@ -14,27 +14,25 @@
 
 ;; Unset C-z for suspend-frame
 ;;(global-unset-key (kbd "C-z"))
-;;(global-set-key (kbd "C-z") 'suspend-frame-ex)
+(global-set-key (kbd "C-z") #'suspend-frame-ex)
 (global-set-key (kbd "C-x C-z") #'suspend-frame-ex)
 (defun suspend-frame-ex ()
   (interactive)
   (if (display-graphic-p)
-      (message "Suspend-frame kbd disabled for graphical displays.")
+      (message "suspend-frame kbd is disabled for graphical displays")
     (suspend-frame)))
 
-
+;; Source: http://www.emacswiki.org/emacs-en/download/misc-cmds.el
 (global-set-key (kbd "C-c r") #'revert-buffer)
 (global-set-key (kbd "C-c M-r") #'revert-buffer-no-confirm)
-;; Source: http://www.emacswiki.org/emacs-en/download/misc-cmds.el
 (defun revert-buffer-no-confirm ()
   "Revert buffer without confirmation."
   (interactive)
   (revert-buffer :ignore-auto :noconfirm)
   (message "buffer reverted"))
 
-
-(global-set-key (kbd "C-c d") #'delete-this-file)
 ;; Delete the current file
+(global-set-key (kbd "C-c d") #'delete-this-file)
 (defun delete-this-file ()
   "Delete the current file, and kill the buffer."
   (interactive)
@@ -45,9 +43,8 @@
     (delete-file (buffer-file-name) t)
     (kill-this-buffer)))
 
-
-(global-set-key (kbd "C-c n") #'rename-this-file-and-buffer)
 ;; Rename the current file
+(global-set-key (kbd "C-c n") #'rename-this-file-and-buffer)
 (defun rename-this-file-and-buffer (new-name)
   "Renames both current buffer and file it's visiting to NEW-NAME."
   (interactive
