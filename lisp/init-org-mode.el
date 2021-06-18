@@ -8,7 +8,8 @@
   :diminish org-indent-mode
   :bind
   (("C-c 0"     . org-capture)
-   ("C-c 9"     . org-agenda))
+   ("C-c 9"     . org-agenda)
+   ("C-c 。"    . org-time-stamp))
 
   :init
   (defun org-mode-hook-func ()
