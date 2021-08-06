@@ -48,9 +48,12 @@
 ;; (message (concat "user-emacs-directory: " user-emacs-directory))
 
 ;; use-package is required for 2rd priority
-(add-to-list 'load-path
-             (expand-file-name "site-lisp/use-package" user-emacs-directory))
-(require 'use-package)
+(unless (require 'use-package nil 'noerror)
+  (add-to-list 'load-path
+               (expand-file-name "site-lisp/use-package" user-emacs-directory))
+  (message "loading site-lisp/use-package")
+  (require 'use-package))
+
 ;; use-package:diminish need this
 (use-package diminish
   :config

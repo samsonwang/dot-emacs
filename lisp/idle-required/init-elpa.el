@@ -33,25 +33,28 @@
     qt-pro-mode
     smex
     undo-tree
-    ;; use-package ;; already installed in site-lisp folder
+    use-package ;; already installed in site-lisp folder
     wc-mode
     which-key
     yasnippet
     yasnippet-snippets
+    yaml-mode
+    ;;
+
     ))
 
 ;; use melpa mirror
-(if *gnutls*
-    (setq package-archives
-          '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
-            ("melpa" . "http://elpa.emacs-china.org/melpa-stable/")))
-  (setq package-archives
-        '(("gnu"   . "https://elpa.emacs-china.org/gnu/")
-          ("melpa" . "https://elpa.emacs-china.org/melpa-stable/"))))
+;; (if *gnutls*
+;;     (setq package-archives
+;;           '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
+;;             ("melpa" . "http://elpa.emacs-china.org/melpa-stable/")))
+;; (setq package-archives
+;;       '(("gnu"   . "https://elpa.emacs-china.org/gnu/")
+;;         ("melpa" . "https://elpa.emacs-china.org/melpa-stable/"))))
 
-;; (add-to-list 'package-archives
-;;              '("melpa-stable" .
-;;                "https://stable.melpa.org/packages/"))
+(add-to-list 'package-archives
+             '("melpa" .
+               "https://stable.melpa.org/packages/"))
 
 ;; (setq package-archives
 ;;       '(("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
