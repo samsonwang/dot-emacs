@@ -11,6 +11,9 @@
 (global-set-key (kbd "C-c m") #'set-mark-command)
 ;; (global-set-key (kbd "C-c M-m") #'set-mark-command)
 
+;; keybinding for chinese input method
+(global-set-key (kbd "C-x 【") #'backward-page)
+(global-set-key (kbd "C-x 】") #'forward-page)
 
 ;; Unset C-z for suspend-frame
 ;;(global-unset-key (kbd "C-z"))
