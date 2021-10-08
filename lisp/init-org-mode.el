@@ -33,6 +33,7 @@
   :custom
   (org-agenda-files '("~/.agenda/"))
   (org-default-notes-file "~/.agenda/notes.org")
+  (org-adapt-indentation nil) ; do not indent
   (org-startup-folded 'content) ; org startup expand all headlines
   (org-support-shift-select t) ; enable shift selecting
   (org-src-fontify-natively t) ; syntax highlight in emacs begin_src block
