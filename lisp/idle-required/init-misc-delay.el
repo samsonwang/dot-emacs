@@ -144,5 +144,24 @@
   :custom
   (url-configuration-directory (expand-file-name "url/" user-emacs-cache)))
 
+(use-package hideshow
+  :ensure nil
+  :diminish hs-minor-mode
+  :bind (:map prog-mode-map
+              ("C-c TAB" . hs-toggle-hiding)
+              ("M-+" . hs-show-all))
+  :hook (prog-mode . hs-minor-mode)
+  :custom
+  (hs-special-modes-alist
+   (mapcar 'purecopy
+           '((c-mode "{" "}" "/[*/]" nil nil)
+             (c++-mode "{" "}" "/[*/]" nil nil)
+             (rust-mode "{" "}" "/[*/]" nil nil)))))
+
+(use-package subword
+  ;;:hook (after-init . global-subword-mode)
+  :diminish subword-mode)
+;;  :custom (global-subword-mode))
+
 ;; misc delay is returned
 (provide 'init-misc-delay)
