@@ -37,6 +37,7 @@
   (org-startup-folded 'content) ; org startup expand all headlines
   (org-support-shift-select t) ; enable shift selecting
   (org-src-fontify-natively t) ; syntax highlight in emacs begin_src block
+  (org-edit-src-content-indentation 0)
   (org-todo-keywords '((sequence "TODO" "PENDING" "FEEDBACK" "|"
                                  "DONE" "CANCELED"))) ; Add todo keywords
   )
