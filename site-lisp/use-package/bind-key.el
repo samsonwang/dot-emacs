@@ -7,6 +7,8 @@
 ;; Created: 16 Jun 2012
 ;; Modified: 29 Nov 2017
 ;; Version: 2.4
+;; Package-Version: 2.4.1
+;; Package-Commit: caa92f1d64fc25480551757d854b4b49981dfa6b
 ;; Keywords: keys keybinding config dotemacs
 ;; URL: https://github.com/jwiegley/use-package
 
@@ -94,7 +96,7 @@
 ;;
 ;;   M-x describe-personal-keybindings
 ;;
-;; This display will tell you if you've overriden a default keybinding, and
+;; This display will tell you if you've overridden a default keybinding, and
 ;; what the default was.  Also, it will tell you if the key was rebound after
 ;; your binding it with `bind-key', and what it was rebound it to.
 
@@ -154,10 +156,12 @@ spelled-out keystrokes, e.g., \"C-c C-z\". See documentation of
 
 COMMAND must be an interactive function or lambda form.
 
-KEYMAP, if present, should be a keymap and not a quoted symbol.
+KEYMAP, if present, should be a keymap variable or symbol.
 For example:
 
   (bind-key \"M-h\" #'some-interactive-function my-mode-map)
+
+  (bind-key \"M-h\" #'some-interactive-function 'my-mode-map)
 
 If PREDICATE is non-nil, it is a form evaluated to determine when
 a key should be bound. It must return non-nil in such cases.
@@ -171,10 +175,11 @@ can safely be called at any time."
     `(let* ((,namevar ,key-name)
             (,keyvar (if (vectorp ,namevar) ,namevar
                        (read-kbd-macro ,namevar)))
+            (kmap (if (and ,keymap (symbolp ,keymap)) (symbol-value ,keymap) ,keymap))
             (,kdescvar (cons (if (stringp ,namevar) ,namevar
                                (key-description ,namevar))
-                             (quote ,keymap)))
-            (,bindingvar (lookup-key (or ,keymap global-map) ,keyvar)))
+                             (if (symbolp ,keymap) ,keymap (quote ,keymap))))
+            (,bindingvar (lookup-key (or kmap global-map) ,keyvar)))
        (let ((entry (assoc ,kdescvar personal-keybindings))
              (details (list ,command
                             (unless (numberp ,bindingvar)
@@ -183,11 +188,11 @@ can safely be called at any time."
              (setcdr entry details)
            (add-to-list 'personal-keybindings (cons ,kdescvar details))))
        ,(if predicate
-            `(define-key (or ,keymap global-map) ,keyvar
+            `(define-key (or kmap global-map) ,keyvar
                '(menu-item "" nil :filter (lambda (&optional _)
                                             (when ,predicate
                                               ,command))))
-          `(define-key (or ,keymap global-map) ,keyvar ,command)))))
+          `(define-key (or kmap global-map) ,keyvar ,command)))))
 
 ;;;###autoload
 (defmacro unbind-key (key-name &optional keymap)
