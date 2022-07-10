@@ -1,12 +1,12 @@
 
 ;; idle require other stuff
 (use-package idle-require
-  :load-path "site-lisp/idle-require"
+  :load-path "lisp-site/idle-require"
   :init
   ;; start idle-require after init finish
   (defun after-init-hook-func ()
     (add-to-list 'load-path
-                 (expand-file-name "lisp/idle-required" user-emacs-directory))
+                 (expand-file-name "lisp-idle" user-emacs-directory))
     (idle-require-mode +1))
   (add-hook 'after-init-hook #'after-init-hook-func)
 

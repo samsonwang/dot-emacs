@@ -27,3 +27,14 @@ Version 2020-02-13"
         (start-process "" nil openFileProgram $path))
       ;; (shell-command "xdg-open .") ;; 2013-02-10 this sometimes froze emacs till the folder is closed. eg with nautilus
       ))))
+
+
+(setq org-html-footnote-format "<sup>%s</sup>")
+(setq org-html-footnote-separator "<sup>, </sup>")
+(setq org-html-footnotes-section "<div id=\"footnotes\">\
+      <h2 class=\"footnotes\" style=\"display:none;\">%s: </h2>\
+      <div id=\"text-footnotes\"> %s </div> </div>")
+
+(org-html-footnote-reference)
+(org-html-footnotes-section)
+(org-html-footnotes)

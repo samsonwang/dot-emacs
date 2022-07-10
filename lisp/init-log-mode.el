@@ -1,6 +1,6 @@
 
 (use-package log-mode
-  :load-path "site-lisp/log-mode"
+  :load-path "lisp-site/log-mode"
   :init
   (defun log-mode-hook-func ()
     "hook func for log mode"

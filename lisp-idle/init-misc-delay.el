@@ -86,7 +86,7 @@
 (defun init-site-lisp-load-path ()
   (eval-when-compile (require 'cl-lib))
   (if (fboundp 'normal-top-level-add-to-load-path)
-      (let* ((site-lisp-dir "~/.emacs.d/site-lisp/")
+      (let* ((site-lisp-dir "~/.emacs.d/lisp-site/")
              (default-directory site-lisp-dir))
         (progn
           (setq load-path
@@ -105,7 +105,7 @@
 
 ;; org file export to rst
 (use-package ox-rst
-  :load-path "site-lisp/ox-rst")
+  :load-path "lisp-site/ox-rst")
 
 ;; matlab files
 (use-package octave

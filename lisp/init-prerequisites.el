@@ -50,8 +50,8 @@
 ;; use-package is required for 2rd priority
 (unless (require 'use-package nil 'noerror)
   (add-to-list 'load-path
-               (expand-file-name "site-lisp/use-package" user-emacs-directory))
-  (message "loading site-lisp/use-package")
+               (expand-file-name "lisp-site/use-package" user-emacs-directory))
+  (message "loading lisp-site/use-package")
   (require 'use-package))
 
 ;; use-package:diminish need this
