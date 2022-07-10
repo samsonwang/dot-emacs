@@ -75,7 +75,10 @@
     (when missing-packages
       (message "Installing %d missing package(s)" (length missing-packages))
       (package-refresh-contents)
-      (mapc #'package-install missing-packages))))
+      ;; (mapc #'package-install missing-packages)
+      (mapc (lambda (package-name)
+              (message "Installing package: %s" package-name))
+            missing-packages))))
 
 ;; auto install package above
 (package-install-ex my-packages)
