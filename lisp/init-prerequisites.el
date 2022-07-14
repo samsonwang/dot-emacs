@@ -67,7 +67,8 @@
   (setq default-directory "~/")
 
   ;; extra path, some elisp need this, such as rgrep's find
-  (setq extra-path '("d:/Program Files/PortableGit/usr/bin"
+  (setq extra-path '("d:/Program Files/PortableGit/bin"
+                     "d:/Program Files/PortableGit/usr/bin"
                      "d:/Program Files/LLVM/bin"
                      "d:/Program Files/Global/bin"))
 
