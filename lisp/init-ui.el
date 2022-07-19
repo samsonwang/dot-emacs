@@ -1,16 +1,17 @@
 ;; -*- coding:utf-8 -*-
 
+;; Enable theme
+;; (add-to-list 'custom-theme-load-path
+;; (expand-file-name "site-lisp/theme" user-emacs-directory))
+;; (load-theme 'autumn-light t)
+(use-package dracula-theme
+  :if (or (display-graphic-p) (daemonp))
+  :config
+  (load-theme 'dracula t))
+
 (if (display-graphic-p)
     (progn
       "graphical user interface"
-      ;; Enable theme
-      ;; (add-to-list 'custom-theme-load-path
-      ;; (expand-file-name "site-lisp/theme" user-emacs-directory))
-      ;; (load-theme 'autumn-light t)
-
-      (use-package dracula-theme
-        :config
-        (load-theme 'dracula t))
 
       ;; startup full screen
       (add-to-list 'initial-frame-alist '(fullscreen . maximized))
