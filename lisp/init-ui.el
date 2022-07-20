@@ -5,17 +5,17 @@
 ;; (expand-file-name "site-lisp/theme" user-emacs-directory))
 ;; (load-theme 'autumn-light t)
 (use-package dracula-theme
-  :if (or (display-graphic-p) (daemonp))
+  :if (or (display-graphic-p)
+          (daemonp))
   :config
   (load-theme 'dracula t))
 
 (if (display-graphic-p)
     (progn
       "graphical user interface"
-
       ;; startup full screen
       (add-to-list 'initial-frame-alist '(fullscreen . maximized))
-      ;; (add-to-list 'default-frame-alist '(fullscreen . fullheight))
+      (add-to-list 'default-frame-alist '(fullscreen . fullheight))
 
       ;; Fontset
       (defconst screen-dpi
@@ -35,14 +35,14 @@
             ;; DPI
             (* (/ (float resx) sizex) 25.4))))
 
-      (defconst font-size
-        (let ( (dpi screen-dpi) )
-          (cond
-           ((< dpi 100) 20)
-           ((< dpi 120) 26)
-           ((< dpi 140) 27)
-           ((< dpi 170) 28)
-           (t 32))))
+      (setq font-size
+            (let ( (dpi screen-dpi) )
+              (cond
+               ((< dpi 100) 20)
+               ((< dpi 120) 26)
+               ((< dpi 140) 27)
+               ((< dpi 170) 28)
+               (t 32))))
       ;; dell workstation: dpi=96 font=20
       ;; dell xps13: dpi=165.877 font=28
       ;; dell xps13 + aoc: dpi=101.940 font=26

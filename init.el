@@ -28,6 +28,7 @@
 (require 'init-python-mode)
 (require 'init-org-mode)
 (require 'init-log-mode)
+(require 'init-server)
 
 ;; 2rd priority is loaded after init when idle
 (require 'init-idle-require)
