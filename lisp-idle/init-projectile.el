@@ -1,7 +1,7 @@
 
 (use-package projectile
   :diminish projectile-mode
-  ;;  :after helm
+  :after (helm helm-projectile)
   :bind
   ("C-c p f"  . projectile-find-file)
   ("C-c p p"  . projectile-switch-project)
@@ -12,8 +12,9 @@
   (projectile-mode +1)
 
   :config
-  (require 'helm)
-  (require 'helm-projectile)
+  ;; (require 'helm)
+  ;; (require 'helm-projectile)
+
   ;; modeline setting
   (setq-default mode-line-buffer-identification
                 (list
@@ -23,7 +24,7 @@
                  (propertized-buffer-identification "%12b")))
   ;; projectile issue #1382
   ;; https://github.com/bbatsov/projectile/issues/1382
-  (require 'subr-x)
+  ;; (require 'subr-x)
 
   :custom
   (projectile-completion-system 'helm)

@@ -41,7 +41,6 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
-
 ;; init config home
 ;; (setq config-home (file-name-directory load-file-name))
 ;; (message (concat "Init from: " config-home))
