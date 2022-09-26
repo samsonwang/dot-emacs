@@ -13,9 +13,9 @@
      ,@body
      (float-time (time-since time))))
 
-;; when idle for 15 sec run gc
+;; when idle for seconds run gc
 (defvar gc-timer
-  (run-with-idle-timer 15 t #'garbage-collect))
+  (run-with-idle-timer 60 t #'garbage-collect))
 
 ;; (defvar gc-timer
 ;;   (run-with-idle-timer 15 t
