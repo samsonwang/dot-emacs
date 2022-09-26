@@ -40,17 +40,7 @@
     yasnippet-snippets
     yaml-mode
     ;;
-
     ))
-
-;; use melpa mirror
-;; (if *gnutls*
-;;     (setq package-archives
-;;           '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
-;;             ("melpa" . "http://elpa.emacs-china.org/melpa-stable/")))
-;; (setq package-archives
-;;       '(("gnu"   . "https://elpa.emacs-china.org/gnu/")
-;;         ("melpa" . "https://elpa.emacs-china.org/melpa-stable/"))))
 
 (add-to-list 'package-archives
              '("melpa" .
@@ -59,10 +49,6 @@
 ;; (setq package-archives
 ;;       '(("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
 ;;         ("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")))
-
-;; (add-to-list 'package-archives
-;;              '("melpa-stable" .
-;;                "http://mirrors.163.com/elpa/melpa-stable/"))
 
 ;; (unless *emacs26* )
 (setq package-check-signature nil)
@@ -77,7 +63,8 @@
       (package-refresh-contents)
       ;; (mapc #'package-install missing-packages)
       (mapc (lambda (package-name)
-              (message "Installing package: %s" package-name))
+              (message "Installing package: %s" package-name)
+              (package-install package-name))
             missing-packages))))
 
 ;; auto install package above
