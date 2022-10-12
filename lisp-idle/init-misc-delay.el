@@ -163,5 +163,15 @@
   :diminish subword-mode)
 ;;  :custom (global-subword-mode))
 
+(use-package nsm
+  :custom
+  (nsm-settings-file
+   (expand-file-name "network-security.data" user-emacs-cache)))
+
+(use-package tramp
+  :custom
+  (tramp-persistency-file-name
+   (expand-file-name "tramp" user-emacs-cache)))
+
 ;; misc delay is returned
 (provide 'init-misc-delay)

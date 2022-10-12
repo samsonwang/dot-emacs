@@ -6,7 +6,9 @@
   ;; on windows.
   (when *windows*
     (defun server-ensure-safe-dir (dir)
-      "Noop" t))
-  )
+      "Noop" t)
+    )
+  :custom
+  (server-auth-dir user-emacs-cache))
 
 (provide 'init-server)
