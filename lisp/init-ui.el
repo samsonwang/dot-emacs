@@ -24,7 +24,8 @@
     (set-face-attribute 'default nil :font
                         (format "%s:pixelsize=%d" english-name english-size))
     (dolist (charset '(kana han symbol cjk-misc bopomofo))
-      (set-fontset-font (frame-parameter nil 'font) charset
+      (set-fontset-font (frame-parameter nil 'font)
+                        charset
                         (font-spec :family chinese-name :size chinese-size))))
   (when *windows*
     (cond
@@ -38,13 +39,18 @@
 
   (when *macintosh*
     (set-fontset "Menlo" "Menlo" font-size font-size))
+
   (when *linux*
     (set-fontset "Mono" "Noto Sans Mono CJK SC" font-size font-size))
 
   ;; specify font for all unicode characters
   ;; http://xahlee.info/comp/unicode_font_download.html
   (when (member "Symbola" (font-family-list))
-    (set-fontset-font t 'unicode "Symbola" nil 'prepend)))
+    (set-fontset-font t 'unicode "Symbola" nil 'prepend))
+
+  ;; invoke customize face and save
+  (if (interactive-p)
+      (customize-face 'default)))
 
 (cond
  ((display-graphic-p)
@@ -88,8 +94,8 @@
   (set-font-size current-font-size))
 
  ((daemonp)
-  ;;       (add-to-list 'initial-frame-alist '(fullscreen . maximized))
-  (add-to-list 'default-frame-alist '(fullscreen . fullheight))
+  (add-to-list 'initial-frame-alist '(fullscreen . maximized))
+  ;; (add-to-list 'default-frame-alist '(fullscreen . fullheight))
   )
 
  (t
