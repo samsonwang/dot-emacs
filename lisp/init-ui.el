@@ -95,8 +95,7 @@
 
  ((daemonp)
   (add-to-list 'initial-frame-alist '(fullscreen . maximized))
-  ;; (add-to-list 'default-frame-alist '(fullscreen . fullheight))
-  )
+  (add-to-list 'default-frame-alist '(fullscreen . maximized)))
 
  (t
   ;;"non graphical user interface"

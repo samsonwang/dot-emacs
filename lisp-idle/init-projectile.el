@@ -1,7 +1,7 @@
 
 (use-package projectile
   :diminish projectile-mode
-;;  :after (helm helm-projectile)
+  :after (helm)
   :bind
   ("C-c p f"  . projectile-find-file)
   ("C-c p p"  . projectile-switch-project)
@@ -32,10 +32,10 @@
   (projectile-completion-system 'helm)
   (projectile-cache-file (concat user-emacs-cache "projectile.cache"))
   (projectile-known-projects-file (concat user-emacs-cache "projectile.bookmarks"))
-;;  (projectile-mode-line
-;;   '(:eval (if (file-remote-p default-directory)
-;;               " Projectile"
-;;             (format " [%s]" (projectile-project-name)))))
+  ;;  (projectile-mode-line
+  ;;   '(:eval (if (file-remote-p default-directory)
+  ;;               " Projectile"
+  ;;             (format " [%s]" (projectile-project-name)))))
   )
 
 (provide 'init-projectile)
