@@ -17,7 +17,7 @@
   (recentf-mode t)
 
   :custom
-  (recentf-auto-cleanup 'never)
+  (recentf-auto-cleanup 3600)
   (recentf-max-saved-items 20)
   (recentf-keep '(file-remote-p file-readable-p))
   (recentf-exclude '("/tmp/" "/ssh:" "/sudo:"
