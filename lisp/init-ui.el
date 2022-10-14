@@ -10,13 +10,15 @@
   :config
   (load-theme 'dracula t))
 
+;; default font size
+(setq current-font-size 24)
+
 (defun set-font-size (font-size)
   (interactive
    (list (string-to-number
-          (read-string "Font size: "
-                       (if (boundp 'current-font-size)
-                           (number-to-string current-font-size)
-                         "24")))))
+          (read-string "Font size: " (number-to-string current-font-size)))))
+
+  (message "font size: %s" current-font-size)
 
   (setq current-font-size font-size)
 
@@ -49,8 +51,9 @@
     (set-fontset-font t 'unicode "Symbola" nil 'prepend))
 
   ;; invoke customize face and save
-  (if (interactive-p)
-      (customize-face 'default)))
+  ;; (if (interactive-p)
+  ;;   (customize-face 'default))
+  )
 
 (cond
  ((display-graphic-p)
@@ -59,7 +62,7 @@
   (add-to-list 'initial-frame-alist '(fullscreen . maximized))
   (add-to-list 'default-frame-alist '(fullscreen . fullheight))
 
-  ;; Fontset
+  ;; fontset
   (defconst screen-dpi
     (let* ((attrs (car (display-monitor-attributes-list)))
            (size (assoc 'mm-size attrs))
@@ -95,7 +98,15 @@
 
  ((daemonp)
   (add-to-list 'initial-frame-alist '(fullscreen . maximized))
-  (add-to-list 'default-frame-alist '(fullscreen . maximized)))
+  (add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+  (defun daemon-set-font-size(frame)
+    (select-frame frame)
+    (set-font-size current-font-size)
+    (remove-hook 'after-make-frame-functions
+                 'daemon-set-font-size))
+  (add-hook 'after-make-frame-functions
+            'daemon-set-font-size))
 
  (t
   ;;"non graphical user interface"
