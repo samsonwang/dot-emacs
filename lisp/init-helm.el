@@ -15,5 +15,7 @@
   :config
   (helm-mode +1))
 
+(idle-require 'helm)
+
 (provide 'init-helm)
 ;;; init-helm ends here

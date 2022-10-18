@@ -23,6 +23,4 @@
 ;;                          (message "Garbage Collector has run for %.06f sec"
 ;;                                   (eval-time (garbage-collect))))))
 
-
-
 (provide 'init-gc)

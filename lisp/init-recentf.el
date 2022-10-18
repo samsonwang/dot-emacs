@@ -29,8 +29,9 @@
                      "\\.mkv$" "\\.mp[34]$" "\\.avi$" "\\.pdf$"
                      ;; sub-titles
                      "\\.sub$" "\\.srt$" "\\.ass$"
-                     "/ido.last$"))
-  )
+                     "/ido.last$")))
+
+(idle-require 'recentf)
 
 (provide 'init-recentf)
 ;;; init-misc.el ends here

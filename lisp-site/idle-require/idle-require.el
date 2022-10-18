@@ -84,7 +84,7 @@
   "Add FEATURE to `idle-require-symbols'.
    FILENAME and NOERROR are provided for compatibility to `require'. If FILENAME
    is non-nil, it is added instead of FEATURE."
-  `(add-to-list 'idle-require-symbols ,feature))
+  `(add-to-list 'idle-require-symbols (or ,feature ,filename) t))
 
 (defconst idle-require-font-lock-keywords
   '(("(\\(idle-require\\)\\_>[ \t']*\\(\\(?:\\sw\\|\\s_\\)+\\)?"
@@ -139,16 +139,20 @@
   "Load symbols from `idle-require-symbols.' until input occurs."
   (let (symbol)
     (idle-req-log "Beginning idle-require")
+    ;; (idle-req-log (format "idle require symbols: %s" idle-require-symbols))
     (while (and idle-require-symbols
                 (not (input-pending-p)))
       (setq symbol (pop idle-require-symbols))
       (condition-case err
           (cond
-           ((stringp symbol) (load symbol t))
+           ((stringp symbol)
+            (idle-req-log (format "idle-require: load1 %s" symbol))
+            (load symbol t))
            ((functionp symbol)
             (setq symbol (symbol-function symbol))
             (when (eq (car-safe symbol) 'autoload)
               ;; still not loaded
+              (idle-req-log (format "idle-require: load2 %s" (cadr symbol)))
               (load (cadr symbol) t)))
            (t
             (idle-req-log (format "idle-require: require %s" symbol))

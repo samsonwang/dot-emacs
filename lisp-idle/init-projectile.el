@@ -38,5 +38,7 @@
   ;;             (format " [%s]" (projectile-project-name)))))
   )
 
+(idle-require 'projectile)
+
 (provide 'init-projectile)
 ;; init-projectile.el ends here

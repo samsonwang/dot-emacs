@@ -22,7 +22,6 @@
 (require 'init-server)
 
 ;; 2rd priority is loaded after init when idle
-(require 'init-idle-require)
 (idle-require 'init-js-mode)
 (idle-require 'init-css-mode)
 (idle-require 'init-go-mode)
@@ -47,7 +46,6 @@
 ;; (idle-require 'init-elfeed)
 (idle-require 'init-gc)
 (idle-require 'init-elpa) ;; finally load and install elpa packages
-
 
 ;; (load custom-file 'noerror t)
 (when (file-exists-p custom-file)
