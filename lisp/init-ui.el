@@ -18,7 +18,7 @@
    (list (string-to-number
           (read-string "Font size: " (number-to-string current-font-size)))))
 
-  (message "font size: %s" current-font-size)
+  (message "font size: %s -> %s" current-font-size font-size)
 
   (setq current-font-size font-size)
 
