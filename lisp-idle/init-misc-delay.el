@@ -54,8 +54,8 @@
 (setq-default ring-bell-function 'mode-line-bell-flash)
 
 ;; delete trailling space before save
-;;(add-hook 'before-save-hook #'whitespace-cleanup)
-(add-hook 'before-save-hook #'delete-trailing-whitespace)
+;; (add-hook 'before-save-hook #'whitespace-cleanup)
+;; (add-hook 'before-save-hook #'delete-trailing-whitespace)
 
 (defun create-scratch-buffer ()
   "create a new scratch buffer to work in.

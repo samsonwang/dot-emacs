@@ -84,7 +84,7 @@
         (let ((dpi screen-dpi))
           (cond
            ((< dpi 100) 20)
-           ((< dpi 120) 26)
+           ((< dpi 120) 24)
            ((< dpi 140) 27)
            ((< dpi 170) 28)
            (t 32))))
