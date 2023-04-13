@@ -42,13 +42,15 @@
     ;;
     ))
 
-(add-to-list 'package-archives
-             '("melpa" .
-               "https://stable.melpa.org/packages/"))
+(setq package-archives-use-mirror t)
 
-;; (setq package-archives
-;;       '(("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-;;         ("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")))
+(if 'package-archives-use-mirror
+    (setq package-archives
+          '(("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+            ("nongnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
+            ("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/stable-melpa/")))
+  (add-to-list 'package-archives
+               '("melpa" . "https://stable.melpa.org/packages/")))
 
 ;; (unless *emacs26* )
 (setq package-check-signature nil)

@@ -62,6 +62,7 @@ Temporary Items
 *.history
 elpa/
 elpa-*/
+eln-cache/
 .recentf
 .smex-items
 smex-items
@@ -78,6 +79,7 @@ tool/playground.el
 personal.el
 tutorial
 url/
+session.*
 
 # GNU Global tag files
 GPATH
