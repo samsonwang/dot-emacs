@@ -60,7 +60,8 @@
   ;; graphical user interface
   ;; startup full screen
   (add-to-list 'initial-frame-alist '(fullscreen . maximized))
-  (add-to-list 'default-frame-alist '(fullscreen . fullheight))
+  ;; (add-to-list 'default-frame-alist '(fullscreen . fullheight))
+  (add-to-list 'default-frame-alist '(height . 32))
 
   ;; fontset
   (defconst screen-dpi
@@ -84,6 +85,7 @@
         (let ((dpi screen-dpi))
           (cond
            ((< dpi 100) 20)
+           ((< dpi 110) 22)
            ((< dpi 120) 24)
            ((< dpi 140) 27)
            ((< dpi 170) 28)
@@ -92,8 +94,8 @@
   ;; dell xps13: dpi=165.877 font=28
   ;; dell xps13 + aoc: dpi=101.940 font=26
 
-  (message (concat "dpi:" (number-to-string screen-dpi)
-                   " font-size:" (number-to-string current-font-size)))
+  (message (concat "dpi: " (number-to-string screen-dpi)
+                   " font-size: " (number-to-string current-font-size)))
   (set-font-size current-font-size))
 
  ((daemonp)
