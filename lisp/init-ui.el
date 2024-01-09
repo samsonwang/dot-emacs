@@ -10,6 +10,7 @@
   :config
   (load-theme 'dracula t))
 
+
 ;; default font size
 (setq current-font-size 24)
 
@@ -29,7 +30,7 @@
       (set-fontset-font (frame-parameter nil 'font)
                         charset
                         (font-spec :family chinese-name :size chinese-size))))
-  (when *windows*
+  (when (or *windows* *cygwin*)
     (cond
      ;; chectk whether font is installed
      ((member "Source Code Pro" (font-family-list))
@@ -59,7 +60,7 @@
  ((display-graphic-p)
   ;; graphical user interface
   ;; startup full screen
-  (add-to-list 'initial-frame-alist '(fullscreen . maximized))
+  ;; (add-to-list 'initial-frame-alist '(fullscreen . maximized))
   ;; (add-to-list 'default-frame-alist '(fullscreen . fullheight))
   (add-to-list 'default-frame-alist '(height . 32))
 
