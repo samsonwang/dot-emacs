@@ -13,7 +13,8 @@
 
   :init
   (defun org-mode-hook-func ()
-    (setq tab-width 2)
+    ;; emacs30.1 requires tab-width set to 8
+    ;; (setq tab-width 2)
     (setq truncate-lines nil)
     (display-margin-line-number))
 

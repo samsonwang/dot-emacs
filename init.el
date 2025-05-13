@@ -13,13 +13,13 @@
 (require 'init-recentf)
 ;; (require 'init-evil)
 (require 'init-helm)
-(require 'init-global)
+;; (require 'init-global)
 (require 'init-elisp-mode)
 (require 'init-cc-mode)
 (require 'init-python-mode)
 (require 'init-org-mode)
-(require 'init-log-mode)
-(require 'init-server)
+;; (require 'init-log-mode)
+;; (require 'init-server)
 
 ;; 2rd priority is loaded after init when idle
 (idle-require 'init-js-mode)

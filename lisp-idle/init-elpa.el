@@ -24,7 +24,7 @@
     htmlize
     iedit ;; Edit multiple regions in the same way simultaneously.
     ;; logview ;; major mode for log files
-    magit
+    ;; magit
     markdown-mode
     ;; mmm-mako
     projectile
