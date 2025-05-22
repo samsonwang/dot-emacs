@@ -30,18 +30,19 @@
     projectile
     ;; pyim ;; using a self-tailored version in site-lisp
     ;; posframe ;; introduced in emacs26, required by emacs26
-    qt-pro-mode
+    ;; qt-pro-mode
     smex
     undo-tree
     use-package ;; already installed in site-lisp folder
     wc-mode
-    which-key
+    which-key ;; built-in package in emacs 30.1
+    yaml-mode
     yasnippet
     yasnippet-snippets
-    yaml-mode
     ;;
     ))
 
+;; use mirror package for a better download speed
 (setq package-archives-use-mirror t)
 
 (if 'package-archives-use-mirror
@@ -55,22 +56,18 @@
 ;; (unless *emacs26* )
 (setq package-check-signature nil)
 
-(require 'cl-lib)
-(defun package-install-ex (my-packages)
-  "Ensure the packages I need are installed. See `my-packages'."
-  (let ((missing-packages
-         (cl-remove-if #'package-installed-p my-packages)))
-    (when missing-packages
-      (message "Installing %d missing package(s)" (length missing-packages))
-      (package-refresh-contents)
-      ;; (mapc #'package-install missing-packages)
-      (mapc (lambda (package-name)
-              (message "Installing package: %s" package-name)
-              (package-install package-name))
-            missing-packages))))
+(defun install-packages ()
+  "Install all packages in `my-packages'."
+  (unless package-archive-contents
+    (package-refresh-contents))
+  (dolist (package my-packages)
+    (unless (package-installed-p package)
+      (package-install package))))
+
+(install-packages)
+
 
 ;; auto install package above
-(package-install-ex my-packages)
 
 (provide 'init-elpa)
 ;;; init-customization.el ends here

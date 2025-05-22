@@ -1,5 +1,7 @@
 ;;; -*- lexical-binding: t -*-
 
+(setq package-enable-at-startup nil)
+
 ;; adjust garbage collection thresholds during startup, and thereafter
 (defconst normal-file-name-handler-alist file-name-handler-alist)
 (setq file-name-handler-alist nil
