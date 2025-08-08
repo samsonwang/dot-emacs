@@ -20,6 +20,8 @@
     (aggressive-indent-mode)
     (highlight-symbol-mode)
     (highlight-symbol-nav-mode)
+    (setq indent-tabs-mode nil)  ; Use spaces instead of tabs
+    (setq tab-width 4)           ; Set tab width to 4 spaces
     (display-margin-line-number))
 
   (add-hook 'c-mode-common-hook 'c-mode-common-hook-func)

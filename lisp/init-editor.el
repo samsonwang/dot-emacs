@@ -19,6 +19,8 @@
 (use-package aggressive-indent
   :diminish aggressive-indent-mode)
 
+(transient-mark-mode +1)
+
 ;; nice scrolling
 (setq scroll-margin 3
       scroll-conservatively 100000

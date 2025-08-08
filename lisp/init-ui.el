@@ -62,7 +62,7 @@
   ;; startup full screen
   ;; (add-to-list 'initial-frame-alist '(fullscreen . maximized))
   ;; (add-to-list 'default-frame-alist '(fullscreen . fullheight))
-  (add-to-list 'default-frame-alist '(height . 32))
+  (setq default-frame-alist '((width . 120) (height . 42)))
 
   ;; fontset
   (defconst screen-dpi
