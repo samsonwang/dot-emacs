@@ -20,6 +20,25 @@
 
   (add-hook 'org-mode-hook 'org-mode-hook-func)
 
+  (defun org-count-headings ()
+    "Count all headings in the current Org buffer."
+    (interactive)
+    (let ((count 0))
+      (org-element-map (org-element-parse-buffer) 'headline
+        (lambda (headline) (setq count (1+ count))))
+      (message "Total headings: %d" count)))
+
+  ;; Count headings at specific level
+  (defun org-count-headings-at-level (level)
+    "Count headings at specified LEVEL."
+    (interactive "nLevel: ")
+    (let ((count 0))
+      (org-element-map (org-element-parse-buffer) 'headline
+        (lambda (headline)
+          (when (= (org-element-property :level headline) level)
+            (setq count (1+ count)))))
+      (message "Level %d headings: %d" level count)))
+
   :config
   ;; @https://emacs.stackexchange.com/questions/13820/inline-verbatim-and-code-with-quotes-in-org-mode
   (setcar (nthcdr 2 org-emphasis-regexp-components) " \t\r\n")
@@ -42,6 +61,8 @@
   (org-todo-keywords '((sequence "TODO" "PENDING" "FEEDBACK" "|"
                                  "DONE" "CANCELED"))) ; Add todo keywords
   )
+
+
 
 (provide 'init-org-mode)
 ;;; init-org-mode.el ends here
