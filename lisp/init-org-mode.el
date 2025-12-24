@@ -58,11 +58,25 @@
   (org-support-shift-select t) ; enable shift selecting
   (org-src-fontify-natively t) ; syntax highlight in emacs begin_src block
   (org-edit-src-content-indentation 0)
-  (org-todo-keywords '((sequence "TODO" "PENDING" "FEEDBACK" "|"
-                                 "DONE" "CANCELED"))) ; Add todo keywords
+  ;; (org-todo-keywords '((sequence "TODO" "PENDING" "FEEDBACK" "|"
+  ;;                     "DONE" "CANCELED"))) ; Add todo keywords
   )
 
+(use-package org-roam
+  :custom
+  (org-roam-directory (file-truename "~/note-org-mode"))
+  (org-roam-db-location (expand-file-name "org-roam.db" user-emacs-cache))
+  
+  ;; :bind (("C-c n l" . org-roam-buffer-toggle)
+  ;;        ("C-c n f" . org-roam-node-find)
+  ;;        ("C-c n i" . org-roam-node-insert)
+  ;;        ("C-c n c" . org-roam-capture)
+  ;;        :map org-mode-map
+  ;;        ("C-M-i" . completion-at-point))
 
+  :config
+  (org-roam-db-autosync-mode))
 
 (provide 'init-org-mode)
 ;;; init-org-mode.el ends here
+

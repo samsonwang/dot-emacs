@@ -80,12 +80,13 @@ personal.el
 tutorial
 url/
 session.*
+# server
+# transient
+# tramp
 
 # GNU Global tag files
 GPATH
 GRTAGS
 GTAGS
 
-server
-transient
-tramp
+

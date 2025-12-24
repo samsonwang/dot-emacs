@@ -27,6 +27,7 @@
     ;; magit
     markdown-mode
     ;; mmm-mako
+    org-roam
     projectile
     ;; pyim ;; using a self-tailored version in site-lisp
     ;; posframe ;; introduced in emacs26, required by emacs26
