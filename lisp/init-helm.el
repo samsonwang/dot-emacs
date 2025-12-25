@@ -13,9 +13,9 @@
    ("C-c i"     . helm-imenu)
    ("C-c k"     . helm-show-kill-ring))
   :config
-  (helm-mode +1))
-
-(idle-require 'helm)
+  (helm-mode +1)
+  (idle-require 'helm))
 
 (provide 'init-helm)
 ;;; init-helm ends here
+

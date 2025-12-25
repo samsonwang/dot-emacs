@@ -9,7 +9,7 @@
     cmake-mode
     diminish
     disable-mouse
-    dockerfile-mode
+    ;; dockerfile-mode
     dracula-theme
     ;; elfeed
     exec-path-from-shell
@@ -18,7 +18,7 @@
     helm
     helm-projectile
     helm-gtags
-    helm-smex
+    ;; helm-smex
     ;; helm-swoop ;; Type a pattern and all the matching lines are shown in another buffer.
     highlight-symbol
     htmlize
@@ -32,7 +32,7 @@
     ;; pyim ;; using a self-tailored version in site-lisp
     ;; posframe ;; introduced in emacs26, required by emacs26
     ;; qt-pro-mode
-    smex
+    ;; smex
     undo-tree
     use-package ;; already installed in site-lisp folder
     wc-mode

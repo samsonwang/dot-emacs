@@ -34,9 +34,9 @@
 (diminish 'which-key-mode)
 
 ;; Display system time in modeline
-(setq display-time-24hr-format t)
-(setq display-time-day-and-date t)
-(setq system-time-locale "C")  ;; Change time display into English
+;; (setq display-time-24hr-format t)
+;; (setq display-time-day-and-date t)
+;; (setq system-time-locale "C")  ;; Change time display into English
 ;; (display-time)
 
 ;;  Fancy display for diary and calendar
@@ -45,6 +45,14 @@
       number-of-diary-entries 7)
 (add-hook 'diary-display-hook 'fancy-diary-display)
 (add-hook 'today-visible-calendar-hook 'calendar-mark-today)
+
+;; I do not use diary, so put diary in a temp folder.
+(setq diary-file (expand-file-name "diary" user-emacs-cache))
+(when (and (boundp 'diary-file)
+           diary-file
+           (not (file-exists-p diary-file)))
+  (make-directory (file-name-directory diary-file) t)
+  (write-region "" nil diary-file))
 
 ;; Warning signal by flash modeline
 (defun mode-line-bell-flash ()
@@ -104,8 +112,8 @@
   (message "auto-indent disabled"))
 
 ;; org file export to rst
-(use-package ox-rst
-  :load-path "lisp-site/ox-rst")
+;; (use-package ox-rst
+;;  :load-path "lisp-site/ox-rst")
 
 ;; matlab files
 (use-package octave
