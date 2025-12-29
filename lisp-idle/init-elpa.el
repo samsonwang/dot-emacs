@@ -18,6 +18,7 @@
     helm
     helm-projectile
     helm-gtags
+    helm-roam
     ;; helm-smex
     ;; helm-swoop ;; Type a pattern and all the matching lines are shown in another buffer.
     highlight-symbol
@@ -50,7 +51,7 @@
     (setq package-archives
           '(("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
             ("nongnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
-            ("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/stable-melpa/")))
+            ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/stable-melpa/")))
   (add-to-list 'package-archives
                '("melpa" . "https://stable.melpa.org/packages/")))
 

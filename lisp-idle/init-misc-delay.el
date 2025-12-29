@@ -36,7 +36,7 @@
 ;; Display system time in modeline
 ;; (setq display-time-24hr-format t)
 ;; (setq display-time-day-and-date t)
-;; (setq system-time-locale "C")  ;; Change time display into English
+(setq system-time-locale "C")  ;; Change time display into English
 ;; (display-time)
 
 ;;  Fancy display for diary and calendar
