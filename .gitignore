@@ -67,22 +67,17 @@ eln-cache/
 .smex-items
 smex-items
 ido.last
-bookmarks
 eshell
 diary
 custom-set-variables.el
 custom.el
 projectile.cache
-.emacs_cache/
-.cache/
 tool/playground.el
 personal.el
 tutorial
 url/
 session.*
-# server
-# transient
-# tramp
+
 
 # GNU Global tag files
 GPATH

@@ -69,12 +69,12 @@
     (if (file-exists-p note-dir)
         (setq org-roam-directory note-dir)))
   
-  (defun org-roam-slug-keep-hyphen (title)
-    "Generate slug from TITLE, keeping hyphens."
-    (let ((s (downcase title)))
-      (setq s (replace-regexp-in-string "[^a-z0-9-]" "-" s))
-      (setq s (replace-regexp-in-string "-+" "-" s))
-      (string-trim s "-+" "-+")))
+  ;; (defun org-roam-slug-keep-hyphen (title)
+  ;;   "Generate slug from TITLE, keeping hyphens."
+  ;;   (let ((s (downcase title)))
+  ;;     (setq s (replace-regexp-in-string "[^a-z0-9-]" "-" s))
+  ;;     (setq s (replace-regexp-in-string "-+" "-" s))
+  ;;     (string-trim s "-+" "-+")))
   
   :custom
   ;; (org-roam-directory (file-truename "~/note-org-mode"))
@@ -82,31 +82,31 @@
   (org-roam-capture-templates
    '(("d" "default" plain "%?"
       :target (file+head
-               "00-default/%<%Y%m%d>-%(org-roam-slug-keep-hyphen \"${title}\").org"
+               "00-default/%<%Y%m%d>-%<%H%M%S>.org"
                "#+title: ${title}\n#+date: %U\n#+last_modified: %U\n")
       :unnarrowed t)
      
      ("l" "life" plain "%?"
       :target (file+head
-               "30-life/%<%Y%m%d>-%(org-roam-slug-keep-hyphen \"${title}\").org"
-               "#+title: ${title}\n#+type: life\n#+source: ${source}\n#+date: %U\n#+last_modified: %U\n")
+               "30-life/%<%Y%m%d>-%<%H%M%S>.org"
+               "#+title: ${title}\n#+type: life\n#+date: %U\n#+last_modified: %U\n")
       :unnarrowed t)
      
      ("p" "programming" plain "%?"
       :target (file+head
-               "50-programming/%<%Y%m%d>-%(org-roam-slug-keep-hyphen \"${title}\").org"
+               "50-programming/%<%Y%m%d>-%<%H%M%S>.org"
                "#+title: ${title}\n#+type: programming\n#+date: %U\n#+last_modified: %U\n")
       :unnarrowed t)
      
      ("r" "reading" plain "%?"
       :target (file+head
-               "60-reading/%<%Y%m%d>-%(org-roam-slug-keep-hyphen \"${title}\").org"
-               "#+title: ${title}\n#+type: reading\n#+author: ${author}\n#+source: ${source}\n#+date: %U\n#+last_modified: %U\n")
+               "60-reading/%<%Y%m%d>-%<%H%M%S>.org"
+               "#+title: ${title}\n#+type: reading\n#+author: ${author}\n#+date: %U\n#+last_modified: %U\n")
       :unnarrowed t)
      
      ("m" "meta" plain "%?"
       :target (file+head
-               "90-meta/%<%Y%m%d>-%(org-roam-slug-keep-hyphen \"${title}\").org"
+               "90-meta/%<%Y%m%d>-%<%H%M%S>.org"
                "#+title: ${title}\n#+type: meta\n#+date: %U\n#+last_modified: %U\n")
       :unnarrowed t)))
   

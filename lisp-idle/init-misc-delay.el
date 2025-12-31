@@ -176,10 +176,15 @@
   (nsm-settings-file
    (expand-file-name "network-security.data" user-emacs-cache)))
 
-(use-package tramp
-  :custom
-  (tramp-persistency-file-name
-   (expand-file-name "tramp" user-emacs-cache)))
+;; (use-package tramp
+;;   :custom
+;;   (tramp-persistency-file-name
+;;    (expand-file-name "tramp" user-emacs-cache)))
+(setq tramp-persistency-file-name
+      (expand-file-name "tramp" user-emacs-cache))
+
+(setq bookmark-default-file
+      (expand-file-name "bookmarks" user-emacs-cache))
 
 ;; misc delay is returned
 (provide 'init-misc-delay)

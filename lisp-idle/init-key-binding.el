@@ -60,6 +60,9 @@
   (set-visited-file-name new-name)
   (rename-buffer new-name))
 
+;; ibuffer
+(global-set-key (kbd "C-c b") #'ibuffer)
+
 
 (provide 'init-key-binding)
 ;;; init-key-binding.el ends here
